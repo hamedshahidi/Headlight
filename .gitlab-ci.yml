@@ -4,7 +4,7 @@ stages:
 build_project:
   stage: build
   script:
-    - xcodebuild clean -project Headlight.xcodeproj -scheme Headlight
-    - xcodebuild test -project Headlight.xcodeproj -scheme Headlight -destination 'platform=iOS Simulator,name=iPhone XR,OS=12.1'
+    - xcodebuild clean -project Headlight.xcodeproj -scheme Headlight | xcpretty
+    - xcodebuild test -project Headlight.xcodeproj -scheme Headlight -destination 'platform=iOS Simulator,name=iPhone XR,OS=12.1' | xcpretty -s
   tags:
   - iOS
