@@ -1,0 +1,20 @@
+{
+    // Global skills
+    skills: ["js", "css", "html"],
+    
+    courses: [
+        {
+            id: "metropolia-web-01",
+            name: "Web Basics",
+            description: "Learn basics of web",
+            location: { lgn: 1.12312213, ltd: 2.23423432 },
+            time: { start: "12-4-2019", end: "14-4-2019" },
+            organization: "Metropolia",
+            rating: 4.5,
+            skills: {
+                gained: ["js", "css", "html"],
+                required: []
+            }
+        }
+    ]
+}

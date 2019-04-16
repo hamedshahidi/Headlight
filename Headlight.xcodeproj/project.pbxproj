@@ -40,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A48C4FE2265D6910079B4A1 /* data_template.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data_template.json; sourceTree = "<group>"; };
 		9542975B2265C2A700AA8E8F /* Headlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Headlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9542975E2265C2A700AA8E8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		954297602265C2A700AA8E8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +118,7 @@
 				9542976A2265C2A900AA8E8F /* LaunchScreen.storyboard */,
 				9542976D2265C2A900AA8E8F /* Info.plist */,
 				954297652265C2A700AA8E8F /* Headlight.xcdatamodeld */,
+				6A48C4FE2265D6910079B4A1 /* data_template.json */,
 			);
 			path = Headlight;
 			sourceTree = "<group>";
