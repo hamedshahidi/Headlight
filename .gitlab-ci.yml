@@ -1,0 +1,10 @@
+stages:
+ - build
+
+build_project:
+  stage: build
+  script:
+    - xcodebuild clean -project CIDemoApp.xcodeproj -scheme CIdemoApp | xcpretty
+    - xcodebuild test -project CIDemoApp.xcodeproj -scheme CIdemoApp -destination 'platform=iOS Simulator,name=iPhone XR,OS=12.1' | xcpretty -s
+  tags:
+  - iOS
