@@ -15,6 +15,11 @@
 		9542976C2265C2A900AA8E8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9542976A2265C2A900AA8E8F /* LaunchScreen.storyboard */; };
 		954297772265C2A900AA8E8F /* HeadlightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297762265C2A900AA8E8F /* HeadlightTests.swift */; };
 		954297822265C2A900AA8E8F /* HeadlightUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297812265C2A900AA8E8F /* HeadlightUITests.swift */; };
+		954297922265C31200AA8E8F /* Mikko.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954297912265C31200AA8E8F /* Mikko.storyboard */; };
+		954297942265C37600AA8E8F /* Tuomas.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954297932265C37600AA8E8F /* Tuomas.storyboard */; };
+		954297962265C37F00AA8E8F /* Janne.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954297952265C37F00AA8E8F /* Janne.storyboard */; };
+		954297982265C38800AA8E8F /* Elias.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954297972265C38800AA8E8F /* Elias.storyboard */; };
+		9542979A2265C39500AA8E8F /* Hamed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954297992265C39500AA8E8F /* Hamed.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		9542977D2265C2A900AA8E8F /* HeadlightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeadlightUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		954297812265C2A900AA8E8F /* HeadlightUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlightUITests.swift; sourceTree = "<group>"; };
 		954297832265C2A900AA8E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		954297912265C31200AA8E8F /* Mikko.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mikko.storyboard; sourceTree = "<group>"; };
+		954297932265C37600AA8E8F /* Tuomas.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tuomas.storyboard; sourceTree = "<group>"; };
+		954297952265C37F00AA8E8F /* Janne.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Janne.storyboard; sourceTree = "<group>"; };
+		954297972265C38800AA8E8F /* Elias.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Elias.storyboard; sourceTree = "<group>"; };
+		954297992265C39500AA8E8F /* Hamed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Hamed.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,7 @@
 		9542975D2265C2A700AA8E8F /* Headlight */ = {
 			isa = PBXGroup;
 			children = (
+				954297902265C2E000AA8E8F /* Storyboards */,
 				9542975E2265C2A700AA8E8F /* AppDelegate.swift */,
 				954297602265C2A700AA8E8F /* ViewController.swift */,
 				954297622265C2A700AA8E8F /* Main.storyboard */,
@@ -126,6 +137,18 @@
 				954297832265C2A900AA8E8F /* Info.plist */,
 			);
 			path = HeadlightUITests;
+			sourceTree = "<group>";
+		};
+		954297902265C2E000AA8E8F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				954297912265C31200AA8E8F /* Mikko.storyboard */,
+				954297932265C37600AA8E8F /* Tuomas.storyboard */,
+				954297952265C37F00AA8E8F /* Janne.storyboard */,
+				954297972265C38800AA8E8F /* Elias.storyboard */,
+				954297992265C39500AA8E8F /* Hamed.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +256,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9542976C2265C2A900AA8E8F /* LaunchScreen.storyboard in Resources */,
+				954297982265C38800AA8E8F /* Elias.storyboard in Resources */,
+				954297962265C37F00AA8E8F /* Janne.storyboard in Resources */,
 				954297692265C2A900AA8E8F /* Assets.xcassets in Resources */,
+				954297942265C37600AA8E8F /* Tuomas.storyboard in Resources */,
+				954297922265C31200AA8E8F /* Mikko.storyboard in Resources */,
+				9542979A2265C39500AA8E8F /* Hamed.storyboard in Resources */,
 				954297642265C2A700AA8E8F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
