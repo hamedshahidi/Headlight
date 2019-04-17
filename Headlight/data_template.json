@@ -1,175 +1,347 @@
 {
-    skills: ["js", "css", "html", "tier-1-physics", "tier-2-physics", "tier-3-physics", "tier-1-mathematics", "tier-2-mathematics", "tier-3-mathematics", "basic-unix", "basic-logism", "ionic", "angular", "sass", "ux-prototyping", "color-theory", "object-oriented-programming", "data-communications", "kotlin", "android-studio", "java", "android", "ios", "xcode", "swift"],
-    
-    courses: [
-        {
-            id: "metropolia-web-01",
-            name: "Web Basics",
-            description: "Learn basics of web",
-            location: { lgn: 1.12312213, ltd: 2.23423432 },
-            time: { start: "12-4-2019", end: "14-4-2019" },
-            organization: "Metropolia",
-            rating: 4.5,
-            skills: {
-                gained: ["js", "css", "html"],
-                required: []
-            }
-        },
-        {
-            id: "metropolia-physics-01",
-            name: "Physics 01",
-            description: "The introduction course to physics",
-            location: { lgn: 1.12312213, ltd: 2.23423432 },
-            time: { start: "12-4-2019", end: "14-4-2019" },
-            organization: "Metropolia",
-            rating: 4.0,
-            skills: {
-                gained: ["tier-1-physics"],
-                required: []
-            }
-        },
-        {
-            id: "metropolia-physics-02",
-            name: "Physics 02",
-            description: "Deep dive into the world of electromagnetism",
-            location: { lgn: 1.12312213, ltd: 2.23423432 },
-            time: { start: "16-5-2019", end: "2-6-2019" },
-            organization: "Metropolia",
-            rating: 3.0,
-            skills: {
-                gained: ["tier-2-physics"],
-                required: ["tier-1-physics", "tier-1-mathematics"]
-            }
-        },
-        {
-            id: "metropolia-physics-03",
-            name: "Physics 03",
-            description: "Kinetic motion and thermodynamics",
-            location: { lgn: 1.12312213, ltd: 2.23423432 },
-            time: { start: "1-8-2019", end: "4-10-2019" },
-            organization: "Metropolia",
-            rating: 5.0,
-            skills: {
-                gained: ["tier-3-physics"],
-                required: ["tier-2-physics", "tier-2-mathematics"]
-            }
-        },
-        {
-            id: "metropolia-maths-01",
-            name: "Mathematics 01",
-            description: "The introduction course mathematics, basic calculus",
-            location: { lgn: 1.12312213, ltd: 2.23423432 },
-            time: { start: "12-4-2019", end: "14-4-2019" },
-            organization: "Metropolia",
-            rating: 4.0,
-            skills: {
-                gained: ["tier-1-mathematics"],
-                required: []
-            }
-        },
-        {
-            id: "metropolia-maths-02",
-            name: "Mathematics 02",
-            description: "Intermediate calculus",
-            location: { lgn: 1.12312213, ltd: 2.23423432 },
-            time: { start: "16-5-2019", end: "2-6-2019" },
-            organization: "Metropolia",
-            rating: 4.4,
-            skills: {
-                gained: ["tier-2-mathematics"],
-                required: ["tier-1-mathematics"]
-            }
-        },
-        {
-            id: "metropolia-maths-03",
-            name: "Mathematics 03",
-            description: "Advanced calculus",
-            location: { lgn: 1.12312213, ltd: 2.23423432 },
-            time: { start: "1-8-2019", end: "4-10-2019" },
-            organization: "Metropolia",
-            rating: 4.8,
-            skills: {
-                gained: ["tier-3-mathematics"],
-                required: ["tier-2-mathematics"]
-            }
-        },
-        {
-            id: "metropolia-smart-systems-01",
-            name: "Smart Systems 01",
-            description: "First course of smart systems technology, mechanics of computer chips",
-            location: { lgn: 1.12312213, ltd: 2.23423432 },
-            time: { start: "12-4-2019", end: "14-4-2019" },
-            organization: "Metropolia",
-            rating: 4.7,
-            skills: {
-                gained: ["basic-unix", "basic-logisim"],
-                required: []
-            }
-        },
-        {
-            id: "metropolia-smart-systems-02",
-            name: "Smart Systems 02",
-            description: "How to create automated systems, turing machine principles",
-            location: { lgn: 1.12312213, ltd: 2.23423432 },
-            time: { start: "16-6-2019", end: "2-6-2019" },
-            organization: "Metropolia",
-            rating: 3.7,
-            skills: {
-                gained: ["advanced-logisim"],
-                required: ["tier-1-physics", "basic-unix", "basic-logism"]
-            }
-        },
-        {
-            id: "metropolia-mobile-01",
-            name: "Web Based Mobile Applications",
-            description: "Creating mobile applications with web technologies.",
-            location: { lgn: 60.258641, ltd: 24.845426 },
-            time: { start: "1-6-2019", end: "24-7-2019" },
-            organization: "Metropolia",
-            rating: 2.9,
-            skills: {
-                gained: ["android", "ionic", "angular", "sass", "ux-prototyping", "color-theory"],
-                required: ["html", "css", "javascript"]
-            }
-        },
-        {
-            id: "metropolia-mobile-02",
-            name: "Object-Oriented Programming and Datacommunication",
-            description: "Learning the basics of how the internet works & object oriented programming with Java.",
-            location: { lgn: 60.258641, ltd: 24.845426 },
-            time: { start: "1-8-2019", end: "26-9-2019" },
-            organization: "Metropolia",
-            rating: 4.4,
-            skills: {
-                gained: ["object-oriented-programming", "data-communications", "java"],
-                required: ["javascript"]
-            }
-        },
-        {
-            id: "metropolia-mobile-03",
-            name: "Mobile Application Development (Android)",
-            description: "Creating native applications for Android.",
-            location: { lgn: 60.258641, ltd: 24.845426 },
-            time: { start: "1-10-2019", end: "24-11-2019" },
-            organization: "Metropolia",
-            rating: 3.4,
-            skills: {
-                gained: ["android", "kotlin", "android-studio", "java"],
-                required: ["object-oriented-programming", "data-communications"]
-            }
-        },
-        {
-            id: "metropolia-mobile-04",
-            name: "Mobile Application Development (iOS)",
-            description: "Creating native applications for iOS.",
-            location: { lgn: 60.258641, ltd: 24.845426 },
-            time: { start: "1-12-2019", end: "26-1-2020" },
-            organization: "Metropolia",
-            rating: 3.9,
-            skills: {
-                gained: ["ios", "xcode", "swift", "ux-prototyping", "color-theory"],
-                required: ["object-oriented-programming", "data-communications"]
-            }
-        }
-    ]
+   "skills": [
+      "js",
+      "css",
+      "html",
+      "tier-1-physics",
+      "tier-2-physics",
+      "tier-3-physics",
+      "tier-1-mathematics",
+      "tier-2-mathematics",
+      "tier-3-mathematics",
+      "basic-unix",
+      "basic-logism",
+      "ionic",
+      "angular",
+      "sass",
+      "ux-prototyping",
+      "color-theory",
+      "object-oriented-programming",
+      "data-communications",
+      "kotlin",
+      "android-studio",
+      "java",
+      "android",
+      "ios",
+      "xcode",
+      "swift"
+   ],
+   "courses": [
+      {
+         "id": "metropolia-web-01",
+         "name": "Web Basics",
+         "description": "Learn basics of web",
+         "location": {
+            "lgn": 1.1231221,
+            "ltd": 2.2342343
+         },
+         "time": {
+            "start": "12-4-2019",
+            "end": "14-4-2019"
+         },
+         "organization": "Metropolia",
+         "rating": 4.5,
+         "skills": {
+            "gained": [
+               "js",
+               "css",
+               "html"
+            ],
+            "required": []
+         }
+      },
+      {
+         "id": "metropolia-physics-01",
+         "name": "Physics 01",
+         "description": "The introduction course to physics",
+         "location": {
+            "lgn": 1.1231221,
+            "ltd": 2.2342343
+         },
+         "time": {
+            "start": "12-4-2019",
+            "end": "14-4-2019"
+         },
+         "organization": "Metropolia",
+         "rating": 4,
+         "skills": {
+            "gained": [
+               "tier-1-physics"
+            ],
+            "required": []
+         }
+      },
+      {
+         "id": "metropolia-physics-02",
+         "name": "Physics 02",
+         "description": "Deep dive into the world of electromagnetism",
+         "location": {
+            "lgn": 1.1231221,
+            "ltd": 2.2342343
+         },
+         "time": {
+            "start": "16-5-2019",
+            "end": "2-6-2019"
+         },
+         "organization": "Metropolia",
+         "rating": 3,
+         "skills": {
+            "gained": [
+               "tier-2-physics"
+            ],
+            "required": [
+               "tier-1-physics",
+               "tier-1-mathematics"
+            ]
+         }
+      },
+      {
+         "id": "metropolia-physics-03",
+         "name": "Physics 03",
+         "description": "Kinetic motion and thermodynamics",
+         "location": {
+            "lgn": 1.1231221,
+            "ltd": 2.2342343
+         },
+         "time": {
+            "start": "1-8-2019",
+            "end": "4-10-2019"
+         },
+         "organization": "Metropolia",
+         "rating": 5,
+         "skills": {
+            "gained": [
+               "tier-3-physics"
+            ],
+            "required": [
+               "tier-2-physics",
+               "tier-2-mathematics"
+            ]
+         }
+      },
+      {
+         "id": "metropolia-maths-01",
+         "name": "Mathematics 01",
+         "description": "The introduction course mathematics, basic calculus",
+         "location": {
+            "lgn": 1.1231221,
+            "ltd": 2.2342343
+         },
+         "time": {
+            "start": "12-4-2019",
+            "end": "14-4-2019"
+         },
+         "organization": "Metropolia",
+         "rating": 4,
+         "skills": {
+            "gained": [
+               "tier-1-mathematics"
+            ],
+            "required": []
+         }
+      },
+      {
+         "id": "metropolia-maths-02",
+         "name": "Mathematics 02",
+         "description": "Intermediate calculus",
+         "location": {
+            "lgn": 1.1231221,
+            "ltd": 2.2342343
+         },
+         "time": {
+            "start": "16-5-2019",
+            "end": "2-6-2019"
+         },
+         "organization": "Metropolia",
+         "rating": 4.4,
+         "skills": {
+            "gained": [
+               "tier-2-mathematics"
+            ],
+            "required": [
+               "tier-1-mathematics"
+            ]
+         }
+      },
+      {
+         "id": "metropolia-maths-03",
+         "name": "Mathematics 03",
+         "description": "Advanced calculus",
+         "location": {
+            "lgn": 1.1231221,
+            "ltd": 2.2342343
+         },
+         "time": {
+            "start": "1-8-2019",
+            "end": "4-10-2019"
+         },
+         "organization": "Metropolia",
+         "rating": 4.8,
+         "skills": {
+            "gained": [
+               "tier-3-mathematics"
+            ],
+            "required": [
+               "tier-2-mathematics"
+            ]
+         }
+      },
+      {
+         "id": "metropolia-smart-systems-01",
+         "name": "Smart Systems 01",
+         "description": "First course of smart systems technology, mechanics of computer chips",
+         "location": {
+            "lgn": 1.1231221,
+            "ltd": 2.2342343
+         },
+         "time": {
+            "start": "12-4-2019",
+            "end": "14-4-2019"
+         },
+         "organization": "Metropolia",
+         "rating": 4.7,
+         "skills": {
+            "gained": [
+               "basic-unix",
+               "basic-logisim"
+            ],
+            "required": []
+         }
+      },
+      {
+         "id": "metropolia-smart-systems-02",
+         "name": "Smart Systems 02",
+         "description": "How to create automated systems, turing machine principles",
+         "location": {
+            "lgn": 1.1231221,
+            "ltd": 2.2342343
+         },
+         "time": {
+            "start": "16-6-2019",
+            "end": "2-6-2019"
+         },
+         "organization": "Metropolia",
+         "rating": 3.7,
+         "skills": {
+            "gained": [
+               "advanced-logisim"
+            ],
+            "required": [
+               "tier-1-physics",
+               "basic-unix",
+               "basic-logism"
+            ]
+         }
+      },
+      {
+         "id": "metropolia-mobile-01",
+         "name": "Web Based Mobile Applications",
+         "description": "Creating mobile applications with web technologies.",
+         "location": {
+            "lgn": 60.25864,
+            "ltd": 24.845427
+         },
+         "time": {
+            "start": "1-6-2019",
+            "end": "24-7-2019"
+         },
+         "organization": "Metropolia",
+         "rating": 2.9,
+         "skills": {
+            "gained": [
+               "android",
+               "ionic",
+               "angular",
+               "sass",
+               "ux-prototyping",
+               "color-theory"
+            ],
+            "required": [
+               "html",
+               "css",
+               "javascript"
+            ]
+         }
+      },
+      {
+         "id": "metropolia-mobile-02",
+         "name": "Object-Oriented Programming and Datacommunication",
+         "description": "Learning the basics of how the internet works & object oriented programming with Java.",
+         "location": {
+            "lgn": 60.25864,
+            "ltd": 24.845427
+         },
+         "time": {
+            "start": "1-8-2019",
+            "end": "26-9-2019"
+         },
+         "organization": "Metropolia",
+         "rating": 4.4,
+         "skills": {
+            "gained": [
+               "object-oriented-programming",
+               "data-communications",
+               "java"
+            ],
+            "required": [
+               "javascript"
+            ]
+         }
+      },
+      {
+         "id": "metropolia-mobile-03",
+         "name": "Mobile Application Development (Android)",
+         "description": "Creating native applications for Android.",
+         "location": {
+            "lgn": 60.25864,
+            "ltd": 24.845427
+         },
+         "time": {
+            "start": "1-10-2019",
+            "end": "24-11-2019"
+         },
+         "organization": "Metropolia",
+         "rating": 3.4,
+         "skills": {
+            "gained": [
+               "android",
+               "kotlin",
+               "android-studio",
+               "java"
+            ],
+            "required": [
+               "object-oriented-programming",
+               "data-communications"
+            ]
+         }
+      },
+      {
+         "id": "metropolia-mobile-04",
+         "name": "Mobile Application Development (iOS)",
+         "description": "Creating native applications for iOS.",
+         "location": {
+            "lgn": 60.25864,
+            "ltd": 24.845427
+         },
+         "time": {
+            "start": "1-12-2019",
+            "end": "26-1-2020"
+         },
+         "organization": "Metropolia",
+         "rating": 3.9,
+         "skills": {
+            "gained": [
+               "ios",
+               "xcode",
+               "swift",
+               "ux-prototyping",
+               "color-theory"
+            ],
+            "required": [
+               "object-oriented-programming",
+               "data-communications"
+            ]
+         }
+      }
+   ]
 }
