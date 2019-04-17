@@ -24,7 +24,9 @@
       "android",
       "ios",
       "xcode",
-      "swift"
+      "swift",
+      "pwa",
+      "sass"
    ],
    "courses": [
       {
@@ -340,6 +342,32 @@
             "required": [
                "object-oriented-programming",
                "data-communications"
+            ]
+         }
+      },
+      {
+         "id": "metropolia-mobile-05",
+         "name": "Converting websites to PWA",
+         "description": "Converting existing websites to mobile friendly PWAs.",
+         "location": {
+            "lgn": 60.25864,
+            "ltd": 24.845427
+         },
+         "time": {
+            "start": "26-1-2020",
+            "end": "12-2-2020"
+         },
+         "organization": "Metropolia",
+         "rating": 4.2,
+         "skills": {
+            "gained": [
+               "pwa",
+               "sass"
+            ],
+            "required": [
+               "javascript",
+               "html",
+               "css"
             ]
          }
       }
