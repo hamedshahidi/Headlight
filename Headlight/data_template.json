@@ -1,6 +1,5 @@
 {
-    // Global skills
-    skills: ["js", "css", "html", "tier-1-physics", "tier-2-physics", "tier-3-physics", "tier-1-mathematics", "tier-2-mathematics", "tier-3-mathematics", "basic-unix", "basic-logism"],
+    skills: ["js", "css", "html", "tier-1-physics", "tier-2-physics", "tier-3-physics", "tier-1-mathematics", "tier-2-mathematics", "tier-3-mathematics", "basic-unix", "basic-logism", "ionic", "angular", "sass", "ux-prototyping", "color-theory", "object-oriented-programming", "data-communications", "kotlin", "android-studio", "java", "android", "ios", "xcode", "swift"],
     
     courses: [
         {
@@ -118,6 +117,58 @@
             skills: {
                 gained: ["advanced-logisim"],
                 required: ["tier-1-physics", "basic-unix", "basic-logism"]
+            }
+        },
+        {
+            id: "metropolia-mobile-01",
+            name: "Web Based Mobile Applications",
+            description: "Creating mobile applications with web technologies.",
+            location: { lgn: 60.258641, ltd: 24.845426 },
+            time: { start: "1-6-2019", end: "24-7-2019" },
+            organization: "Metropolia",
+            rating: 2.9,
+            skills: {
+                gained: ["android", "ionic", "angular", "sass", "ux-prototyping", "color-theory"],
+                required: ["html", "css", "javascript"]
+            }
+        },
+        {
+            id: "metropolia-mobile-02",
+            name: "Object-Oriented Programming and Datacommunication",
+            description: "Learning the basics of how the internet works & object oriented programming with Java.",
+            location: { lgn: 60.258641, ltd: 24.845426 },
+            time: { start: "1-8-2019", end: "26-9-2019" },
+            organization: "Metropolia",
+            rating: 4.4,
+            skills: {
+                gained: ["object-oriented-programming", "data-communications", "java"],
+                required: ["javascript"]
+            }
+        },
+        {
+            id: "metropolia-mobile-03",
+            name: "Mobile Application Development (Android)",
+            description: "Creating native applications for Android.",
+            location: { lgn: 60.258641, ltd: 24.845426 },
+            time: { start: "1-10-2019", end: "24-11-2019" },
+            organization: "Metropolia",
+            rating: 3.4,
+            skills: {
+                gained: ["android", "kotlin", "android-studio", "java"],
+                required: ["object-oriented-programming", "data-communications"]
+            }
+        },
+        {
+            id: "metropolia-mobile-04",
+            name: "Mobile Application Development (iOS)",
+            description: "Creating native applications for iOS.",
+            location: { lgn: 60.258641, ltd: 24.845426 },
+            time: { start: "1-12-2019", end: "26-1-2020" },
+            organization: "Metropolia",
+            rating: 3.9,
+            skills: {
+                gained: ["ios", "xcode", "swift", "ux-prototyping", "color-theory"],
+                required: ["object-oriented-programming", "data-communications"]
             }
         }
     ]
