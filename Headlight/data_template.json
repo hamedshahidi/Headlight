@@ -1,6 +1,6 @@
 {
     // Global skills
-    skills: ["js", "css", "html"],
+    skills: ["js", "css", "html", "tier-1-physics", "tier-2-physics", "tier-3-physics", "tier-1-mathematics", "tier-2-mathematics", "tier-3-mathematics", "basic-unix", "basic-logism"],
     
     courses: [
         {
