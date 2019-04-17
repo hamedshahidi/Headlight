@@ -15,6 +15,110 @@
                 gained: ["js", "css", "html"],
                 required: []
             }
+        },
+        {
+            id: "metropolia-physics-01",
+            name: "Physics 01",
+            description: "The introduction course to physics",
+            location: { lgn: 1.12312213, ltd: 2.23423432 },
+            time: { start: "12-4-2019", end: "14-4-2019" },
+            organization: "Metropolia",
+            rating: 4.0,
+            skills: {
+                gained: ["tier-1-physics"],
+                required: []
+            }
+        },
+        {
+            id: "metropolia-physics-02",
+            name: "Physics 02",
+            description: "Deep dive into the world of electromagnetism",
+            location: { lgn: 1.12312213, ltd: 2.23423432 },
+            time: { start: "16-5-2019", end: "2-6-2019" },
+            organization: "Metropolia",
+            rating: 3.0,
+            skills: {
+                gained: ["tier-2-physics"],
+                required: ["tier-1-physics", "tier-1-mathematics"]
+            }
+        },
+        {
+            id: "metropolia-physics-03",
+            name: "Physics 03",
+            description: "Kinetic motion and thermodynamics",
+            location: { lgn: 1.12312213, ltd: 2.23423432 },
+            time: { start: "1-8-2019", end: "4-10-2019" },
+            organization: "Metropolia",
+            rating: 5.0,
+            skills: {
+                gained: ["tier-3-physics"],
+                required: ["tier-2-physics", "tier-2-mathematics"]
+            }
+        },
+        {
+            id: "metropolia-maths-01",
+            name: "Mathematics 01",
+            description: "The introduction course mathematics, basic calculus",
+            location: { lgn: 1.12312213, ltd: 2.23423432 },
+            time: { start: "12-4-2019", end: "14-4-2019" },
+            organization: "Metropolia",
+            rating: 4.0,
+            skills: {
+                gained: ["tier-1-mathematics"],
+                required: []
+            }
+        },
+        {
+            id: "metropolia-maths-02",
+            name: "Mathematics 02",
+            description: "Intermediate calculus",
+            location: { lgn: 1.12312213, ltd: 2.23423432 },
+            time: { start: "16-5-2019", end: "2-6-2019" },
+            organization: "Metropolia",
+            rating: 4.4,
+            skills: {
+                gained: ["tier-2-mathematics"],
+                required: ["tier-1-mathematics"]
+            }
+        },
+        {
+            id: "metropolia-maths-03",
+            name: "Mathematics 03",
+            description: "Advanced calculus",
+            location: { lgn: 1.12312213, ltd: 2.23423432 },
+            time: { start: "1-8-2019", end: "4-10-2019" },
+            organization: "Metropolia",
+            rating: 4.8,
+            skills: {
+                gained: ["tier-3-mathematics"],
+                required: ["tier-2-mathematics"]
+            }
+        },
+        {
+            id: "metropolia-smart-systems-01",
+            name: "Smart Systems 01",
+            description: "First course of smart systems technology, mechanics of computer chips",
+            location: { lgn: 1.12312213, ltd: 2.23423432 },
+            time: { start: "12-4-2019", end: "14-4-2019" },
+            organization: "Metropolia",
+            rating: 4.7,
+            skills: {
+                gained: ["basic-unix", "basic-logisim"],
+                required: []
+            }
+        },
+        {
+            id: "metropolia-smart-systems-02",
+            name: "Smart Systems 02",
+            description: "How to create automated systems, turing machine principles",
+            location: { lgn: 1.12312213, ltd: 2.23423432 },
+            time: { start: "16-6-2019", end: "2-6-2019" },
+            organization: "Metropolia",
+            rating: 3.7,
+            skills: {
+                gained: ["advanced-logisim"],
+                required: ["tier-1-physics", "basic-unix", "basic-logism"]
+            }
         }
     ]
 }
