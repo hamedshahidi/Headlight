@@ -1,0 +1,4 @@
+[fetch]
+	recurseSubmodules = false
+[http "https://gitlab.com"]
+	sslCAInfo = /Users/iosdev/Documents/headlight/builds/VqXjeVB8/0/ischoolmusical/headlight.tmp/CI_SERVER_TLS_CA_FILE

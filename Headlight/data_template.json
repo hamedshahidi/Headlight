@@ -26,7 +26,8 @@
       "xcode",
       "swift",
       "pwa",
-      "sass"
+      "sass",
+      "sql"
    ],
    "courses": [
       {
@@ -370,6 +371,48 @@
                "css"
             ]
          }
+      },
+      {
+          "id": "metropolia-sql-01",
+          "name": "Basics of SQL",
+          "description": "Learn to query a database with SQL",
+          "location": {
+              "lgn": 10.1231221,
+              "ltd": 28.2342343
+          },
+          "time": {
+              "start": "28-4-2019",
+              "end": "02-5-2019"
+          },
+          "organization": "Metropolia",
+          "rating": 4.2,
+          "skills": {
+              "gained": [
+                  "sql"
+              ],
+              "required": []
+          }
+      },
+      {
+          "id": "metropolia-sql-01",
+          "name": "Basics of SQL",
+          "description": "Learn to query a database with SQL",
+          "location": {
+              "lgn": 10.1231221,
+              "ltd": 28.2342343
+          },
+          "time": {
+              "start": "28-4-2019",
+              "end": "02-5-2019"
+          },
+          "organization": "Metropolia",
+          "rating": 4.2,
+          "skills": {
+              "gained": [
+                  "sql"
+              ],
+              "required": []
+          }
       }
    ]
 }
