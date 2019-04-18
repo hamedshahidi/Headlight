@@ -379,7 +379,6 @@
          }
       },
       {
-<<<<<<< HEAD
           "id": "metropolia-sql-01",
           "name": "Basics of SQL",
           "description": "Learn to query a database with SQL",
@@ -396,7 +395,11 @@
           "skills": {
               "gained": [
                   "sql"
-=======
+              ],
+              "required": []
+          }
+      },
+      {
           "id": "metropolia-game-development-01",
           "name": "Unity Basics",
           "description": "Learn the basics of Unity and C#",
@@ -414,13 +417,11 @@
               "gained": [
                   "csharp",
                   "unity"
->>>>>>> 514517d432c699d6f01492bd8944971e1cc46c28
               ],
               "required": []
           }
       },
       {
-=======
           "id": "helsingin-yliopisto-java-basics-01",
           "name": "The basics of programming",
           "description": "In this course you will learn about algorithms, object oriented programming and the basics of Java",
@@ -481,7 +482,6 @@
               "gained": [
                   "unreal",
                   "c++"
->>>>>>> 514517d432c699d6f01492bd8944971e1cc46c28
               ],
               "required": []
           }
