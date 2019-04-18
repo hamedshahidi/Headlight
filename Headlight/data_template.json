@@ -26,7 +26,11 @@
       "xcode",
       "swift",
       "pwa",
-      "sass"
+      "sass",
+      "unity",
+      "csharp",
+      "unreal",
+      "c++"
    ],
    "courses": [
       {
@@ -370,6 +374,93 @@
                "css"
             ]
          }
+      },
+      {
+          "id": "metropolia-game-development-01",
+          "name": "Unity Basics",
+          "description": "Learn the basics of Unity and C#",
+          "location": {
+              "lgn": 60.25864,
+              "ltd": 24.845427
+          },
+          "time": {
+              "start": "16-8-2019",
+              "end": "20-9-2019"
+          },
+          "organization": "Metropolia",
+          "rating": 4.0,
+          "skills": {
+              "gained": [
+                  "csharp",
+                  "unity"
+              ],
+              "required": []
+          }
+      },
+      {
+          "id": "helsingin-yliopisto-java-basics-01",
+          "name": "The basics of programming",
+          "description": "In this course you will learn about algorithms, object oriented programming and the basics of Java",
+          "location": {
+              "lgn": 60.25864,
+              "ltd": 24.845427
+          },
+          "time": {
+              "start": "14-12-2019",
+              "end": "04-01-2020"
+          },
+          "organization": "Avoin Yliopisto",
+          "rating": 4.4,
+          "skills": {
+              "gained": [
+                  "java",
+                  "object-oriented-programming"
+              ],
+              "required": []
+          }
+      },
+      {
+          "id": "vaasan-yliopisto-java-basics-01",
+          "name": "The basics of programming",
+          "description": "In this course you will learn to design and create basic programs in Java",
+          "location": {
+              "lgn": 1.1224111,
+              "ltd": 2.2341190
+          },
+          "time": {
+              "start": "04-01-2020",
+              "end": "20-02-2020"
+          },
+          "organization": "Vaasan Yliopisto",
+          "rating": 2.9,
+          "skills": {
+              "gained": [
+                  "java"
+              ],
+              "required": []
+          }
+      },
+      {
+          "id": "metropolia-game-development-02",
+          "name": "Basics of Unreal",
+          "description": "Learn the basics of Unreal and c++",
+          "location": {
+              "lgn": 60.25864,
+              "ltd": 24.845427
+          },
+          "time": {
+              "start": "16-8-2019",
+              "end": "23-9-2019"
+          },
+          "organization": "Metropolia",
+          "rating": 3.5,
+          "skills": {
+              "gained": [
+                  "unreal",
+                  "c++"
+              ],
+              "required": []
+          }
       }
    ]
 }
