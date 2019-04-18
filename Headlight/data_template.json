@@ -27,7 +27,13 @@
       "swift",
       "pwa",
       "sass",
-      "sql"
+<<<<<<< HEAD
+=======
+      "unity",
+      "csharp",
+      "unreal",
+      "c++"
+>>>>>>> 514517d432c699d6f01492bd8944971e1cc46c28
    ],
    "courses": [
       {
@@ -373,6 +379,7 @@
          }
       },
       {
+<<<<<<< HEAD
           "id": "metropolia-sql-01",
           "name": "Basics of SQL",
           "description": "Learn to query a database with SQL",
@@ -389,27 +396,92 @@
           "skills": {
               "gained": [
                   "sql"
+=======
+          "id": "metropolia-game-development-01",
+          "name": "Unity Basics",
+          "description": "Learn the basics of Unity and C#",
+          "location": {
+              "lgn": 60.25864,
+              "ltd": 24.845427
+          },
+          "time": {
+              "start": "16-8-2019",
+              "end": "20-9-2019"
+          },
+          "organization": "Metropolia",
+          "rating": 4.0,
+          "skills": {
+              "gained": [
+                  "csharp",
+                  "unity"
+>>>>>>> 514517d432c699d6f01492bd8944971e1cc46c28
               ],
               "required": []
           }
       },
       {
-          "id": "metropolia-sql-01",
-          "name": "Basics of SQL",
-          "description": "Learn to query a database with SQL",
+=======
+          "id": "helsingin-yliopisto-java-basics-01",
+          "name": "The basics of programming",
+          "description": "In this course you will learn about algorithms, object oriented programming and the basics of Java",
           "location": {
-              "lgn": 10.1231221,
-              "ltd": 28.2342343
+              "lgn": 60.25864,
+              "ltd": 24.845427
           },
           "time": {
-              "start": "28-4-2019",
-              "end": "02-5-2019"
+              "start": "14-12-2019",
+              "end": "04-01-2020"
           },
-          "organization": "Metropolia",
-          "rating": 4.2,
+          "organization": "Avoin Yliopisto",
+          "rating": 4.4,
           "skills": {
               "gained": [
-                  "sql"
+                  "java",
+                  "object-oriented-programming"
+              ],
+              "required": []
+          }
+      },
+      {
+          "id": "vaasan-yliopisto-java-basics-01",
+          "name": "The basics of programming",
+          "description": "In this course you will learn to design and create basic programs in Java",
+          "location": {
+              "lgn": 1.1224111,
+              "ltd": 2.2341190
+          },
+          "time": {
+              "start": "04-01-2020",
+              "end": "20-02-2020"
+          },
+          "organization": "Vaasan Yliopisto",
+          "rating": 2.9,
+          "skills": {
+              "gained": [
+                  "java"
+              ],
+              "required": []
+          }
+      },
+      {
+          "id": "metropolia-game-development-02",
+          "name": "Basics of Unreal",
+          "description": "Learn the basics of Unreal and c++",
+          "location": {
+              "lgn": 60.25864,
+              "ltd": 24.845427
+          },
+          "time": {
+              "start": "16-8-2019",
+              "end": "23-9-2019"
+          },
+          "organization": "Metropolia",
+          "rating": 3.5,
+          "skills": {
+              "gained": [
+                  "unreal",
+                  "c++"
+>>>>>>> 514517d432c699d6f01492bd8944971e1cc46c28
               ],
               "required": []
           }
