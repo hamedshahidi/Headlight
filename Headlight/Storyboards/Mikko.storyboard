@@ -10,35 +10,40 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Signup Name View Controller-->
         <scene sceneID="eQq-Dz-NtJ">
             <objects>
-                <viewController id="Vl9-34-D5h" sceneMemberID="viewController">
+                <viewController id="Vl9-34-D5h" customClass="SignupNameViewController" customModule="Headlight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Een-d7-ul5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Lfd-si-68H">
-                                <rect key="frame" x="0.0" y="20" width="383.5" height="370.5"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="391"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iTy-UH-Vv7">
-                                        <rect key="frame" x="92" y="0.0" width="200" height="200"/>
+                                        <rect key="frame" x="87.5" y="0.0" width="200" height="200"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Hello! Lets get started by entering your username." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxG-vP-1Fp">
-                                        <rect key="frame" x="0.0" y="230" width="383.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Hello! Lets get started by entering your username." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="382.5" translatesAutoresizingMaskIntoConstraints="NO" id="kxG-vP-1Fp">
+                                        <rect key="frame" x="55.5" y="230" width="264.5" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qAt-3z-fQh">
-                                        <rect key="frame" x="16" y="280.5" width="351.5" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qAt-3z-fQh">
+                                        <rect key="frame" x="16" y="301" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPS-bB-ANi">
-                                        <rect key="frame" x="173.5" y="340.5" width="37" height="30"/>
+                                        <rect key="frame" x="169" y="361" width="37" height="30"/>
+                                        <color key="backgroundColor" red="0.1803921568627451" green="0.49019607843137253" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Enter"/>
+                                        <connections>
+                                            <segue destination="oGg-h6-vRo" kind="show" id="JJk-fD-39P"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -49,8 +54,16 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Lfd-si-68H" firstAttribute="top" secondItem="qhY-lq-9C8" secondAttribute="top" id="7mQ-qO-Acu"/>
+                            <constraint firstItem="Lfd-si-68H" firstAttribute="leading" secondItem="qhY-lq-9C8" secondAttribute="leading" id="VFg-dx-Aca"/>
+                            <constraint firstItem="qhY-lq-9C8" firstAttribute="trailing" secondItem="Lfd-si-68H" secondAttribute="trailing" id="lQ4-x2-mO6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qhY-lq-9C8"/>
                     </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="qAt-3z-fQh" id="cHs-Xt-CBX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="48N-dD-vZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

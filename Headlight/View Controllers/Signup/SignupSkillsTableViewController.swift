@@ -9,10 +9,12 @@
 import UIKit
 
 class SignupSkillsTableViewController: UITableViewController {
+    
+    var username = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(username)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
