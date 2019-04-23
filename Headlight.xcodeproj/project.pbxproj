@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A36550C226EFB23009C8FA2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A36550B226EFB23009C8FA2 /* MainViewController.swift */; };
+		6A36550E226EFF1F009C8FA2 /* CourseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A36550D226EFF1F009C8FA2 /* CourseRow.swift */; };
 		6A48C543226E12BD0079B4A1 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C542226E12BD0079B4A1 /* Structs.swift */; };
 		6A48C545226E12D70079B4A1 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C544226E12D70079B4A1 /* DataFetcher.swift */; };
 		6AC3C47C226C887700E3C595 /* SignupNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C47B226C887700E3C595 /* SignupNameViewController.swift */; };
@@ -54,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A36550B226EFB23009C8FA2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		6A36550D226EFF1F009C8FA2 /* CourseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRow.swift; sourceTree = "<group>"; };
 		6A48C4FE2265D6910079B4A1 /* data_template.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data_template.json; sourceTree = "<group>"; };
 		6A48C542226E12BD0079B4A1 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		6A48C544226E12D70079B4A1 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
@@ -111,9 +115,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A365508226EFAC5009C8FA2 /* Main screen */ = {
+			isa = PBXGroup;
+			children = (
+				6A36550B226EFB23009C8FA2 /* MainViewController.swift */,
+				6A36550D226EFF1F009C8FA2 /* CourseRow.swift */,
+			);
+			path = "Main screen";
+			sourceTree = "<group>";
+		};
 		6AC3C479226C880100E3C595 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6A365508226EFAC5009C8FA2 /* Main screen */,
 				6AC3C47A226C882B00E3C595 /* Signup */,
 			);
 			path = "View Controllers";
@@ -340,7 +354,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9542979E226DB1AC00AA8E8F /* CoreDataHelper.swift in Sources */,
+				6A36550C226EFB23009C8FA2 /* MainViewController.swift in Sources */,
 				954297672265C2A700AA8E8F /* Headlight.xcdatamodeld in Sources */,
+				6A36550E226EFF1F009C8FA2 /* CourseRow.swift in Sources */,
 				6AC3C484226C88D900E3C595 /* SignupSkillsTableViewController.swift in Sources */,
 				6A48C545226E12D70079B4A1 /* DataFetcher.swift in Sources */,
 				6A48C543226E12BD0079B4A1 /* Structs.swift in Sources */,
