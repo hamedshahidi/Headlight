@@ -9,35 +9,36 @@
 import Foundation
 
 // a file that holds the fetched data structures as structs
+class CourseStruct {
+    struct FakeData: Codable{
+        var skills : [String];
+        var courses : [Course];
+    }
 
-struct FakeData: Codable{
-    var skills : [String];
-    var courses : [Course];
-}
+    struct Course : Codable {
+        var id : String?;
+        var name : String?;
+        var description : String?;
+        var location : Location;
+        var time : Time;
+        var organization : String?;
+        var rating : Double?;
+        var skills : Skills?;
+        
+    }
 
-struct Course : Codable {
-    var id : String?;
-    var name : String?;
-    var description : String?;
-    var location : Location;
-    var time : Time;
-    var organization : String?;
-    var rating : Double?;
-    var skills : Skills?;
-    
-}
+    struct Time : Codable {
+        var start : String?
+        var end : String?
+    }
 
-struct Time : Codable {
-    var start : String?
-    var end : String?
-}
+    struct Location : Codable {
+        var lgn : Double?
+        var ltd : Double?
+    }
 
-struct Location : Codable {
-    var lgn : Double?
-    var ltd : Double?
-}
-
-struct Skills : Codable {
-    var gained : [String]?;
-    var required : [String]?;
+    struct Skills : Codable {
+        var gained : [String]?;
+        var required : [String]?;
+    }
 }
