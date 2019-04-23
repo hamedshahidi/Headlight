@@ -9,15 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var fetcher : DataFetcher = DataFetcher()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         // Init user here for now, TODO: needs to be moved
-        CoreDataHelper.saveUserData(name: "Test")
+        fetcher.FetchInitialData()
+        for i in CoreDataHelper.listAllCourses()
+        {
+            print(i.name ?? "")
+        }
+
     }
-
-
 }
 
