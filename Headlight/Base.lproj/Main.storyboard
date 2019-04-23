@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,12 +17,111 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qT4-M3-w7b">
+                                <rect key="frame" x="16" y="20" width="343" height="170"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67Q-R2-2Lk">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <state key="normal" title="Janne"/>
+                                        <connections>
+                                            <segue destination="NFB-Mp-k82" kind="show" id="l4e-pJ-orw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydv-bL-7jn">
+                                        <rect key="frame" x="0.0" y="35" width="343" height="30"/>
+                                        <state key="normal" title="Tuomas"/>
+                                        <connections>
+                                            <segue destination="lps-3O-xqG" kind="show" id="Cqq-LF-JBg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57a-dw-8UJ">
+                                        <rect key="frame" x="0.0" y="70" width="343" height="30"/>
+                                        <state key="normal" title="Elias"/>
+                                        <connections>
+                                            <segue destination="NZX-iq-f6P" kind="show" id="1AV-YJ-HdB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9O-6t-ux7">
+                                        <rect key="frame" x="0.0" y="105" width="343" height="30"/>
+                                        <state key="normal" title="Mikko"/>
+                                        <connections>
+                                            <segue destination="ixS-rw-Qt5" kind="show" id="w1f-MB-VUd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZT-0s-HyW">
+                                        <rect key="frame" x="0.0" y="140" width="343" height="30"/>
+                                        <state key="normal" title="Hamed"/>
+                                        <connections>
+                                            <segue destination="k6U-sA-fa2" kind="show" id="N65-Zb-Wpc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="67Q-R2-2Lk" firstAttribute="leading" secondItem="qT4-M3-w7b" secondAttribute="leading" id="LGg-oD-WiQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ydv-bL-7jn" secondAttribute="trailing" id="Li3-jh-HGT"/>
+                                    <constraint firstAttribute="trailing" secondItem="5ZT-0s-HyW" secondAttribute="trailing" id="RhK-Y9-fuX"/>
+                                    <constraint firstItem="g9O-6t-ux7" firstAttribute="leading" secondItem="qT4-M3-w7b" secondAttribute="leading" id="TDO-HG-4pc"/>
+                                    <constraint firstAttribute="trailing" secondItem="57a-dw-8UJ" secondAttribute="trailing" id="TJ8-sZ-CF6"/>
+                                    <constraint firstItem="5ZT-0s-HyW" firstAttribute="leading" secondItem="qT4-M3-w7b" secondAttribute="leading" id="bBM-BW-Vvq"/>
+                                    <constraint firstAttribute="trailing" secondItem="g9O-6t-ux7" secondAttribute="trailing" id="cvV-d4-59I"/>
+                                    <constraint firstItem="57a-dw-8UJ" firstAttribute="leading" secondItem="qT4-M3-w7b" secondAttribute="leading" id="hKc-6G-sam"/>
+                                    <constraint firstItem="Ydv-bL-7jn" firstAttribute="leading" secondItem="qT4-M3-w7b" secondAttribute="leading" id="ieu-pe-1US"/>
+                                    <constraint firstAttribute="trailing" secondItem="67Q-R2-2Lk" secondAttribute="trailing" id="vtm-5U-xG5"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qT4-M3-w7b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="38F-OF-wfG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qT4-M3-w7b" secondAttribute="trailing" constant="16" id="4yC-6r-3HQ"/>
+                            <constraint firstItem="qT4-M3-w7b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="OAo-Sr-hPq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Janne-->
+        <scene sceneID="Oxg-XL-inf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Janne" id="NFB-Mp-k82" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qVu-dT-3dW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904" y="-220"/>
+        </scene>
+        <!--Tuomas-->
+        <scene sceneID="CWe-SU-1af">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tuomas" id="lps-3O-xqG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6iT-7s-A2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="-133"/>
+        </scene>
+        <!--Elias-->
+        <scene sceneID="iVQ-Vc-jWQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Elias" id="NZX-iq-f6P" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="whw-DV-VM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="903" y="-57"/>
+        </scene>
+        <!--Mikko-->
+        <scene sceneID="kG9-e4-0ef">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Mikko" id="ixS-rw-Qt5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yoU-Ob-DnP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904" y="23"/>
+        </scene>
+        <!--Hamed-->
+        <scene sceneID="h6c-va-pwt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Hamed" id="k6U-sA-fa2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ubl-2x-kSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="903" y="106"/>
         </scene>
     </scenes>
 </document>
