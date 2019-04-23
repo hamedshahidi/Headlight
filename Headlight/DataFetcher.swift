@@ -32,7 +32,7 @@ class DataFetcher {
             guard let dataToBeParsed = data else{return}
             do{
                 let decoder = JSONDecoder()
-                let parsedData = try decoder.decode(Array<Course>.self, from: dataToBeParsed)
+                let parsedData = try decoder.decode(Array<CourseStruct.Course>.self, from: dataToBeParsed)
                 
                 // data is now parsed into parsedData -variable.
                 // call the coredata saving from here
