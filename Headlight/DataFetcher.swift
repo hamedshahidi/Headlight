@@ -37,6 +37,11 @@ class DataFetcher {
                 // data is now parsed into parsedData -variable.
                 // call the coredata saving from here
                 
+                DispatchQueue.main.async {
+                      CoreDataHelper.saveCourseData(courseList: parsedData)
+                }
+                
+              
                 
             }catch let err{
                 print("someting went wrong decoding the fetched data \(err)")
