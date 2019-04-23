@@ -10,14 +10,10 @@ import UIKit
 
 class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var tableView: UITableView!
-    let skills: [String: String] = [
-        "html": "HTML",
-        "css": "CSS",
-        "js": "JavaScript"
-    ]
     var selectedSkills: [String: String] = [:]
     var name = ""
+    let maxHeight = UIScreen.main.bounds.size.height
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +50,7 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
         }
         tableView.deselectRow(at: indexPath, animated: true)
 
-        print(selectedSkills)
+        print(selectedSkills.values)
     }
 
     /*
@@ -68,7 +64,11 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
     */
     @IBAction func nextButton(_ sender: Any) {
         CoreDataHelper.saveUserData(name: name)
-        CoreDataHelper.addToUsersSkills(skills: <#T##[String]#>)
+        CoreDataHelper.addToUsersSkills(skills: Array(selectedSkills.values))
+        print(CoreDataHelper.getUserData()?.name, CoreDataHelper.getUserData()?.skills)
+    }
+    @IBAction func clearUserData(_ sender: Any) {
+        CoreDataHelper.clearUserData()
     }
     
 }

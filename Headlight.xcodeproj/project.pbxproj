@@ -12,8 +12,6 @@
 		6A48C543226E12BD0079B4A1 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C542226E12BD0079B4A1 /* Structs.swift */; };
 		6A48C545226E12D70079B4A1 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C544226E12D70079B4A1 /* DataFetcher.swift */; };
 		6AC3C47C226C887700E3C595 /* SignupNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C47B226C887700E3C595 /* SignupNameViewController.swift */; };
-		6AC3C47D226C887700E3C595 /* SignupNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C47B226C887700E3C595 /* SignupNameViewController.swift */; };
-		6AC3C47E226C887700E3C595 /* SignupNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C47B226C887700E3C595 /* SignupNameViewController.swift */; };
 		6AC3C484226C88D900E3C595 /* SignupSkillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C483226C88D900E3C595 /* SignupSkillsTableViewController.swift */; };
 		6AC3C485226C88D900E3C595 /* SignupSkillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C483226C88D900E3C595 /* SignupSkillsTableViewController.swift */; };
 		6AC3C486226C88D900E3C595 /* SignupSkillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C483226C88D900E3C595 /* SignupSkillsTableViewController.swift */; };
@@ -393,7 +391,6 @@
 			files = (
 				954297772265C2A900AA8E8F /* HeadlightTests.swift in Sources */,
 				6AC3C48B226F350700E3C595 /* User.swift in Sources */,
-				6AC3C47D226C887700E3C595 /* SignupNameViewController.swift in Sources */,
 				6AC3C485226C88D900E3C595 /* SignupSkillsTableViewController.swift in Sources */,
 				954297BA226EFE2100AA8E8F /* CourseCoreDataTests.swift in Sources */,
 				954297B4226DC3D000AA8E8F /* UserCoreDataTests.swift in Sources */,
@@ -405,7 +402,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				954297822265C2A900AA8E8F /* HeadlightUITests.swift in Sources */,
-				6AC3C47E226C887700E3C595 /* SignupNameViewController.swift in Sources */,
 				6AC3C48C226F350800E3C595 /* User.swift in Sources */,
 				6AC3C486226C88D900E3C595 /* SignupSkillsTableViewController.swift in Sources */,
 			);
