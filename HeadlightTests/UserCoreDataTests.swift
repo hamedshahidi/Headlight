@@ -44,6 +44,7 @@ class UserCoreDataTests: XCTestCase {
         XCTAssert(user?.skills.contains("js") ?? false)
         XCTAssert(user?.skills.contains("html") ?? false)
     }
+
     func testUserSkillAddingDuplicates() {
         CoreDataHelper.saveUserData(name: "Test User")
         CoreDataHelper.addToUsersSkills(skills: ["css", "js", "html"])
