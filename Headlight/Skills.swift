@@ -6,7 +6,7 @@
 //  Copyright © 2019 iSchoolMusical. All rights reserved.
 //
 
-let Skills: [String: String] = [
+let skills: [String: String] = [
     "html": "HTML",
     "css": "CSS",
     "js": "JavaScript"
