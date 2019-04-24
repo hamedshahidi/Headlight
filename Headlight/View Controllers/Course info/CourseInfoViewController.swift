@@ -9,82 +9,139 @@
 import UIKit
 
 class CourseInfoViewController: UITableViewController {
+    
+    // this hardcoded data will be replaced by fetched data
+    let courseData = [
+        [ // 0
+            "name": "Converting websites to PWA",
+            "rating": 4.2,
+        ],
+        [ // 1
+            "description": "Converting existing websites to mobile friendly PWAs.",
+            "location": [ "lgn": 60.25864, "ltd": 24.845427]
+        ],
+        [ // 2
+            "organization": "Metropolia",
+            "time": [ "start": "26-1-2020", "end": "12-2-2020"]
+        ],
+        [ // 3
+            "skills": [
+                "gained": ["pwa","sass"],
+                "required": ["javascript","html","css"]
+            ]
+        ]
+    ]
+        
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+}
 
-    // MARK: - Table view data source
+struct Storyboard {
+    static let title = "courseTitleAndRate"
+    static let descAndMap = "courseDescriptionAndMap"
+    static let providerAndLoc = "courseProviderAndDates"
+    static let skills = "courseRequiredAndGainedSkills"
+}
 
+// MARK: - Table view data source
+
+extension CourseInfoViewController
+{
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        // 0 - course title + rate
+        // 1 - description + map
+        // 2 - teacher + location name
+        // 3 - skills (required + gained)
+        return courseData.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
+        UITableViewCell {
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.title, for: indexPath) as! courseInfoHeaderCell
+                
+                return cell
+            } else if indexPath.row == 1 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.descAndMap, for: indexPath) as! courseDescAndMapCell
+                
+                return cell
+            } else if indexPath.row == 2 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.providerAndLoc, for: indexPath) as! courseProviderAndDatesCell
+                
+                return cell
+            } else if indexPath.row == 3 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.skills, for: indexPath) as! courseSkillsCell
+                
+                return cell
+            }
 
-        // Configure the cell...
-
-        return cell
+        return UITableViewCell()
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            
+            return 72
+            
+        } else if indexPath.row == 1 {
+            
+            return 100
+            
+        } else if indexPath.row == 2 {
+            
+            return 100
+            
+        } else if indexPath.row == 3 {
+            
+            return 100
+        }
+        
+        return 10
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        
+        switch indexPath.row {
+        case 0:
+            if let cell = cell as? courseInfoHeaderCell {
+                cell.courseTitle?.text = courseData[0]["name"] as? String
+                cell.courseRate?.text = courseData[0]["rating"] as? String
+            }
+            return
+        case 1:
+            if let cell = cell as? courseDescAndMapCell {
+                cell.courseDescription?.text = courseData[1]["description"] as? String
+                // TODO location on map
+            }
+            return
+        case 2:
+            if let cell = cell as? courseProviderAndDatesCell {
+                cell.organization?.text = courseData[2]["organization"] as? String
+                let time = courseData[2]["time"] as? [String: String]
+                cell.startDate?.text = time?["start"]
+                cell.endDate?.text = time?["end"]
+            }
+            return
+        case 3:
+            if let cell = cell as? courseSkillsCell {
+                // show skills in tableview
+            }
+            return
+        default:
+            // error cell
+            return
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

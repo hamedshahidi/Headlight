@@ -28,7 +28,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="l7z-At-0q2">
                         <rect key="frame" x="229" y="19" width="75" height="32"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ick-dn-DCn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rate star" translatesAutoresizingMaskIntoConstraints="NO" id="ick-dn-DCn">
                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="74o-vM-9HD"/>
@@ -63,4 +63,7 @@
             <point key="canvasLocation" x="132.80000000000001" y="154.72263868065968"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Rate star" width="553" height="481"/>
+    </resources>
 </document>
