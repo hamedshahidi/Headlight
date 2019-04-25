@@ -8,13 +8,17 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDataSource {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
-    var coursePaths = ["Course path 1", "Course path 2", "Course path 3", "Course path 4"]
+    @IBOutlet weak var tableView: UITableView!
+    // Temporar data
+    var coursePaths = ["Career path 1", "Career path 2", "Career path 3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.dataSource = self
+        tableView.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -31,10 +35,16 @@ class MainViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
-    private func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    // Makes title's background color white
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        (view as! UITableViewHeaderFooterView).backgroundView?.backgroundColor = UIColor.white
+    }
+    
+    // Creates titles
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return coursePaths[section]
     }
-
+    
     /*
     // MARK: - Navigation
 
