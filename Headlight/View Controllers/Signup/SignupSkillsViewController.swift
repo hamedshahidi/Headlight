@@ -42,7 +42,7 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Add/remove skill
         if selectedSkills[Array(skills.keys)[indexPath.row]] == nil {
-            selectedSkills[Array(skills.keys)[indexPath.row]] = Array(skills.values)[indexPath.row]
+            selectedSkills[Array(skills.keys)[indexPath.row]] = Array(skills.keys)[indexPath.row]
             self.tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         } else {
             selectedSkills.removeValue(forKey: Array(skills.keys)[indexPath.row])
