@@ -10,8 +10,7 @@ import UIKit
 
 class courseDescAndMapCell: UITableViewCell {
 
-    @IBOutlet weak var courseDescription: UILabel!
-    
-    @IBOutlet weak var mapView: UIView!
+    @IBOutlet weak var courseDesc: UILabel!
+    @IBOutlet weak var mapContainer: UIView!
     
 }

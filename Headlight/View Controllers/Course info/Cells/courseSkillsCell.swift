@@ -10,7 +10,9 @@ import UIKit
 
 class courseSkillsCell: UITableViewCell {
 
-
-    @IBOutlet weak var skillsRequired: UITableView!
+    @IBOutlet weak var requiredSkillsCollectionView: UICollectionView!
+    
+    @IBOutlet weak var gainedSkillsCollectionView: UICollectionView!
+    
     
 }

@@ -10,8 +10,9 @@ import UIKit
 
 class courseProviderAndDatesCell: UITableViewCell {
 
-    @IBOutlet weak var organization: UILabel!
+    @IBOutlet weak var courseOrganizer: UILabel!
     @IBOutlet weak var startDate: UILabel!
     @IBOutlet weak var endDate: UILabel!
+    
     
 }

@@ -31,12 +31,10 @@ class CourseInfoViewController: UITableViewController {
             ]
         ]
     ]
-        
     
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView()
     }
 }
 
@@ -53,7 +51,6 @@ extension CourseInfoViewController
 {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -96,7 +93,7 @@ extension CourseInfoViewController
             
         } else if indexPath.row == 1 {
             
-            return 100
+            return 120
             
         } else if indexPath.row == 2 {
             
@@ -104,10 +101,10 @@ extension CourseInfoViewController
             
         } else if indexPath.row == 3 {
             
-            return 100
+            return 200
         }
         
-        return 10
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -116,19 +113,20 @@ extension CourseInfoViewController
         switch indexPath.row {
         case 0:
             if let cell = cell as? courseInfoHeaderCell {
-                cell.courseTitle?.text = courseData[0]["name"] as? String
-                cell.courseRate?.text = courseData[0]["rating"] as? String
+                cell.courseName?.text = courseData[0]["name"] as? String
+                let rate = "\(courseData[0]["rating"] ?? "0.0")"
+                cell.courseRate?.text = rate
             }
             return
         case 1:
             if let cell = cell as? courseDescAndMapCell {
-                cell.courseDescription?.text = courseData[1]["description"] as? String
+                cell.courseDesc?.text = courseData[1]["description"] as? String
                 // TODO location on map
             }
             return
         case 2:
             if let cell = cell as? courseProviderAndDatesCell {
-                cell.organization?.text = courseData[2]["organization"] as? String
+                cell.courseOrganizer?.text = courseData[2]["organization"] as? String
                 let time = courseData[2]["time"] as? [String: String]
                 cell.startDate?.text = time?["start"]
                 cell.endDate?.text = time?["end"]

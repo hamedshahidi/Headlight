@@ -10,8 +10,7 @@ import UIKit
 
 class courseInfoHeaderCell: UITableViewCell {
 
-    @IBOutlet weak var courseTitle: UILabel!
-    
+    @IBOutlet weak var courseName: UILabel!
     @IBOutlet weak var courseRate: UILabel!
     
     
