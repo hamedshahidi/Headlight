@@ -13,6 +13,17 @@ class courseSkillsCell: UITableViewCell {
     @IBOutlet weak var requiredSkillsCollectionView: UICollectionView!
     
     @IBOutlet weak var gainedSkillsCollectionView: UICollectionView!
+}
+
+extension courseSkillsCell {
     
-    
+    func setCollectionviewDataSourceDelegate
+         <D: UICollectionViewDelegate & UICollectionViewDataSource>
+        (_ dataSourceDelegate: D, forRow row: Int) {
+        
+        requiredSkillsCollectionView.delegate = dataSourceDelegate
+        requiredSkillsCollectionView.dataSource = dataSourceDelegate
+        
+        requiredSkillsCollectionView.reloadData()
+    }
 }

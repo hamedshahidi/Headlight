@@ -1,15 +1,8 @@
-//
-//  CourseInfoViewController.swift
-//  Headlight
-//
-//  Created by iosdev on 24/04/2019.
-//  Copyright © 2019 iSchoolMusical. All rights reserved.
-//
 
 import UIKit
 
 class CourseInfoViewController: UITableViewController {
-    
+
     // this hardcoded data will be replaced by fetched data
     let courseData = [
         [ // 0
@@ -132,14 +125,67 @@ extension CourseInfoViewController
                 cell.endDate?.text = time?["end"]
             }
             return
-        case 3:
-            if let cell = cell as? courseSkillsCell {
-                // show skills in tableview
-            }
-            return
+//        case 3:
+//            if let cell = cell as? courseSkillsCell {
+//
+//            }
+//            return
         default:
             // error cell
             return
         }
     }
 }
+
+
+
+extension CourseInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        let skills = courseData[3]["skills"] as? [String:[String]]
+        
+        switch collectionView.restorationIdentifier {
+            
+        case "skillsRequiredCV":
+            let count = skills?["required"]?.count ?? 0
+            return count
+            
+        case "skillsGainedCV":
+            let count = skills?["gained"]?.count ?? 0
+            return count
+            
+        default:
+            return 0
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "skillCell", for: indexPath) as? skillCell
+            else { fatalError("skillcell error")}
+        
+        let skills = courseData[3]["skills"] as? [String:[String]]
+        
+        switch collectionView.restorationIdentifier {
+            
+        case "skillsRequiredCV":
+            cell.requiredSkillLabel?.text = skills?["required"]?[indexPath.row]
+            return cell
+            
+        case "skillsGainedCV":
+            cell.gainedSkillLabel?.text = skills?["gained"]?[indexPath.row]
+            return cell
+            
+        default:
+            return cell
+        }
+    }
+    
+    
+}
+
+
+
