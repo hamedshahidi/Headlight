@@ -12,17 +12,15 @@ class SignupNameViewController: UIViewController {
 
     @IBOutlet weak var logoView: UIImageView!
     @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var enterButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //resizeImage()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = Theme.background
+        enterButton.backgroundColor = Theme.tint
+        enterButton.tintColor = Theme.background
+        enterButton.layer.cornerRadius = 4
     }
-    
-    func resizeImage() {
-        logoView.image?.stretchableImage(withLeftCapWidth: 150, topCapHeight: 150)
-    }
-
     
     // MARK: - Navigation
 

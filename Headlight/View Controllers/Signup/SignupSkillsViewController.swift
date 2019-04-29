@@ -12,15 +12,17 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
     
     var selectedSkills: [String: String] = [:]
     var name = ""
-    let maxHeight = UIScreen.main.bounds.size.height
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nextBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = Theme.background
+        nextBtn.backgroundColor = Theme.tint
+        nextBtn.tintColor = Theme.background
+        nextBtn.layer.cornerRadius = 4
         tableView.dataSource = self
         tableView.delegate = self
-        // Do any additional setup after loading the view.
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -34,6 +36,13 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "skillCell", for: indexPath)
         cell.textLabel?.text = Array(skills.values)[indexPath.row]
+        
+        // Check accessory type while reusing cells
+        if selectedSkills[Array(skills.keys)[indexPath.row]] != nil {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
 
         return cell
     }
@@ -50,7 +59,6 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
         }
         tableView.deselectRow(at: indexPath, animated: true)
 
-        print(selectedSkills.values)
     }
 
     /*
