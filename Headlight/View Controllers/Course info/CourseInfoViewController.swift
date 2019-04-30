@@ -17,6 +17,7 @@ class CourseInfoViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        tableView.separatorColor = UIColor.clear
         
         // for development only
         course = CoreDataHelper.findCourseByID("metropolia-mobile-05")
