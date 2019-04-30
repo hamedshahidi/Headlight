@@ -130,10 +130,9 @@ extension CourseInfoViewController
 }
 
 
+// CollectionViewContoller
 
 extension CourseInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -170,7 +169,7 @@ extension CourseInfoViewController: UICollectionViewDelegate, UICollectionViewDa
 
             cell.requiredSkillLabel?.text = skills?.required?[indexPath.row]
 
-            let colors = getPairColors()
+            let colors = SkillColor.getPairColors()
             cell.requiredSkillLabel?.textColor = colors.0
             cell.requiredSkillLabel?.backgroundColor = colors.1
             
@@ -180,7 +179,7 @@ extension CourseInfoViewController: UICollectionViewDelegate, UICollectionViewDa
 
             cell.gainedSkillLabel?.text = skills?.gained?[indexPath.row]
 
-            let colors = getPairColors()
+            let colors = SkillColor.getPairColors()
             cell.gainedSkillLabel?.textColor = colors.1
             cell.gainedSkillLabel?.backgroundColor = colors.0
 
@@ -191,80 +190,3 @@ extension CourseInfoViewController: UICollectionViewDelegate, UICollectionViewDa
         }
     }
 }
-
-
-extension CourseInfoViewController
-{
-    
-    // Finds two complementary colors for text and background
-    // with a contrast rate suitable for reading.
-    func getPairColors () -> (UIColor,UIColor) {
-        
-        var color: UIColor = .white
-        var complementary: UIColor = .black
-        
-        let colors = ["#00FF00","#0000FF","#FF0000","#01FFFE","#FFA6FE","#006401","#010067","#95003A","#007DB5","#FF00F6","#774D00","#90FB92","#0076FF","#FF937E","#6A826C","#FF029D","#FE8900","#7A4782","#7E2DD2","#85A900","#FF0056","#A42400","#00AE7E","#683D3B","#BDC6FF","#263400","#BDD393","#00B917","#9E008E","#001544","#C28C9F","#FF74A3","#01D0FF","#004754","#E56FFE","#788231","#0E4CA1","#91D0CB","#BE9970","#968AE8","#BB8800","#43002C","#DEFF74","#00FFC6","#FFE502","#620E00","#008F9C","#98FF52","#7544B1","#B500FF","#00FF78","#FF6E41","#005F39","#6B6882","#5FAD4E","#A75740","#A5FFD2","#FFB167","#009BFF","#E85EBE"]
-        
-        // Search for colors with good contrast rate
-        repeat {
-            
-            let colorIndex = Int.random(in: 0 ..< colors.count)
-            color = UIColor(hex: colors.shuffled()[colorIndex]) ?? .cyan
-            complementary = getComplementaryForColor(color: color)
-            
-        } while (
-            usedColors.contains(color) ||
-            UIColor.contrastRatio(between: color, and: complementary) < 6
-            )
-        
-        usedColors.append(color)
-        
-        return (color, complementary)
-    }
-    
-    func getComplementaryForColor(color: UIColor) -> UIColor {
-        
-        let ciColor = CIColor(color: color)
-        
-        // get the current values and make the difference from white:
-        let compRed: CGFloat = 1.0 - ciColor.red
-        let compGreen: CGFloat = 1.0 - ciColor.green
-        let compBlue: CGFloat = 1.0 - ciColor.blue
-        
-        return UIColor(red: compRed, green: compGreen, blue: compBlue, alpha: 1.0)
-    }
-}
-
-
-extension UIColor {
-    
-    // Calculates contrast rate of two colors (used in general)
-    static func contrastRatio(between color1: UIColor, and color2: UIColor) -> CGFloat {
-        
-        let luminance1 = color1.luminance()
-        let luminance2 = color2.luminance()
-        
-        let luminanceDarker = min(luminance1, luminance2)
-        let luminanceLighter = max(luminance1, luminance2)
-        
-        return (luminanceLighter + 0.05) / (luminanceDarker + 0.05)
-    }
-    
-    // Calculates contrast rate of a color to another (used on a color)
-    func contrastRatio(with color: UIColor) -> CGFloat {
-        return UIColor.contrastRatio(between: self, and: color)
-    }
-    
-    func luminance() -> CGFloat {
-        
-        let ciColor = CIColor(color: self)
-        
-        func adjust(colorComponent: CGFloat) -> CGFloat {
-            return (colorComponent < 0.03928) ? (colorComponent / 12.92) : pow((colorComponent + 0.055) / 1.055, 2.4)
-        }
-        
-        return 0.2126 * adjust(colorComponent: ciColor.red) + 0.7152 * adjust(colorComponent: ciColor.green) + 0.0722 * adjust(colorComponent: ciColor.blue)
-    }
-}
-
-
