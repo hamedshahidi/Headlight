@@ -14,8 +14,7 @@ class CareerPathPickViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var careerLength: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var career: Career = Career(name: "Unknown", requiredSkills: [])
-    var courseList: [CourseStruct.Course] = []
+    var careerPath: CareerPath? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +22,8 @@ class CareerPathPickViewController: UIViewController, UITableViewDataSource, UIT
         tableView.dataSource = self
         tableView.delegate = self
         
-        careerName.text = career.name
-        careerLength.text = String(courseList.count) + " courses"
+        careerName.text = careerPath?.career.name ?? "Unknown"
+        careerLength.text = String(careerPath?.path.count ?? 0) + " courses"
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -32,14 +31,18 @@ class CareerPathPickViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return courseList.count
+        return careerPath?.path.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "careerPickViewCell", for: indexPath)
         
-        cell.textLabel?.text = courseList[indexPath.row].name
+        cell.textLabel?.text = careerPath?.path[indexPath.row].name
         
         return cell
+    }
+
+    @IBAction func pickPath(_ sender: Any) {
+        CoreDataHelper.saveCareerPath(careerPath: careerPath!)
     }
 }

@@ -15,4 +15,7 @@ class CareerPathViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    @IBAction func clearData(_ sender: Any) {
+        CoreDataHelper.clearCareerPathData()
+    }
 }

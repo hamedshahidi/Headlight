@@ -68,6 +68,9 @@ class CourseCoreDataTests: XCTestCase {
         find = CoreDataHelper.findCourseByID("test-2")
         XCTAssert(find != nil)
         XCTAssert(find?.id == "test-2")
+        
+        find = CoreDataHelper.findCourseByID("test-3")
+        XCTAssert(find == nil)
     }
     
     func testCourseCoreDataParsing() {

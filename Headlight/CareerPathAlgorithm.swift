@@ -8,41 +8,50 @@
 
 import Foundation
 
+struct CareerPath {
+    let id: UUID?
+    let career: Career
+    let path: [CourseStruct.Course]
+    let missingSkills: [String]
+    let gainedSkills: [String]
+}
+
 class CareerPathAlgorithm {
-    static private func containsSkills(_ a: [String]?, _ b: [String]?) -> Bool {
+    static internal func containsSkills(_ a: [String]?, _ b: [String]?) -> Bool {
         return (a ?? []).filter { x in !(b ?? []).contains(x) }.count == 0
     }
     
-    static private func combineIntoCoursePath(_ coursePathTree: CareerPath) -> [CourseStruct.Course] {
-        var path: [CourseStruct.Course] = []
-        for x in coursePathTree.path {
-            path = x + path
-        }
-        
-        // Sort the courses in the order they need to be done
+    // Sort the courses in the order they need to be done
+    static internal func orderCourseListBasedOnRequirements(_ list: [CourseStruct.Course], _ missingSkills: [String]) -> [CourseStruct.Course] {
         var sortedPath: [CourseStruct.Course] = []
-        var gainedSkills: [String] = coursePathTree.missingSkills
+        var gainedSkills: [String] = missingSkills
         repeat {
-            for course in path {
+            for course in list {
                 if sortedPath.contains(where: { x in x.id == course.id }) { continue }
                 if containsSkills(course.skills?.required, gainedSkills) {
                     sortedPath.append(course)
                     gainedSkills = Array(Set(gainedSkills + (course.skills?.gained ?? [])))
                 }
             }
-        } while(sortedPath.count != path.count)
+        } while(sortedPath.count != list.count)
         
         return sortedPath
     }
     
-    static private func createCoursePathTree(_ courseList: [CourseStruct.Course], _ career: [String], _ user: User, _ path: CareerPath?) -> CareerPath {
-        let list = sortCoursesByPreferenceFactor(courseList, career, user)
+    static private func combineIntoCoursePath(_ coursePathTree: CareerPath) -> CareerPath {
+        let sortedPath = orderCourseListBasedOnRequirements(coursePathTree.path, coursePathTree.missingSkills)
+        
+        return CareerPath(id: coursePathTree.id, career: coursePathTree.career, path: sortedPath, missingSkills: coursePathTree.missingSkills, gainedSkills: coursePathTree.missingSkills)
+    }
+    
+    static private func createCoursePathTree(_ career: Career, _ courseList: [CourseStruct.Course], _ skillList: [String], _ user: User, _ path: CareerPath?) -> CareerPath {
+        let list = sortCoursesByPreferenceFactor(courseList, skillList, user)
         
         var stepCourses: [CourseStruct.Course] = []
         var fulfilledSkills: [String] = []
         var requiredSkills: [String] = []
         for course in list {
-            let skills = calculateCareerGivenSkills(course, career)
+            let skills = calculateCareerGivenSkills(course, skillList)
             
             let usefullSkills = skills.filter { skill in !fulfilledSkills.contains(skill) }
             if usefullSkills.count > 0 {
@@ -61,18 +70,20 @@ class CareerPathAlgorithm {
         requiredSkills = requiredSkills.filter { skill in !completeGainedSkills.contains(skill) }
         
         // Add missing career skills
-        requiredSkills = Array(Set(requiredSkills + career.filter { skill in !fulfilledSkills.contains(skill) }))
+        requiredSkills = Array(Set(requiredSkills + skillList.filter { skill in !fulfilledSkills.contains(skill) }))
         
         var currentPath = path?.path ?? []
-        currentPath.append(stepCourses)
+        for course in stepCourses {
+            currentPath.append(course)
+        }
         
-        let careerPath = CareerPath(path: currentPath, missingSkills: requiredSkills, gainedSkills: completeGainedSkills)
+        let careerPath = CareerPath(id: nil, career: career, path: currentPath, missingSkills: requiredSkills, gainedSkills: completeGainedSkills)
         
         if requiredSkills.count > 0 && stepCourses.count > 0 {
             let unusedCourseList = courseList.filter { course in !stepCourses.contains { x in x.id == course.id } }
-            return createCoursePathTree(unusedCourseList, requiredSkills, user, careerPath)
+            return createCoursePathTree(career, unusedCourseList, requiredSkills, user, careerPath)
         } else {
-            return CareerPath(path: careerPath.path.filter { x in x.count > 0 }, missingSkills: careerPath.missingSkills, gainedSkills: careerPath.gainedSkills)
+            return CareerPath(id: nil, career: career, path: careerPath.path, missingSkills: careerPath.missingSkills, gainedSkills: careerPath.gainedSkills)
         }
     }
     
@@ -111,7 +122,7 @@ class CareerPathAlgorithm {
         return career.filter { skill in course.skills?.gained!.contains(skill) ?? false }
     }
     
-    static func createCareerPath(_ career: Career) -> [CourseStruct.Course] {
+    static func createCareerPath(_ career: Career) -> CareerPath {
         let courseList = CoreDataHelper.listAllCourses();
         let userData = CoreDataHelper.getUserData();
         
@@ -119,10 +130,10 @@ class CareerPathAlgorithm {
             fatalError("User must be created before career path")
         }
         
-        let path = createCoursePathTree(courseList, career.requiredSkills, user, nil)
+        let path = createCoursePathTree(career, courseList, career.requiredSkills, user, nil)
     
         let finalPath = combineIntoCoursePath(path)
-        for i in finalPath {
+        for i in finalPath.path {
             print(i.name)
         }
         
