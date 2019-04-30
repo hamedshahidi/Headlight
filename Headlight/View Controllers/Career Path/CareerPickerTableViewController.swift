@@ -84,7 +84,6 @@ class CareerPickerTableViewController: UITableViewController {
         
         let careerPath = CareerPathAlgorithm.createCareerPath(career)
         
-        viewController.career = career
-        viewController.courseList = careerPath
+        viewController.careerPath = careerPath
     }
 }
