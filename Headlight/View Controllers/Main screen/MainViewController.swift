@@ -12,7 +12,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
   
     @IBOutlet weak var tableView: UITableView!
     // Temporar data
-    var coursePaths = ["Career path 1", "Career path 2", "Career path 3"]
+    var coursePaths = ["Career path 1", "Career path 2"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
