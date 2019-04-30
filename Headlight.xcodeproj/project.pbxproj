@@ -18,18 +18,13 @@
 		6A8DBC142270F3CE00613A5F /* courseProviderAndTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC122270F3CE00613A5F /* courseProviderAndTimeCell.swift */; };
 		6A8DBC1C2271021F00613A5F /* courseSkillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC1A2271021F00613A5F /* courseSkillsCell.swift */; };
 		6AC3C47C226C887700E3C595 /* SignupNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C47B226C887700E3C595 /* SignupNameViewController.swift */; };
-		6AC3C47D226C887700E3C595 /* SignupNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C47B226C887700E3C595 /* SignupNameViewController.swift */; };
-		6AC3C47E226C887700E3C595 /* SignupNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C47B226C887700E3C595 /* SignupNameViewController.swift */; };
-		6AC3C484226C88D900E3C595 /* SignupSkillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C483226C88D900E3C595 /* SignupSkillsTableViewController.swift */; };
-		6AC3C485226C88D900E3C595 /* SignupSkillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C483226C88D900E3C595 /* SignupSkillsTableViewController.swift */; };
-		6AC3C486226C88D900E3C595 /* SignupSkillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C483226C88D900E3C595 /* SignupSkillsTableViewController.swift */; };
-		6ACE7BAA227749E800AF0287 /* skillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE7BA9227749E800AF0287 /* skillCell.swift */; };
 		6AC3C488226F03C000E3C595 /* SignupSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C487226F03C000E3C595 /* SignupSkillsViewController.swift */; };
 		6AC3C48B226F350700E3C595 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297AD226DBBFF00AA8E8F /* User.swift */; };
 		6AC3C48C226F350800E3C595 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297AD226DBBFF00AA8E8F /* User.swift */; };
 		6AC3C48E22705FAC00E3C595 /* SkillColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C48D22705FAC00E3C595 /* SkillColor.swift */; };
 		6AC3C4912277227800E3C595 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C4902277227800E3C595 /* Theme.swift */; };
 		6AC3C4932277228D00E3C595 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AC3C4922277228D00E3C595 /* Colors.xcassets */; };
+		6ACE7BAA227749E800AF0287 /* skillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE7BA9227749E800AF0287 /* skillCell.swift */; };
 		9542975F2265C2A700AA8E8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9542975E2265C2A700AA8E8F /* AppDelegate.swift */; };
 		954297612265C2A700AA8E8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297602265C2A700AA8E8F /* ViewController.swift */; };
 		954297642265C2A700AA8E8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954297622265C2A700AA8E8F /* Main.storyboard */; };
@@ -89,12 +84,11 @@
 		6A8DBC122270F3CE00613A5F /* courseProviderAndTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseProviderAndTimeCell.swift; sourceTree = "<group>"; };
 		6A8DBC1A2271021F00613A5F /* courseSkillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseSkillsCell.swift; sourceTree = "<group>"; };
 		6AC3C47B226C887700E3C595 /* SignupNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupNameViewController.swift; sourceTree = "<group>"; };
-		6AC3C483226C88D900E3C595 /* SignupSkillsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSkillsTableViewController.swift; sourceTree = "<group>"; };
-		6ACE7BA9227749E800AF0287 /* skillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skillCell.swift; sourceTree = "<group>"; };
 		6AC3C487226F03C000E3C595 /* SignupSkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSkillsViewController.swift; sourceTree = "<group>"; };
 		6AC3C48D22705FAC00E3C595 /* SkillColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillColor.swift; sourceTree = "<group>"; };
 		6AC3C4902277227800E3C595 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		6AC3C4922277228D00E3C595 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		6ACE7BA9227749E800AF0287 /* skillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skillCell.swift; sourceTree = "<group>"; };
 		9542975B2265C2A700AA8E8F /* Headlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Headlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9542975E2265C2A700AA8E8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		954297602265C2A700AA8E8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +188,16 @@
 			path = Signup;
 			sourceTree = "<group>";
 		};
+		6AC3C48F2277225F00E3C595 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				6AC3C48D22705FAC00E3C595 /* SkillColor.swift */,
+				6AC3C4902277227800E3C595 /* Theme.swift */,
+				6AC3C4922277228D00E3C595 /* Colors.xcassets */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		6AD749542275E62000D4F324 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,16 +208,6 @@
 				6ACE7BA9227749E800AF0287 /* skillCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		6AC3C48F2277225F00E3C595 /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				6AC3C48D22705FAC00E3C595 /* SkillColor.swift */,
-				6AC3C4902277227800E3C595 /* Theme.swift */,
-				6AC3C4922277228D00E3C595 /* Colors.xcassets */,
-			);
-			path = Theme;
 			sourceTree = "<group>";
 		};
 		954297522265C2A700AA8E8F = {

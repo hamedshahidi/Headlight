@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,9 +27,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKo-cH-PlI">
-                                            <rect key="frame" x="32" y="13" width="116" height="24"/>
+                                            <rect key="frame" x="32" y="13" width="125" height="24"/>
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -243,49 +244,72 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="skillsRequiredCV" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yqh-Lv-dbZ">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleToFill" restorationIdentifier="skillsRequiredCV" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yqh-Lv-dbZ">
                                                     <rect key="frame" x="8" y="34" width="142.5" height="128"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5zG-jz-dkP">
-                                                        <size key="itemSize" width="80" height="26"/>
+                                                        <size key="itemSize" width="141" height="36"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="skillCell" id="1xc-VN-pUB" customClass="skillCell" customModule="Headlight" customModuleProvider="target">
-                                                            <rect key="frame" x="31.5" y="0.0" width="80" height="26"/>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" layoutMarginsFollowReadableWidth="YES" reuseIdentifier="skillCell" id="1xc-VN-pUB" customClass="skillCell" customModule="Headlight" customModuleProvider="target">
+                                                            <rect key="frame" x="1" y="0.0" width="141" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="26"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="141" height="36"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x04-rn-yBe" userLabel="requiredSkillLabel">
-                                                                        <rect key="frame" x="0.0" y="8" width="80" height="18"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="141" height="36"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="543-8r-gcJ"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="sYu-z1-6i9"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="0.0"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="0.0"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
                                                             </view>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstItem="x04-rn-yBe" firstAttribute="top" secondItem="1xc-VN-pUB" secondAttribute="top" constant="8" id="6Mu-in-RDt"/>
-                                                                <constraint firstItem="x04-rn-yBe" firstAttribute="leading" secondItem="1xc-VN-pUB" secondAttribute="leading" id="8dc-kg-tDu"/>
-                                                                <constraint firstAttribute="bottom" secondItem="x04-rn-yBe" secondAttribute="bottom" id="Jp7-R4-Tjo"/>
-                                                                <constraint firstAttribute="trailing" secondItem="x04-rn-yBe" secondAttribute="trailing" id="wmK-jd-qaP"/>
+                                                                <constraint firstAttribute="bottom" secondItem="x04-rn-yBe" secondAttribute="bottom" id="Hc0-7D-fl3"/>
+                                                                <constraint firstItem="x04-rn-yBe" firstAttribute="top" secondItem="1xc-VN-pUB" secondAttribute="top" id="Qub-PM-7wJ"/>
+                                                                <constraint firstAttribute="trailing" secondItem="x04-rn-yBe" secondAttribute="trailing" id="cUC-v5-mve"/>
+                                                                <constraint firstItem="x04-rn-yBe" firstAttribute="leading" secondItem="1xc-VN-pUB" secondAttribute="leading" id="cgv-pc-meM"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <outlet property="requiredSkillLabel" destination="x04-rn-yBe" id="w34-O8-hED"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <outlet property="dataSource" destination="rvn-Cg-EjQ" id="qX9-8h-QA2"/>
                                                         <outlet property="delegate" destination="rvn-Cg-EjQ" id="wtH-4P-IOO"/>
                                                     </connections>
                                                 </collectionView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.9995246175811684" green="1" blue="0.9116669907110625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="yqh-Lv-dbZ" firstAttribute="leading" secondItem="42X-0L-Hzp" secondAttribute="leading" constant="8" id="1Sf-Qm-bII"/>
                                                 <constraint firstAttribute="bottom" secondItem="yqh-Lv-dbZ" secondAttribute="bottom" constant="8" id="3Y5-lC-kN7"/>
@@ -294,6 +318,17 @@
                                                 <constraint firstItem="yqh-Lv-dbZ" firstAttribute="top" secondItem="au5-tf-1Gf" secondAttribute="bottom" constant="8" id="obA-jx-eGp"/>
                                                 <constraint firstAttribute="trailing" secondItem="yqh-Lv-dbZ" secondAttribute="trailing" constant="8" id="zjV-f6-g15"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" name="Tint"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFe-yK-fjB">
                                             <rect key="frame" x="200.5" y="19" width="158.5" height="170"/>
@@ -306,47 +341,70 @@
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="skillsGainedCV" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="abM-of-68a">
                                                     <rect key="frame" x="8" y="34" width="142.5" height="128"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ffB-vt-U1f">
-                                                        <size key="itemSize" width="80" height="26"/>
+                                                        <size key="itemSize" width="141" height="36"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="skillCell" id="3HP-FN-QSN" customClass="skillCell" customModule="Headlight" customModuleProvider="target">
-                                                            <rect key="frame" x="31.5" y="0.0" width="80" height="26"/>
+                                                            <rect key="frame" x="1" y="0.0" width="141" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="26"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="141" height="36"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7v-iQ-xpT" userLabel="gainedSkillLabel">
-                                                                        <rect key="frame" x="0.0" y="8" width="80" height="18"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="141" height="36"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="05C-tM-wh2"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="CWJ-MT-cz3"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="0.0"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="0.0"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
                                                             </view>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstItem="b7v-iQ-xpT" firstAttribute="leading" secondItem="3HP-FN-QSN" secondAttribute="leading" id="WKa-jz-wpl"/>
-                                                                <constraint firstAttribute="bottom" secondItem="b7v-iQ-xpT" secondAttribute="bottom" id="ffQ-PH-hgp"/>
-                                                                <constraint firstItem="b7v-iQ-xpT" firstAttribute="top" secondItem="3HP-FN-QSN" secondAttribute="top" constant="8" id="mPC-ZA-Byv"/>
-                                                                <constraint firstAttribute="trailing" secondItem="b7v-iQ-xpT" secondAttribute="trailing" id="pnk-JS-Sj4"/>
+                                                                <constraint firstItem="b7v-iQ-xpT" firstAttribute="top" secondItem="3HP-FN-QSN" secondAttribute="top" id="Zmd-M9-MrY"/>
+                                                                <constraint firstAttribute="bottom" secondItem="b7v-iQ-xpT" secondAttribute="bottom" id="h03-KH-m7w"/>
+                                                                <constraint firstAttribute="trailing" secondItem="b7v-iQ-xpT" secondAttribute="trailing" id="w10-E9-K3g"/>
+                                                                <constraint firstItem="b7v-iQ-xpT" firstAttribute="leading" secondItem="3HP-FN-QSN" secondAttribute="leading" id="wRk-Bg-4O1"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <outlet property="gainedSkillLabel" destination="b7v-iQ-xpT" id="ahs-Id-ItQ"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <outlet property="dataSource" destination="rvn-Cg-EjQ" id="Q0P-Mn-iEm"/>
                                                         <outlet property="delegate" destination="rvn-Cg-EjQ" id="NAr-P8-biU"/>
                                                     </connections>
                                                 </collectionView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.82073631483223164" green="1" blue="0.85408801229733378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="abM-of-68a" firstAttribute="leading" secondItem="iFe-yK-fjB" secondAttribute="leading" constant="8" id="C27-xf-1Ix"/>
                                                 <constraint firstItem="abM-of-68a" firstAttribute="top" secondItem="qAp-sP-Eir" secondAttribute="bottom" constant="8" id="O1e-pT-xRu"/>
@@ -355,6 +413,17 @@
                                                 <constraint firstAttribute="bottom" secondItem="abM-of-68a" secondAttribute="bottom" constant="8" id="Utu-iT-NPY"/>
                                                 <constraint firstItem="qAp-sP-Eir" firstAttribute="top" secondItem="iFe-yK-fjB" secondAttribute="top" constant="8" id="Ze7-xR-nLm"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" name="Tint"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </view>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Cni-c7-cRt">
                                             <rect key="frame" x="162.5" y="79" width="50" height="42"/>
@@ -393,5 +462,8 @@
     <resources>
         <image name="Rate star" width="553" height="481"/>
         <image name="arrow" width="960" height="480"/>
+        <namedColor name="Tint">
+            <color red="0.26666666666666666" green="0.72549019607843135" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
