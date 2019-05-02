@@ -20,23 +20,27 @@
 // Career paths
 "pick_career_btn" = "Valitse opintopolku";
 "pick_this_path_btn" = "Valitse polku";
-"Front-End Developer" = "Front-End Kehittäjä"
-"Back-End Developer" = "Back-End Kehittäjä"
-"Full Stack Developer" = "Full Stack Kehittäjä"
-"Computer Scientist" = "Tietotekniikan tutkija"
-"UI Designer" = "UI Suunnittelija"
-"Android Developer" = "Android Kehittäjä"
-"iOS Developer" = "iOS Kehittäjä"
-"Mobile Developer" = "Mobiilikehittäjä"
-"Game Developer" = "Pelikehittäjä"
+"Front-End Developer" = "Front-End Kehittäjä";
+"Back-End Developer" = "Back-End Kehittäjä";
+"Full Stack Developer" = "Full Stack Kehittäjä";
+"Computer Scientist" = "Tietotekniikan tutkija";
+"UI Designer" = "UI Suunnittelija";
+"Android Developer" = "Android Kehittäjä";
+"iOS Developer" = "iOS Kehittäjä";
+"Mobile Developer" = "Mobiilikehittäjä";
+"Game Developer" = "Pelikehittäjä";
 
 // Course view
 "description" = "Kuvaus";
-"organized_by" = "Järjestäjä:"
-"starts" = "Alkaa:"
-"ends" = "Loppuu:"
-"requires" = "Vaaditut"
-"provides" = "Saadut"
+"organized_by" = "Järjestäjä:";
+"starts" = "Alkaa:";
+"ends" = "Loppuu:";
+"requires" = "Vaaditut";
+"provides" = "Saadut";
+
+// Search
+"searchbar_placeholder" = "Hae kurssia";
+"cancel_btn" = "Peruuta";
 
 // Skills
 "html" = "HTML";
