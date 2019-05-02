@@ -27,11 +27,14 @@ extension SearchRow : UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "entryCell", for: indexPath as IndexPath) as! SingleCellContent
         let skill = Array(self.all_skills)[indexPath.item]
         cell.labelText.text = skill.value
+        cell.hiddenValue = skill.key
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print((collectionView.cellForItem(at: indexPath) as! SingleCellContent).hiddenValue)
+        var temp_string: String = (collectionView.cellForItem(at: indexPath) as! SingleCellContent).hiddenValue
+        print("sending a value to be searched : \(temp_string)")
+        self.cont_ref?.appendToSearchString(temp_string)
     }
 }
 
