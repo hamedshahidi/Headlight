@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 class SearchRow : UITableViewCell {
-     var all_skills = skills
+    var all_skills = skills
+    open var cont_ref : SearchViewController?
 }
 
 extension SearchRow : UICollectionViewDataSource{

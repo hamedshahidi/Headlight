@@ -12,15 +12,20 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
     
     var selectedSkills: [String: String] = [:]
     var name = ""
-    let maxHeight = UIScreen.main.bounds.size.height
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var guideText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = Theme.background
+        nextBtn.backgroundColor = Theme.tint
+        nextBtn.tintColor = Theme.background
+        nextBtn.layer.cornerRadius = 4
         tableView.dataSource = self
         tableView.delegate = self
-        // Do any additional setup after loading the view.
+        guideText.text = NSLocalizedString("skill_pick", comment: "")
+        nextBtn.setTitle(NSLocalizedString("next_button", comment: ""), for: .normal)
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -33,7 +38,14 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
     // Load skill names to cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "skillCell", for: indexPath)
-        cell.textLabel?.text = Array(skills.values)[indexPath.row]
+        cell.textLabel?.text = NSLocalizedString(Array(skills.keys)[indexPath.row], comment: "skill name")
+        
+        // Check accessory type while reusing cells
+        if selectedSkills[Array(skills.keys)[indexPath.row]] != nil {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
 
         return cell
     }
@@ -42,7 +54,7 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Add/remove skill
         if selectedSkills[Array(skills.keys)[indexPath.row]] == nil {
-            selectedSkills[Array(skills.keys)[indexPath.row]] = Array(skills.values)[indexPath.row]
+            selectedSkills[Array(skills.keys)[indexPath.row]] = Array(skills.keys)[indexPath.row]
             self.tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         } else {
             selectedSkills.removeValue(forKey: Array(skills.keys)[indexPath.row])
@@ -50,7 +62,6 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
         }
         tableView.deselectRow(at: indexPath, animated: true)
 
-        print(selectedSkills.values)
     }
 
     /*

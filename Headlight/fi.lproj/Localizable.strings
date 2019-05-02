@@ -1,0 +1,111 @@
+/* 
+  Localizable.strings
+  Headlight
+
+  Created by iosdev on 01/05/2019.
+  Copyright © 2019 iSchoolMusical. All rights reserved.
+*/
+
+// Errors
+"err_name_creation_title" = "Virhe";
+"err_name_creation" = "Käyttäjänimen tulee olla 1-20 merkkiä pitkä.";
+
+// Signup
+"get_started" = "Moi! Aloitetaan syöttämällä käyttäjänimesi.";
+"skill_pick" = "Valitse omat taitosi listasta.";
+"name_placeholder_text" = "Käyttäjänimi";
+"enter_button_text" = "Syötä";
+"next_button" = "Seuraava";
+
+// Skills
+"html" = "HTML";
+"css" = "CSS";
+"js" = "JavaScript";
+"tier-1-physics" = "Fysiikan perusteet";
+"tier-2-physics" = "Edistynyt fysiikka";
+"tier-3-physics" = "Korkeampi fysiikka";
+"tier-1-mathematics" = "Matematiikan perusteet";
+"tier-2-mathematics" = "Edistynyt matematiikka";
+"tier-3-mathematics" = "Korkeampi matematiikka";
+"basic-unix"  = "UNIX perusteet";
+"basic-logism" = "Logismin perusteet";
+"ionic" = "Ionic";
+"angular" = "Angular";
+"sass" = "SASS";
+"ux-prototyping" = "UX Prototyypit";
+"color-theory" = "Väriteoria";
+"object-oriented-programming" = "Olio-ohjelmointi";
+"data-communications" = "Tietoliikenne";
+"kotlin" = "Kotlin";
+"android-studio" = "Android Studio";
+"java" = "Java";
+"android" = "Android";
+"ios" = "iOS";
+"xcode" = "xCode";
+"swift" = "Swift";
+"pwa" = "Progressiiviset web-sovellukset";
+"unity" = "Unity";
+"csharp" = "C#";
+"unreal" = "Unreal Engine";
+"c++" = "C++";
+
+// Courses
+"metropolia-web-01_name" = "Web-teknologioiden perusteet";
+"metropolia-web-01_description" = "Opi web-teknologioiden perusteet";
+
+"metropolia-physics-01_name" = "Fysiikka 01";
+"metropolia-physics-01_description" = "Fysiikan alkeet";
+
+"metropolia-physics-02_name" = "Fysiikka 02";
+"metropolia-physics-02_description" = "Syväsukellus sähkömagnetismin maailmaan";
+
+"metropolia-physics-03_name" = "Fysiikka 03";
+"metropolia-physics-03_description" = "Liike-energia ja termodynamiikka";
+
+"metropolia-maths-01_name" = "Matematiikka 01";
+"metropolia-maths-01_description" = "Matematiikan alkeiskurssi";
+
+"metropolia-maths-02_name" = "Matematiikka 02";
+"metropolia-maths-02_description" = "Keskitason laskentaa";
+
+"metropolia-maths-03_name" = "Matematiikka 03";
+"metropolia-maths-03_description" = "Edistynyttä laskentaa";
+
+"metropolia-smart-systems-01_name" = "Sulautetut järjestelmät 01";
+"metropolia-smart-systems-01_description" = "Sulautettujen järjestelmien alkeiskurssi. Kurssilla tutustutaan sirujen toimintaan.";
+
+"metropolia-smart-systems-02_name" = "Sulautetut järjestelmät 02";
+"metropolia-smart-systems-02_description" = "Miten automatisoituja järjestelmiä kehitetään: Turingin koneen perusteet";
+
+"metropolia-mobile-01_name" = "Web-pohjaiset mobiilisovellukset";
+"metropolia-mobile-01_description" = "Mobiilisovellusten luominen web-teknologioiden avulla.";
+
+"metropolia-mobile-02_name" = "Olio-ohjelmointi ja tietoliikenne";
+"metropolia-mobile-02_description" = "Internetin toiminnan perusteet ja olio-ohjelmionti Javalla.";
+
+"metropolia-mobile-03_name" = "Mobiilisovellusten kehitys (Android)";
+"metropolia-mobile-03_description" = "Kurssilla opitaan luomaan natiivisovelluksia Android-alustalle.";
+
+"metropolia-mobile-04_name" = "Mobiilisovellusten kehitys (iOS)";
+"metropolia-mobile-04_description" = "Kurssilla opitaan luomaan natiivisovelluksia iOS-alustalle.";
+
+"metropolia-mobile-05_name" = "Nettisivujen muuntaminen PWA:ksi";
+"metropolia-mobile-05_description" = "Kurssilla opitaan muuntamaan jo olemassa olevia nettisivuja mobiiliystävällisiksi PWA-sivustoiksi.";
+
+"metropolia-sql-01_name" = "SQL perusteet";
+"metropolia-sql-01_description" = "Opi etsimään tietokannoista SQL:n avulla.";
+
+"metropolia-game-development-01_name" = "Unityn perusteet";
+"metropolia-game-development-01_description" = "Opi Unityn ja C#:n perusteet";
+
+"helsingin-yliopisto-java-basics-01_name" = "Ohjelmoinnin perusteet";
+"helsingin-yliopisto-java-basics-01_description" = "Tällä kurssilla opit algoritmeistä ja olio-ohjelmoinnista Javalla.";
+
+"vaasan-yliopisto-java-basics-01_name" = "Ohjelmoinnin perusteet";
+"vaasan-yliopisto-java-basics-01_description" = "Tällä kurssilla opit kehittämään yksinkertaisia Java-sovelluksia.";
+
+"metropolia-game-development-02_name" = "Unreal Enginen perusteet";
+"metropolia-game-development-02_description" = "Opi C++ ja Unreal Enginen perusteet";
+
+"aaltoyliopisto-c++-01_name" = "C++ ohjelmointi";
+"aaltoyliopisto-c++-01_description" = "Tällä kurssilla tulet tutustumaan C++:aan ja luomaan kokonaisen ohjelman, joka käyttää hyväksi monia C++:n ominaisuuksia.";

@@ -78,6 +78,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == self.tableView{
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SearchRow
+            cell.cont_ref = self
             return cell
         }else{
             let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
@@ -85,6 +86,11 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
              cell.detailTextLabel?.text = "extra information bla bla bla"
             return cell
         }
+    }
+    
+    
+    func appendToSearchString(_ string: String){
+        
     }
 
 }
