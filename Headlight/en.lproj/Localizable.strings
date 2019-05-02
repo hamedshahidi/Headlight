@@ -17,6 +17,27 @@
 "enter_button_text" = "Enter";
 "next_button" = "Next";
 
+// Career paths
+"pick_career_btn" = "Pick a learning path";
+"pick_this_path_btn" = "Pick this path";
+"Front-End Developer" = "Front-End Developer"
+"Back-End Developer" = "Back-End Developer"
+"Full Stack Developer" = "Full Stack Developer"
+"Computer Scientist" = "Computer Scientist"
+"UI Designer" = "UI Designer"
+"Android Developer" = "Android Developer"
+"iOS Developer" = "iOS Developer"
+"Mobile Developer" = "Mobile Developer"
+"Game Developer" = "Game Developer"
+
+// Course view
+"description" = "Description";
+"organized_by" = "Organized by:"
+"starts" = "Starts:"
+"ends" = "Ends:"
+"requires" = "Requires"
+"provides" = "Provides"
+
 // Skills
 "html" = "HTML";
 "css" = "CSS";
