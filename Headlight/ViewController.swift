@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         fetcher.FetchInitialData()
         for i in CoreDataHelper.listAllCourses()
         {
-            print(i.name ?? "")
+            print(i.location)
         }
 
     }
