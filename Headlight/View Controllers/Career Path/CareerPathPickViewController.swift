@@ -24,8 +24,10 @@ class CareerPathPickViewController: UIViewController, UITableViewDataSource, UIT
         tableView.dataSource = self
         tableView.delegate = self
         
-        careerName.text = careerPath?.career.name ?? "Unknown"
-        careerLength.text = String(careerPath?.path.count ?? 0) + " courses"
+        let pathLength = careerPath?.path.count ?? 0
+        let skillCount = careerPath?.gainedSkills.count ?? 0
+        careerName.text = String(pathLength) + (pathLength == 1 ? " course" : " courses")
+        careerLength.text = String(skillCount) + (skillCount == 1 ? " skills" : " skills")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -9,11 +9,24 @@
 import UIKit
 
 class CareerPickerTableViewController: UITableViewController {
+    // Dictionary keys are stored here to maintain ordering
+    var indexList: [String] = [
+        "Web Development",
+        "Mobile Application Development",
+        "Video Game Development",
+        "Other"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = "Select Career"
+        
+        /*
+        for key in CareerData.careerCaregoryDictionary.keys {
+            indexList.append(key)
+        }
+        */
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,21 +37,22 @@ class CareerPickerTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return indexList[section]
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        return indexList.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CareerData.careerList.count
+        return CareerData.careerCaregoryDictionary[indexList[section]]?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "careerListViewCell", for: indexPath)
-        
-        print(CareerData.careerList[indexPath.row].name)
 
-        cell.textLabel?.text = CareerData.careerList[indexPath.row].name
+        cell.textLabel?.text = CareerData.careerCaregoryDictionary[indexList[indexPath.section]]?[indexPath.row].name ?? "Unknown"
 
         return cell
     }
@@ -82,9 +96,10 @@ class CareerPickerTableViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         let viewController = segue.destination as! CareerPathPickViewController
-        let career = CareerData.careerList[tableView.indexPathForSelectedRow?.row ?? 0]
+        let indexPath = tableView.indexPathForSelectedRow!
+        let career = CareerData.careerCaregoryDictionary[indexList[indexPath.section]]?[indexPath.row]
         
-        let careerPath = CareerPathAlgorithm.createCareerPath(career)
+        let careerPath = CareerPathAlgorithm.createCareerPath(career!)
         
         viewController.careerPath = careerPath
     }
