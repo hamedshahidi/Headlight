@@ -9,12 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var fetcher: DataFetcher?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetcher = DataFetcher()
+        fetcher?.FetchInitialData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated);
+        super.viewDidAppear(animated)
         
         let user = CoreDataHelper.getUserData()
         print(user?.name)

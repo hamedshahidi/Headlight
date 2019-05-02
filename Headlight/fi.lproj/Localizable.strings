@@ -20,7 +20,7 @@
 // Career paths
 "pick_career_btn" = "Valitse opintopolku";
 "pick_this_path_btn" = "Valitse polku";
-"courses" = "kurssia"
+"courses" = "kurssia";
 "Front-End Developer" = "Front-End Kehittäjä";
 "Back-End Developer" = "Back-End Kehittäjä";
 "Full Stack Developer" = "Full Stack Kehittäjä";

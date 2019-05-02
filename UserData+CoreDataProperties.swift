@@ -2,7 +2,7 @@
 //  UserData+CoreDataProperties.swift
 //  Headlight
 //
-//  Created by Tuomas Pöyry on 22/04/2019.
+//  Created by Tuomas Pöyry on 02/05/2019.
 //  Copyright © 2019 iSchoolMusical. All rights reserved.
 //
 //

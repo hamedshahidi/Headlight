@@ -18,7 +18,11 @@ class CoreDataHelper {
 
         user.name = name
         
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("Failed to save core data")
+        }
     }
     
     static func addToUsersSkills(skills: [String]) {
@@ -30,7 +34,11 @@ class CoreDataHelper {
             coreUser.skills = convertToCoreDataSkills(combinedSkills)
         }
         
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("Failed to save core data")
+        }
     }
     
     static private func getUserCoreData() -> UserData? {
@@ -53,7 +61,11 @@ class CoreDataHelper {
             managedObjectContext.delete(coreUser)
         }
         
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("Failed to save core data")
+        }
     }
     
     static func getUserData() -> User? {
@@ -86,7 +98,12 @@ class CoreDataHelper {
     // Save a single course
     static func saveCourseData(course: CourseStruct.Course) {
         saveSingleCourseData(course)
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("Failed to save core data")
+        }
     }
     
     // Save multiple courses
@@ -94,7 +111,12 @@ class CoreDataHelper {
         for course in courseList {
             saveSingleCourseData(course)
         }
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("Failed to save core data")
+        }
     }
     
     static private func findCourseCoreDataByID(_ id: String) -> CourseData? {
@@ -161,7 +183,11 @@ class CoreDataHelper {
         
         careerPathData.courseList = NSOrderedSet(array: courseList)
         
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("Failed to save core data")
+        }
     }
     
     static func listAllCareerPaths() -> [CareerPath] {
@@ -205,7 +231,11 @@ class CoreDataHelper {
             managedObjectContext.delete(coreCareerPath)
         }
         
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("Failed to save core data")
+        }
     }
     
     // Use only for development purposes
@@ -218,7 +248,11 @@ class CoreDataHelper {
             }
         }
         
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("Failed to save core data")
+        }
     }
 
     // Convert skills array from Binary Data back to [String]

@@ -19,6 +19,8 @@ class CareerPathPickViewController: UIViewController, UITableViewDataSource, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = careerPath?.career.name
+        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -49,10 +51,12 @@ class CareerPathPickViewController: UIViewController, UITableViewDataSource, UIT
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let viewController = segue.destination as! CourseInfoViewController
-        let course = careerPath?.path[tableView.indexPathForSelectedRow?.row ?? 0]
-        
-        viewController.course = course
+        if segue.destination is CourseInfoViewController {
+            let viewController = segue.destination as! CourseInfoViewController
+            let course = careerPath?.path[tableView.indexPathForSelectedRow?.row ?? 0]
+            
+            viewController.course = course
+        }
     }
 
 }
