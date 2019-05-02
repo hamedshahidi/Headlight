@@ -20,6 +20,7 @@
 // Career paths
 "pick_career_btn" = "Pick a learning path";
 "pick_this_path_btn" = "Pick this path";
+"courses" = "courses";
 "Front-End Developer" = "Front-End Developer";
 "Back-End Developer" = "Back-End Developer";
 "Full Stack Developer" = "Full Stack Developer";
@@ -41,6 +42,11 @@
 // Search
 "searchbar_placeholder" = "Search for a course";
 "cancel_btn" = "Cancel";
+
+// Main view
+"search" = "Search";
+"current_course" = "Current course";
+"courses_left" = "Courses left: ";
 
 // Skills
 "html" = "HTML";
