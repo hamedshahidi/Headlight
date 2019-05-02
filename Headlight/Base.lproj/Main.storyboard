@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <state key="normal" title="Janne"/>
                                         <connections>
-                                            <segue destination="NFB-Mp-k82" kind="show" id="l4e-pJ-orw"/>
+                                            <segue destination="NFB-Mp-k82" kind="showDetail" identifier="frontPageSegue" id="l4e-pJ-orw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydv-bL-7jn">
@@ -46,7 +46,7 @@
                                         <rect key="frame" x="0.0" y="105" width="343" height="30"/>
                                         <state key="normal" title="Mikko"/>
                                         <connections>
-                                            <segue destination="ixS-rw-Qt5" kind="show" id="w1f-MB-VUd"/>
+                                            <segue destination="ixS-rw-Qt5" kind="showDetail" identifier="signUpSegue" id="w1f-MB-VUd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZT-0s-HyW">

@@ -9,19 +9,8 @@
 import Foundation
 import UIKit
 
-class CourseRow : UITableViewCell { }
-    
-extension CourseRow : UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "courseCell", for: indexPath as IndexPath)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
-    }
-    
+class CourseRow : UITableViewCell {
+
 }
 
 extension CourseRow : UICollectionViewDelegateFlowLayout {

@@ -8,19 +8,41 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+    
+    //Profile info
+    @IBOutlet weak var profileName: UILabel!
+    @IBOutlet weak var precentageCoursesDone: UILabel!
+    @IBOutlet weak var profileCoursesLeft: UILabel!
+    
+    // Search bar
+    @IBOutlet weak var searchBar: UISearchBar!
   
+    // Table view
     @IBOutlet weak var tableView: UITableView!
+    
+    var careerPath: CareerPath? = nil
+    
     // Temporar data
-    var coursePaths = ["Career path 1", "Career path 2"]
+    var coursePaths = ["Career path"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.dataSource = self
         tableView.delegate = self
+        
+        searchBar.delegate = self
+        
         // Do any additional setup after loading the view.
+        profileName.text = CoreDataHelper.getUserData()?.name
+        
+        let careerPaths = CoreDataHelper.listAllCareerPaths()
+        if careerPaths.count > 0 {
+            careerPath = careerPaths[0]
+        }
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -32,6 +54,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CourseRow
+
         return cell
     }
     
@@ -43,6 +66,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // Creates titles
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return coursePaths[section]
+    }
+    
+    // Search bar click
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        performSegue(withIdentifier: "searchSegue", sender: self)
+        return false
+    }
+
+    @IBAction func clearCareerPathData(_ sender: Any) {
+        print("Test");
+        CoreDataHelper.clearCareerPathData()
+        CoreDataHelper.clearUserData()
     }
     
     /*

@@ -45,4 +45,14 @@ class CareerPathPickViewController: UIViewController, UITableViewDataSource, UIT
     @IBAction func pickPath(_ sender: Any) {
         CoreDataHelper.saveCareerPath(careerPath: careerPath!)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        let viewController = segue.destination as! CourseInfoViewController
+        let course = careerPath?.path[tableView.indexPathForSelectedRow?.row ?? 0]
+        
+        viewController.course = course
+    }
+
 }
