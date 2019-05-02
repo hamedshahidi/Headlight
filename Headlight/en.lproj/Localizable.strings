@@ -1,0 +1,112 @@
+/* 
+  Localizable.strings
+  Headlight
+
+  Created by iosdev on 01/05/2019.
+  Copyright © 2019 iSchoolMusical. All rights reserved.
+*/
+
+// Errors
+"err_name_creation_title" = "Error";
+"err_name_creation" = "Please enter a name between 1-20 characters.";
+
+// Signup
+"get_started" = "Hello! Lets get started by entering your username.";
+"skill_pick" = "Now let's fill out your skills. Please choose all relevant skills.";
+"name_placeholder_text" = "Username";
+"enter_button_text" = "Enter";
+"next_button" = "Next";
+
+// Skills
+"html" = "HTML";
+"css" = "CSS";
+"js" = "JavaScript";
+"tier-1-physics" = "Basics of Physics";
+"tier-2-physics" = "Advanced Physics";
+"tier-3-physics" = "Additional Advanced Physics";
+"tier-1-mathematics" = "Basic Mathematics";
+"tier-2-mathematics" = "Advanced Mathematics";
+"tier-3-mathematics" = "Additional Advanced Mathematics";
+"basic-unix"  = "UNIX Basics";
+"basic-logism" = "Basics of logism";
+"ionic" = "Ionic";
+"angular" = "Angular";
+"sass" = "SASS";
+"ux-prototyping" = "UX Prototyping";
+"color-theory" = "Color theory";
+"object-oriented-programming" = "Object-oriented programming";
+"data-communications" = "Data Communications";
+"kotlin" = "Kotlin";
+"android-studio" = "Android Studio";
+"java" = "Java";
+"android" = "Android";
+"ios" = "iOS";
+"xcode" = "xCode";
+"swift" = "Swift";
+"pwa" = "Progressive Web Applications";
+"unity" = "Unity";
+"csharp" = "C#";
+"unreal" = "Unreal Engine";
+"c++" = "C++";
+
+// Courses
+"metropolia-web-01_name" = "Web Basics";
+"metropolia-web-01_description" = "Learn basics of web";
+
+"metropolia-physics-01_name" = "Physics 01";
+"metropolia-physics-01_description" = "The introduction course to physics";
+
+"metropolia-physics-02_name" = "Physics 02";
+"metropolia-physics-02_description" = "Deep dive into the world of electromagnetism";
+
+"metropolia-physics-03_name" = "Physics 03";
+"metropolia-physics-03_description" = "Kinetic motion and thermodynamics";
+
+"metropolia-maths-01_name" = "Mathematics 01";
+"metropolia-maths-01_description" = "The introduction course mathematics = basic calculus";
+
+"metropolia-maths-02_name" = "Mathematics 02";
+"metropolia-maths-02_description" = "Intermediate calculus";
+
+"metropolia-maths-03_name" = "Mathematics 03";
+"metropolia-maths-03_description" = "Advanced calculus";
+
+"metropolia-smart-systems-01_name" = "Smart Systems 01";
+"metropolia-smart-systems-01_description" = "First course of smart systems technology = mechanics of computer chips";
+
+"metropolia-smart-systems-02_name" = "Smart Systems 02";
+"metropolia-smart-systems-02_description" = "How to create automated systems = turing machine principles";
+
+"metropolia-mobile-01_name" = "Web Based Mobile Applications";
+"metropolia-mobile-01_description" = "Creating mobile applications with web technologies.";
+
+"metropolia-mobile-02_name" = "Object-Oriented Programming and Datacommunication";
+"metropolia-mobile-02_description" = "Learning the basics of how the internet works & object oriented programming with Java.";
+
+"metropolia-mobile-03_name" = "Mobile Application Development (Android)";
+"metropolia-mobile-03_description" = "Creating native applications for Android.";
+
+"metropolia-mobile-04_name" = "Mobile Application Development (iOS)";
+"metropolia-mobile-04_description" = "Creating native applications for iOS.";
+
+"metropolia-mobile-05_name" = "Converting websites to PWA";
+"metropolia-mobile-05_description" = "Converting existing websites to mobile friendly PWAs.";
+
+"metropolia-sql-01_name" = "Basics of SQL";
+"metropolia-sql-01_description" = "Learn to query a database with SQL";
+
+"metropolia-game-development-01_name" = "Unity Basics";
+"metropolia-game-development-01_description" = "Learn the basics of Unity and C#";
+
+"helsingin-yliopisto-java-basics-01_name" = "The basics of programming";
+"helsingin-yliopisto-java-basics-01_description" = "In this course you will learn about algorithms = object oriented programming and the basics of Java";
+
+"vaasan-yliopisto-java-basics-01_name" = "The basics of programming";
+"vaasan-yliopisto-java-basics-01_description" = "In this course you will learn to design and create basic programs in Java";
+
+"metropolia-game-development-02_name" = "Basics of Unreal";
+"metropolia-game-development-02_description" = "Learn the basics of Unreal and c++";
+
+"aaltoyliopisto-c++-01_name" = "C++ Programming";
+"aaltoyliopisto-c++-01_description" = "In this course you will get familiar with C++ by designing a whole program from scratch that utilises different C++ features";
+

@@ -15,6 +15,9 @@
 		6A36550E226EFF1F009C8FA2 /* CourseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A36550D226EFF1F009C8FA2 /* CourseRow.swift */; };
 		6A48C543226E12BD0079B4A1 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C542226E12BD0079B4A1 /* Structs.swift */; };
 		6A48C545226E12D70079B4A1 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C544226E12D70079B4A1 /* DataFetcher.swift */; };
+		6A48C5482271CAE60079B4A1 /* SearchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C5472271CAE60079B4A1 /* SearchScreenViewController.swift */; };
+		6A48C54A2271DD1E0079B4A1 /* SearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C5492271DD1E0079B4A1 /* SearchRow.swift */; };
+		6A48C54C22783BCD0079B4A1 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C54B22783BCD0079B4A1 /* CollectionViewController.swift */; };
 		6AC3C47C226C887700E3C595 /* SignupNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C47B226C887700E3C595 /* SignupNameViewController.swift */; };
 		6AC3C488226F03C000E3C595 /* SignupSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C487226F03C000E3C595 /* SignupSkillsViewController.swift */; };
 		6AC3C48B226F350700E3C595 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297AD226DBBFF00AA8E8F /* User.swift */; };
@@ -22,6 +25,7 @@
 		6AC3C48E22705FAC00E3C595 /* SkillColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C48D22705FAC00E3C595 /* SkillColor.swift */; };
 		6AC3C4912277227800E3C595 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C4902277227800E3C595 /* Theme.swift */; };
 		6AC3C4932277228D00E3C595 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AC3C4922277228D00E3C595 /* Colors.xcassets */; };
+		6AC3C4962279D5FB00E3C595 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AC3C4982279D5FB00E3C595 /* Localizable.strings */; };
 		9542975F2265C2A700AA8E8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9542975E2265C2A700AA8E8F /* AppDelegate.swift */; };
 		954297612265C2A700AA8E8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297602265C2A700AA8E8F /* ViewController.swift */; };
 		954297642265C2A700AA8E8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954297622265C2A700AA8E8F /* Main.storyboard */; };
@@ -49,6 +53,10 @@
 		954297C1227725AF00AA8E8F /* CareerPickerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297C0227725AF00AA8E8F /* CareerPickerTableViewController.swift */; };
 		954297C3227727DE00AA8E8F /* Career.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297C2227727DE00AA8E8F /* Career.swift */; };
 		954297C5227731BD00AA8E8F /* CareerPathPickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297C4227731BD00AA8E8F /* CareerPathPickViewController.swift */; };
+		954297CA2278310500AA8E8F /* PathData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297C82278310500AA8E8F /* PathData+CoreDataClass.swift */; };
+		954297CB2278310500AA8E8F /* PathData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297C92278310500AA8E8F /* PathData+CoreDataProperties.swift */; };
+		954297CD227840BB00AA8E8F /* CareerPathAlgorithmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297CC227840BB00AA8E8F /* CareerPathAlgorithmTests.swift */; };
+		954297CF227844F700AA8E8F /* CareerPathCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297CE227844F700AA8E8F /* CareerPathCoreDataTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,11 +86,18 @@
 		6A48C4FE2265D6910079B4A1 /* data_template.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data_template.json; sourceTree = "<group>"; };
 		6A48C542226E12BD0079B4A1 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		6A48C544226E12D70079B4A1 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
+		6A48C5472271CAE60079B4A1 /* SearchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewController.swift; sourceTree = "<group>"; };
+		6A48C5492271DD1E0079B4A1 /* SearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRow.swift; sourceTree = "<group>"; };
+		6A48C54B22783BCD0079B4A1 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		6AC3C47B226C887700E3C595 /* SignupNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupNameViewController.swift; sourceTree = "<group>"; };
 		6AC3C487226F03C000E3C595 /* SignupSkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSkillsViewController.swift; sourceTree = "<group>"; };
 		6AC3C48D22705FAC00E3C595 /* SkillColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillColor.swift; sourceTree = "<group>"; };
 		6AC3C4902277227800E3C595 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		6AC3C4922277228D00E3C595 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		6AC3C4972279D5FB00E3C595 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6AC3C4992279D60C00E3C595 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Main.strings; sourceTree = "<group>"; };
+		6AC3C49A2279D60C00E3C595 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6AC3C49B2279D60C00E3C595 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9542975B2265C2A700AA8E8F /* Headlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Headlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9542975E2265C2A700AA8E8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		954297602265C2A700AA8E8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +131,10 @@
 		954297C0227725AF00AA8E8F /* CareerPickerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerPickerTableViewController.swift; sourceTree = "<group>"; };
 		954297C2227727DE00AA8E8F /* Career.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Career.swift; sourceTree = "<group>"; };
 		954297C4227731BD00AA8E8F /* CareerPathPickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerPathPickViewController.swift; sourceTree = "<group>"; };
+		954297C82278310500AA8E8F /* PathData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PathData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		954297C92278310500AA8E8F /* PathData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PathData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		954297CC227840BB00AA8E8F /* CareerPathAlgorithmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerPathAlgorithmTests.swift; sourceTree = "<group>"; };
+		954297CE227844F700AA8E8F /* CareerPathCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerPathCoreDataTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,9 +175,20 @@
 			path = "Main screen";
 			sourceTree = "<group>";
 		};
+		6A48C5462271CAC30079B4A1 /* Search Screen */ = {
+			isa = PBXGroup;
+			children = (
+				6A48C5472271CAE60079B4A1 /* SearchScreenViewController.swift */,
+				6A48C5492271DD1E0079B4A1 /* SearchRow.swift */,
+				6A48C54B22783BCD0079B4A1 /* CollectionViewController.swift */,
+			);
+			path = "Search Screen";
+			sourceTree = "<group>";
+		};
 		6AC3C479226C880100E3C595 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6A48C5462271CAC30079B4A1 /* Search Screen */,
 				954297BD2277257600AA8E8F /* Career Path */,
 				6A365508226EFAC5009C8FA2 /* Main screen */,
 				6AC3C47A226C882B00E3C595 /* Signup */,
@@ -188,6 +218,8 @@
 		954297522265C2A700AA8E8F = {
 			isa = PBXGroup;
 			children = (
+				954297C82278310500AA8E8F /* PathData+CoreDataClass.swift */,
+				954297C92278310500AA8E8F /* PathData+CoreDataProperties.swift */,
 				954297B5226EF29300AA8E8F /* CourseData+CoreDataClass.swift */,
 				954297B6226EF29300AA8E8F /* CourseData+CoreDataProperties.swift */,
 				954297AF226DBC7D00AA8E8F /* UserData+CoreDataClass.swift */,
@@ -230,6 +262,7 @@
 				954297AD226DBBFF00AA8E8F /* User.swift */,
 				6A48C542226E12BD0079B4A1 /* Structs.swift */,
 				6A48C544226E12D70079B4A1 /* DataFetcher.swift */,
+				6AC3C4982279D5FB00E3C595 /* Localizable.strings */,
 			);
 			path = Headlight;
 			sourceTree = "<group>";
@@ -241,6 +274,8 @@
 				954297782265C2A900AA8E8F /* Info.plist */,
 				954297B3226DC3D000AA8E8F /* UserCoreDataTests.swift */,
 				954297B9226EFE2100AA8E8F /* CourseCoreDataTests.swift */,
+				954297CC227840BB00AA8E8F /* CareerPathAlgorithmTests.swift */,
+				954297CE227844F700AA8E8F /* CareerPathCoreDataTests.swift */,
 			);
 			path = HeadlightTests;
 			sourceTree = "<group>";
@@ -362,6 +397,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fi,
 			);
 			mainGroup = 954297522265C2A700AA8E8F;
 			productRefGroup = 9542975C2265C2A700AA8E8F /* Products */;
@@ -385,6 +421,7 @@
 				954297982265C38800AA8E8F /* Elias.storyboard in Resources */,
 				954297962265C37F00AA8E8F /* Janne.storyboard in Resources */,
 				954297692265C2A900AA8E8F /* Assets.xcassets in Resources */,
+				6AC3C4962279D5FB00E3C595 /* Localizable.strings in Resources */,
 				954297942265C37600AA8E8F /* Tuomas.storyboard in Resources */,
 				954297922265C31200AA8E8F /* Mikko.storyboard in Resources */,
 				9542979A2265C39500AA8E8F /* Hamed.storyboard in Resources */,
@@ -415,13 +452,16 @@
 			files = (
 				954297BF2277259400AA8E8F /* CareerPathViewController.swift in Sources */,
 				954297BC227720CC00AA8E8F /* CareerPathAlgorithm.swift in Sources */,
+				954297CA2278310500AA8E8F /* PathData+CoreDataClass.swift in Sources */,
 				9542979E226DB1AC00AA8E8F /* CoreDataHelper.swift in Sources */,
 				6AC3C48E22705FAC00E3C595 /* SkillColor.swift in Sources */,
 				6AC3C488226F03C000E3C595 /* SignupSkillsViewController.swift in Sources */,
 				954297C5227731BD00AA8E8F /* CareerPathPickViewController.swift in Sources */,
+				954297CB2278310500AA8E8F /* PathData+CoreDataProperties.swift in Sources */,
 				6A36550C226EFB23009C8FA2 /* MainViewController.swift in Sources */,
 				6A130CEF2279B5FF007E12BE /* SkillsCell.swift in Sources */,
 				954297672265C2A700AA8E8F /* Headlight.xcdatamodeld in Sources */,
+				6A48C54C22783BCD0079B4A1 /* CollectionViewController.swift in Sources */,
 				6A36550E226EFF1F009C8FA2 /* CourseRow.swift in Sources */,
 				6A130CE522783F3D007E12BE /* CourseCell.swift in Sources */,
 				954297B8226EF29300AA8E8F /* CourseData+CoreDataProperties.swift in Sources */,
@@ -431,11 +471,13 @@
 				6A48C543226E12BD0079B4A1 /* Structs.swift in Sources */,
 				954297C1227725AF00AA8E8F /* CareerPickerTableViewController.swift in Sources */,
 				954297B1226DBC7D00AA8E8F /* UserData+CoreDataClass.swift in Sources */,
+				6A48C5482271CAE60079B4A1 /* SearchScreenViewController.swift in Sources */,
 				954297B7226EF29300AA8E8F /* CourseData+CoreDataClass.swift in Sources */,
 				6A130CF12279C0E1007E12BE /* skillsgained.swift in Sources */,
 				954297A8226DB5C700AA8E8F /* Skills.swift in Sources */,
 				6AC3C4912277227800E3C595 /* Theme.swift in Sources */,
 				954297612265C2A700AA8E8F /* ViewController.swift in Sources */,
+				6A48C54A2271DD1E0079B4A1 /* SearchRow.swift in Sources */,
 				954297B2226DBC7D00AA8E8F /* UserData+CoreDataProperties.swift in Sources */,
 				9542975F2265C2A700AA8E8F /* AppDelegate.swift in Sources */,
 				6AC3C47C226C887700E3C595 /* SignupNameViewController.swift in Sources */,
@@ -450,7 +492,9 @@
 				954297772265C2A900AA8E8F /* HeadlightTests.swift in Sources */,
 				6AC3C48B226F350700E3C595 /* User.swift in Sources */,
 				954297BA226EFE2100AA8E8F /* CourseCoreDataTests.swift in Sources */,
+				954297CD227840BB00AA8E8F /* CareerPathAlgorithmTests.swift in Sources */,
 				954297B4226DC3D000AA8E8F /* UserCoreDataTests.swift in Sources */,
+				954297CF227844F700AA8E8F /* CareerPathCoreDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,10 +523,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6AC3C4982279D5FB00E3C595 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AC3C4972279D5FB00E3C595 /* en */,
+				6AC3C49B2279D60C00E3C595 /* fi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		954297622265C2A700AA8E8F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				954297632265C2A700AA8E8F /* Base */,
+				6AC3C4992279D60C00E3C595 /* fi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -491,6 +545,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9542976B2265C2A900AA8E8F /* Base */,
+				6AC3C49A2279D60C00E3C595 /* fi */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -502,6 +557,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -563,6 +619,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

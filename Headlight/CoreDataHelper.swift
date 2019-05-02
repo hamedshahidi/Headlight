@@ -139,6 +139,81 @@ class CoreDataHelper {
             }
         }
     }
+    
+    static func saveCareerPath(careerPath: CareerPath) {
+        let careerPathData = PathData(context: managedObjectContext)
+        
+        careerPathData.id = UUID()
+        careerPathData.name = careerPath.career.name
+        careerPathData.requiredSkills = self.convertToCoreDataSkills(careerPath.career.requiredSkills)
+        careerPathData.gainedSkills = self.convertToCoreDataSkills(careerPath.gainedSkills)
+        careerPathData.missingSkills = self.convertToCoreDataSkills(careerPath.missingSkills)
+        careerPathData.timeCreated = Date() as NSDate
+        
+        var courseList: [CourseData] = []
+        for course in careerPath.path {
+            if let courseData = self.findCourseCoreDataByID(course.id ?? "") {
+                courseList.append(courseData)
+            }
+        }
+        
+        careerPathData.courseList = NSOrderedSet(array: courseList)
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+    }
+    
+    static func listAllCareerPaths() -> [CareerPath] {
+        let careerPathRequest: NSFetchRequest<PathData> = PathData.fetchRequest()
+        
+        if let list = try? managedObjectContext.fetch(careerPathRequest) {
+            return list.map { careerPath in parseFromCoreDataCareerPath(careerPath) }
+        }
+        
+        return []
+    }
+    
+    static private func findCareerPathCoreDataByID(_ id: UUID) -> PathData? {
+        let careerPathRequest: NSFetchRequest<PathData> = PathData.fetchRequest()
+        careerPathRequest.predicate = NSPredicate(format: "id = %@", id as CVarArg)
+        
+        if let list = try? managedObjectContext.fetch(careerPathRequest) {
+            if list.count <= 0 {
+                return nil
+            }
+            return list[0]
+        }
+        
+        return nil
+    }
+    
+    static func findCareerPathByID(_ id: UUID) -> CareerPath? {
+        let careerPath = findCareerPathCoreDataByID(id)
+        
+        if let coreCareerPath = careerPath {
+            return parseFromCoreDataCareerPath(coreCareerPath)
+        } else {
+            return nil
+        }
+    }
+    
+    static func removeCareerPathByID(_ id: UUID) {
+        let careerPath = findCareerPathCoreDataByID(id)
+        
+        if let coreCareerPath = careerPath {
+            managedObjectContext.delete(coreCareerPath)
+        }
+    }
+    
+    // Use only for development purposes
+    static func clearCareerPathData() {
+        let careerPathRequest: NSFetchRequest<PathData> = PathData.fetchRequest()
+        
+        if let list = try? managedObjectContext.fetch(careerPathRequest) {
+            for careerPath in list {
+                managedObjectContext.delete(careerPath)
+            }
+        }
+    }
 
     // Convert skills array from Binary Data back to [String]
     static private func parseFromCoreDataSkills(_ coreSkills: NSData?) -> [String] {
@@ -196,9 +271,24 @@ class CoreDataHelper {
         }
     }
     
-    // Convert course from Binary Data back to CourseStruct.Course
+    // Convert course from Core Data back to CourseStruct.Course
     static private func parseFromCoreDataCourse(_ coreCourse: CourseData) -> CourseStruct.Course {
         let course = CourseStruct.Course(id: coreCourse.id, name: coreCourse.name, description: coreCourse.desc, location: parseFromCoreDataLocation(coreCourse.location), time: CourseStruct.Time(start: coreCourse.timeStart, end: coreCourse.timeEnd), organization: coreCourse.organization, rating: coreCourse.rating, skills: CourseStruct.Skills(gained: parseFromCoreDataSkills(coreCourse.skillsGained), required: parseFromCoreDataSkills(coreCourse.skillsRequired)))
         return course
+    }
+    
+    // Convert career path from Core Data back to CareerPath
+    static private func parseFromCoreDataCareerPath(_ coreCareerPath: PathData) -> CareerPath {
+        let career = Career(name: coreCareerPath.name ?? "", requiredSkills: self.parseFromCoreDataSkills(coreCareerPath.requiredSkills))
+
+        var path: [CourseStruct.Course] = []
+        for course in Array(coreCareerPath.courseList ?? []) as! [CourseData] {
+            path.append(self.parseFromCoreDataCourse(course))
+        }
+
+        let gainedSkills = self.parseFromCoreDataSkills(coreCareerPath.gainedSkills)
+        let missingSkills = self.parseFromCoreDataSkills(coreCareerPath.missingSkills)
+
+        return CareerPath(id: coreCareerPath.id, career: career, path: path, missingSkills: missingSkills, gainedSkills: gainedSkills)
     }
 }

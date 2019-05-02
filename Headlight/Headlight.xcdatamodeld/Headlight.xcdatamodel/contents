@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18C54" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D42" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Course" representedClassName=".CourseData" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,6 +12,15 @@
         <attribute name="timeEnd" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timeStart" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Path" representedClassName=".PathData" syncable="YES">
+        <attribute name="gainedSkills" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="missingSkills" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="requiredSkills" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="timeCreated" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="courseList" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Course" syncable="YES"/>
+    </entity>
     <entity name="User" representedClassName=".UserData" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="skills" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -19,5 +28,6 @@
     <elements>
         <element name="Course" positionX="-143.16796875" positionY="-169.7265625" width="128" height="193"/>
         <element name="User" positionX="29.0546875" positionY="-192.66015625" width="128" height="75"/>
+        <element name="Path" positionX="67.6953125" positionY="-77.1171875" width="128" height="148"/>
     </elements>
 </model>
