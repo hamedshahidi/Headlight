@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         
         for i in courseList
         {
-            print(i.name ?? "")
+            print(i.location)
         }
         */
         

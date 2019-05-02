@@ -14,6 +14,7 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
     var name = ""
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var guideText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,8 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
         nextBtn.layer.cornerRadius = 4
         tableView.dataSource = self
         tableView.delegate = self
+        guideText.text = NSLocalizedString("skill_pick", comment: "")
+        nextBtn.setTitle(NSLocalizedString("next_button", comment: ""), for: .normal)
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -35,7 +38,7 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
     // Load skill names to cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "skillCell", for: indexPath)
-        cell.textLabel?.text = Array(skills.values)[indexPath.row]
+        cell.textLabel?.text = NSLocalizedString(Array(skills.keys)[indexPath.row], comment: "skill name")
         
         // Check accessory type while reusing cells
         if selectedSkills[Array(skills.keys)[indexPath.row]] != nil {

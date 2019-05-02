@@ -13,6 +13,7 @@ class SignupNameViewController: UIViewController {
     @IBOutlet weak var logoView: UIImageView!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var enterButton: UIButton!
+    @IBOutlet weak var welcomeText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,9 @@ class SignupNameViewController: UIViewController {
         enterButton.backgroundColor = Theme.tint
         enterButton.tintColor = Theme.background
         enterButton.layer.cornerRadius = 4
+        welcomeText.text = NSLocalizedString("get_started", comment: "")
+        nameField.placeholder = NSLocalizedString("name_placeholder_text", comment: "")
+        enterButton.setTitle(NSLocalizedString("enter_button_text", comment: ""), for: .normal)
     }
     
     // MARK: - Navigation
@@ -29,12 +33,12 @@ class SignupNameViewController: UIViewController {
         if nameField?.text?.count ?? 0 > 0 && nameField?.text?.count ?? 0 < 21 {
             skillView.name = nameField?.text ?? ""
         } else {
-            createAlert(errorMsg: "Please enter a name between 1-20 characters.")
+            createAlert(errorMsg: NSLocalizedString("err_name_creation", comment: ""))
         }
     }
  
     func createAlert(errorMsg: String) {
-        let alert = UIAlertController(title: "Error", message: errorMsg, preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("err_name_creation_title", comment: ""), message: errorMsg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
             NSLog("The \"OK\" alert occured.")
         }))
