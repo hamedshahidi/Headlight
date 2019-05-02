@@ -74,6 +74,7 @@ extension CourseInfoViewController
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         if indexPath.row == 0 {
             
             return 80
@@ -82,12 +83,14 @@ extension CourseInfoViewController
             
             return 160
             
-        } else if indexPath.row == 2 {
-            
+        }
+        else if indexPath.row == 2 {
+
             return 120
-            
-        } else if indexPath.row == 3 {
-            
+
+        }
+        else if indexPath.row == 3 {
+
             return 240
         }
         
