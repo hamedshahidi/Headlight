@@ -9,10 +9,18 @@
 import UIKit
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    //Profile info
+    @IBOutlet weak var profileName: UILabel!
+    @IBOutlet weak var precentageCoursesDone: UILabel!
+    @IBOutlet weak var profileCoursesLeft: UILabel!
+    
   
+    //Table view
     @IBOutlet weak var tableView: UITableView!
+    
     // Temporar data
-    var coursePaths = ["Career path 1", "Career path 2"]
+    var coursePaths = ["Career path"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +28,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.delegate = self
         // Do any additional setup after loading the view.
+        profileName.text = CoreDataHelper.getUserData()?.name
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1

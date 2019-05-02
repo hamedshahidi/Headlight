@@ -8,14 +8,49 @@
 
 import UIKit
 
-class skillsgained: UICollectionView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+class skillsgained: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
     }
-    */
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var courses: [CourseStruct.Course]
+        courses = CoreDataHelper.listAllCourses()
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "skills", for: indexPath as IndexPath) as? SkillsCell
+            else { fatalError("cell not working")}
+        
+        print("test")
+        
+        cell.skills.text  = "n"
+        cell.backgroundColor = Theme.accent
+        
+        return cell
+    }
+    
 
+    /*func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        var courses: [CourseStruct.Course]
+        courses = CoreDataHelper.listAllCourses()
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "skills", for: indexPath as IndexPath) as? SkillsCell
+            else { fatalError("cell not working")}
+        
+        cell.skills.text  = "n"
+        cell.backgroundColor = Theme.accent
+        
+        return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        var courses: [CourseStruct.Course]
+        courses = CoreDataHelper.listAllCourses()
+        
+        return courses.count
+    }*/
+    
 }

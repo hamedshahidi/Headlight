@@ -9,17 +9,33 @@
 import Foundation
 import UIKit
 
-class CourseRow : UITableViewCell { }
+class CourseRow : UITableViewCell {
+}
     
 extension CourseRow : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "courseCell", for: indexPath as IndexPath)
+        
+        var courses: [CourseStruct.Course]
+        courses = CoreDataHelper.listAllCourses()
+        
+       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "courseCell", for: indexPath as IndexPath) as? CourseCell
+        else { fatalError("cell not working")}
+        
+        
+        cell.courseName.text = courses[indexPath.row].name
+        cell.courseInfo.text = courses[indexPath.row].description
+        
         return cell
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        
+        var courses: [CourseStruct.Course]
+        courses = CoreDataHelper.listAllCourses()
+        
+        return courses.count
     }
     
 }

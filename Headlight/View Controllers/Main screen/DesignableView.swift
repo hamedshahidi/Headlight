@@ -17,6 +17,10 @@ class DesignableImageView: UIImageView {
 }
 
 @IBDesignable
+class DesignableLabel: UILabel {
+}
+
+@IBDesignable
 class DesignableCollectionViewCell: UICollectionViewCell{
 }
 

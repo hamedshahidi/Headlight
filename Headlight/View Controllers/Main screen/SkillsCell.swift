@@ -9,5 +9,5 @@
 import UIKit
 
 class SkillsCell: UICollectionViewCell {
-    
+    @IBOutlet weak var skills: UILabel!
 }

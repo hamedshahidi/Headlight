@@ -8,6 +8,7 @@
 
 import UIKit
 
-class CourseCell: UICollectionViewCell {
-    
+class CourseCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
+    @IBOutlet weak var courseName: UILabel!
+    @IBOutlet weak var courseInfo: UILabel!
 }
