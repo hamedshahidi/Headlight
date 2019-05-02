@@ -11,4 +11,8 @@ import UIKit
 class CourseCell: UICollectionViewCell {
     @IBOutlet weak var courseName: UILabel!
     @IBOutlet weak var courseInfo: UILabel!
+    
+    override func prepareForReuse() {
+        
+    }
 }
