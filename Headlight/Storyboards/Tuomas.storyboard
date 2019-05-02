@@ -166,6 +166,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <segue destination="4z2-PJ-a90" kind="show" id="2HB-4s-wtZ"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -211,6 +214,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aVu-Ml-wZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3546" y="106"/>
+        </scene>
+        <!--Hamed-->
+        <scene sceneID="M96-q7-zHu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Hamed" id="4z2-PJ-a90" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yHK-Co-4Jg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3622" y="173"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8QO-JW-9Kz">

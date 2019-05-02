@@ -52,6 +52,8 @@ class CoreDataHelper {
         if let coreUser = user {
             managedObjectContext.delete(coreUser)
         }
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
     static func getUserData() -> User? {
@@ -202,6 +204,8 @@ class CoreDataHelper {
         if let coreCareerPath = careerPath {
             managedObjectContext.delete(coreCareerPath)
         }
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
     // Use only for development purposes
@@ -213,6 +217,8 @@ class CoreDataHelper {
                 managedObjectContext.delete(careerPath)
             }
         }
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
 
     // Convert skills array from Binary Data back to [String]

@@ -20,7 +20,7 @@ class CourseInfoViewController: UITableViewController {
         tableView.separatorColor = UIColor.clear
         
         // for development only
-        course = CoreDataHelper.findCourseByID("metropolia-mobile-05")
+        // course = CoreDataHelper.findCourseByID("metropolia-mobile-05")
     }
 }
 
