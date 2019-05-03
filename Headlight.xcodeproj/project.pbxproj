@@ -17,7 +17,7 @@
 		6A48C545226E12D70079B4A1 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C544226E12D70079B4A1 /* DataFetcher.swift */; };
 		6A48C5482271CAE60079B4A1 /* SearchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C5472271CAE60079B4A1 /* SearchScreenViewController.swift */; };
 		6A48C54A2271DD1E0079B4A1 /* SearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C5492271DD1E0079B4A1 /* SearchRow.swift */; };
-		6A48C54C22783BCD0079B4A1 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C54B22783BCD0079B4A1 /* CollectionViewController.swift */; };
+		6A48C54E227C75B20079B4A1 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C54D227C75B20079B4A1 /* SearchResultCell.swift */; };
 		6A8DBC092270A62000613A5F /* CourseInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC082270A62000613A5F /* CourseInfoViewController.swift */; };
 		6A8DBC0C2270B91700613A5F /* courseInfoHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC0A2270B91700613A5F /* courseInfoHeaderCell.swift */; };
 		6A8DBC102270BB8D00613A5F /* courseDescAndMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC0E2270BB8D00613A5F /* courseDescAndMapCell.swift */; };
@@ -95,7 +95,7 @@
 		6A48C544226E12D70079B4A1 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		6A48C5472271CAE60079B4A1 /* SearchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewController.swift; sourceTree = "<group>"; };
 		6A48C5492271DD1E0079B4A1 /* SearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRow.swift; sourceTree = "<group>"; };
-		6A48C54B22783BCD0079B4A1 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		6A48C54D227C75B20079B4A1 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		6A8DBC082270A62000613A5F /* CourseInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfoViewController.swift; sourceTree = "<group>"; };
 		6A8DBC0A2270B91700613A5F /* courseInfoHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseInfoHeaderCell.swift; sourceTree = "<group>"; };
 		6A8DBC0E2270BB8D00613A5F /* courseDescAndMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseDescAndMapCell.swift; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 			children = (
 				6A48C5472271CAE60079B4A1 /* SearchScreenViewController.swift */,
 				6A48C5492271DD1E0079B4A1 /* SearchRow.swift */,
-				6A48C54B22783BCD0079B4A1 /* CollectionViewController.swift */,
+				6A48C54D227C75B20079B4A1 /* SearchResultCell.swift */,
 			);
 			path = "Search Screen";
 			sourceTree = "<group>";
@@ -491,6 +491,7 @@
 				954297BC227720CC00AA8E8F /* CareerPathAlgorithm.swift in Sources */,
 				954297CA2278310500AA8E8F /* PathData+CoreDataClass.swift in Sources */,
 				9542979E226DB1AC00AA8E8F /* CoreDataHelper.swift in Sources */,
+				6A48C54E227C75B20079B4A1 /* SearchResultCell.swift in Sources */,
 				6A8DBC0C2270B91700613A5F /* courseInfoHeaderCell.swift in Sources */,
 				6AC3C48E22705FAC00E3C595 /* SkillColor.swift in Sources */,
 				6AC3C488226F03C000E3C595 /* SignupSkillsViewController.swift in Sources */,
@@ -502,7 +503,6 @@
 				954297672265C2A700AA8E8F /* Headlight.xcdatamodeld in Sources */,
 				6A8DBC142270F3CE00613A5F /* courseProviderAndTimeCell.swift in Sources */,
 				6A8DBC102270BB8D00613A5F /* courseDescAndMapCell.swift in Sources */,
-				6A48C54C22783BCD0079B4A1 /* CollectionViewController.swift in Sources */,
 				6A36550E226EFF1F009C8FA2 /* CourseRow.swift in Sources */,
 				6A130CE522783F3D007E12BE /* CourseCell.swift in Sources */,
 				6A8DBC1C2271021F00613A5F /* courseSkillsCell.swift in Sources */,
