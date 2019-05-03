@@ -48,8 +48,6 @@ class SearchRow : UITableViewCell, UICollectionViewDataSource, UICollectionViewD
         let hardCodedPadding:CGFloat = 5
         let itemWidth = (collectionView.bounds.width / itemsPerRow) - hardCodedPadding
         let itemHeight = 100 - (2 * hardCodedPadding)
-        print(itemWidth)
-        print(itemHeight)
         return CGSize(width: itemWidth, height: itemHeight)
     }
     

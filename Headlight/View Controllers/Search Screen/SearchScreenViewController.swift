@@ -146,7 +146,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     func updateResultTableViewData(){
         self.resultTableView.reloadData()
-        print("data reloaded..")
+      //  print("data reloaded..")
     }
     
     func clearSearchData(){
@@ -168,7 +168,7 @@ extension SearchViewController: UISearchBarDelegate{
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("typing to searchbar")
+    //    print("typing to searchbar")
         self.appendToSearchString(searchText.lowercased())
     }
 }
