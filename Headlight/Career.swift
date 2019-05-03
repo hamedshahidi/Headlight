@@ -49,4 +49,24 @@ class CareerData {
         CareerData.mobileDeveloper,
         CareerData.gameDeveloper
     ]
+    
+    static let careerCaregoryDictionary = [
+        "Web Development": [
+            CareerData.frontEndDeveloper,
+            CareerData.backendDeveloper,
+            CareerData.fullStackDeveloper,
+            CareerData.uiDesigner,
+        ],
+        "Mobile Application Development": [
+            CareerData.androidDeveloper,
+            CareerData.iOSDeveloper,
+            CareerData.mobileDeveloper,
+        ],
+        "Video Game Development": [
+            CareerData.gameDeveloper
+        ],
+        "Other": [
+            CareerData.computerScientist,
+        ]
+    ]
 }

@@ -9,15 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var fetcher: DataFetcher?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetcher = DataFetcher()
+        fetcher?.FetchInitialData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated);
+        super.viewDidAppear(animated)
         
         let user = CoreDataHelper.getUserData()
-        print(user?.name)
         if user != nil && user?.name.count ?? 0 > 0 {
             performSegue(withIdentifier: "frontPageSegue", sender: self)
         } else {

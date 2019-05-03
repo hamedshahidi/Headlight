@@ -9,6 +9,8 @@
 import UIKit
 
 class CourseCell: UICollectionViewCell {
+    var course: CourseStruct.Course? = nil
+
     @IBOutlet weak var courseName: UILabel!
     @IBOutlet weak var courseInfo: UILabel!
     

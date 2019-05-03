@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     
     //Profile info
     @IBOutlet weak var profileName: UILabel!
@@ -22,17 +22,17 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     
     var careerPath: CareerPath? = nil
-    
-    // Temporar data
-    var coursePaths = ["Career path"]
+    var selectedCourse: CourseStruct.Course? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.dataSource = self
-        tableView.delegate = self
         
+        self.navigationItem.title = "Cool title"
+
         searchBar.delegate = self
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         // Do any additional setup after loading the view.
         profileName.text = CoreDataHelper.getUserData()?.name
@@ -40,21 +40,37 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let careerPaths = CoreDataHelper.listAllCareerPaths()
         if careerPaths.count > 0 {
             careerPath = careerPaths[0]
+            tableView.reloadData()
+        }
+    }
+
+    // Search bar click
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        performSegue(withIdentifier: "searchSegue", sender: self)
+        return false
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if careerPath == nil {
+            return 0
+        } else {
+            return 1
         }
     }
     
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return coursePaths.count
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CourseRow
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "careerTableCell") as! CourseRow
+        
+        print("cellForRowAt")
+        
+        cell.collectionView.delegate = self
+        cell.collectionView.dataSource = self
+        cell.collectionView.reloadData()
+        
         return cell
     }
     
@@ -65,29 +81,56 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // Creates titles
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return coursePaths[section]
+        return "Career path"
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if careerPath == nil {
+            return 0
+        } else {
+            return careerPath?.path.count ?? 0
+        }
     }
     
-    // Search bar click
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        performSegue(withIdentifier: "searchSegue", sender: self)
-        return false
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "courseCell", for: indexPath as IndexPath) as? CourseCell
+            else { fatalError("cell not working")}
+        
+        print("Collection cell")
+        
+        let course = careerPath?.path[indexPath.row]
+        
+        cell.course = course
+        cell.courseName.text = course?.name ?? "Unknown"
+        cell.courseInfo.text = course?.description ?? ""
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemsPerRow:CGFloat = 1.3
+        let hardCodedPadding:CGFloat = 5
+        let itemWidth = (collectionView.bounds.width / itemsPerRow) - hardCodedPadding
+        let itemHeight = collectionView.bounds.height - (2 * hardCodedPadding)
+        return CGSize(width: itemWidth, height: itemHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedCourse = (collectionView.cellForItem(at: indexPath) as! CourseCell).course
+        performSegue(withIdentifier: "courseInfoSegue", sender: self)
     }
 
     @IBAction func clearCareerPathData(_ sender: Any) {
-        print("Test");
         CoreDataHelper.clearCareerPathData()
         CoreDataHelper.clearUserData()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.destination is CourseInfoViewController {
+            let viewController = segue.destination as? CourseInfoViewController
+            viewController?.course = selectedCourse
+        }
     }
-    */
-
 }
