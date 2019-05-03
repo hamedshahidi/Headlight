@@ -88,10 +88,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         if tableView == self.resultTableView{
-            // the clicked course data is available as  searchResultData?[indexPath.row]
-            // how to send that to instantiate a new course page?
-            
-           
+           performSegue(withIdentifier: "courseSegue", sender: self)
         }
     }
     

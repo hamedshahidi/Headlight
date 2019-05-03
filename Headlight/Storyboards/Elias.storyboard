@@ -131,11 +131,20 @@
                         <outlet property="resultTableView" destination="etl-rf-BZ0" id="Io4-hx-FEH"/>
                         <outlet property="searchBar" destination="S5v-Rz-SEB" id="eMB-db-Lpt"/>
                         <outlet property="tableView" destination="Y6p-cA-4Qq" id="HGp-x2-WX5"/>
+                        <segue destination="Gkc-zp-fsE" kind="show" identifier="courseSegue" id="Do2-l0-0HY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hcs-b5-bE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="64.799999999999997" y="108.39580209895054"/>
+        </scene>
+        <!--Hamed-->
+        <scene sceneID="jHW-Lo-8Hq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Hamed" id="Gkc-zp-fsE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rNI-kv-Ozz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="833" y="-18"/>
         </scene>
     </scenes>
     <resources>
