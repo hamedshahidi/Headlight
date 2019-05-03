@@ -22,9 +22,9 @@ class CareerPathAlgorithm {
     }
     
     // Sort the courses in the order they need to be done
-    static internal func orderCourseListBasedOnRequirements(_ list: [CourseStruct.Course], _ missingSkills: [String]) -> [CourseStruct.Course] {
+    static internal func orderCourseListBasedOnRequirements(_ list: [CourseStruct.Course], _ existingSkills: [String], _ missingSkills: [String]) -> [CourseStruct.Course] {
         var sortedPath: [CourseStruct.Course] = []
-        var gainedSkills: [String] = missingSkills
+        var gainedSkills: [String] = Array(Set(missingSkills + existingSkills))
         repeat {
             for course in list {
                 if sortedPath.contains(where: { x in x.id == course.id }) { continue }
@@ -38,8 +38,8 @@ class CareerPathAlgorithm {
         return sortedPath
     }
     
-    static private func combineIntoCoursePath(_ coursePathTree: CareerPath) -> CareerPath {
-        let sortedPath = orderCourseListBasedOnRequirements(coursePathTree.path, coursePathTree.missingSkills)
+    static private func combineIntoCoursePath(_ coursePathTree: CareerPath, _ existingSkills: [String]) -> CareerPath {
+        let sortedPath = orderCourseListBasedOnRequirements(coursePathTree.path, existingSkills, coursePathTree.missingSkills)
         
         return CareerPath(id: coursePathTree.id, career: coursePathTree.career, path: sortedPath, missingSkills: coursePathTree.missingSkills, gainedSkills: coursePathTree.missingSkills)
     }
@@ -132,7 +132,7 @@ class CareerPathAlgorithm {
         
         let path = createCoursePathTree(career, courseList, career.requiredSkills, user, nil)
     
-        let finalPath = combineIntoCoursePath(path)
+        let finalPath = combineIntoCoursePath(path, user.skills)
         for i in finalPath.path {
             print(i.name)
         }

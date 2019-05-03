@@ -13,12 +13,20 @@ import CoreData
 class CoreDataHelper {
     static private let managedObjectContext = AppDelegate.viewContext
 
+    static private func save() {
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("Failed to save core data \(error).")
+        }
+    }
+    
     static func saveUserData(name: String) {
         let user = getUserCoreData() ?? UserData(context: managedObjectContext)
 
         user.name = name
         
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        self.save()
     }
     
     static func addToUsersSkills(skills: [String]) {
@@ -30,7 +38,7 @@ class CoreDataHelper {
             coreUser.skills = convertToCoreDataSkills(combinedSkills)
         }
         
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        self.save()
     }
     
     static private func getUserCoreData() -> UserData? {
@@ -52,6 +60,8 @@ class CoreDataHelper {
         if let coreUser = user {
             managedObjectContext.delete(coreUser)
         }
+        
+        self.save()
     }
     
     static func getUserData() -> User? {
@@ -84,7 +94,7 @@ class CoreDataHelper {
     // Save a single course
     static func saveCourseData(course: CourseStruct.Course) {
         saveSingleCourseData(course)
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        self.save()
     }
     
     // Save multiple courses
@@ -92,7 +102,7 @@ class CoreDataHelper {
         for course in courseList {
             saveSingleCourseData(course)
         }
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        self.save()
     }
     
     static private func findCourseCoreDataByID(_ id: String) -> CourseData? {
@@ -138,6 +148,8 @@ class CoreDataHelper {
                 managedObjectContext.delete(course)
             }
         }
+        
+        self.save()
     }
     
     static func saveCareerPath(careerPath: CareerPath) {
@@ -159,7 +171,7 @@ class CoreDataHelper {
         
         careerPathData.courseList = NSOrderedSet(array: courseList)
         
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        self.save()
     }
     
     static func listAllCareerPaths() -> [CareerPath] {
@@ -196,12 +208,20 @@ class CoreDataHelper {
         }
     }
     
-    static func removeCareerPathByID(_ id: UUID) {
+    static private func removeCareerPathCoreByID(_ id: UUID) {
         let careerPath = findCareerPathCoreDataByID(id)
         
         if let coreCareerPath = careerPath {
+            for course in coreCareerPath.courseList ?? [] {
+                (course as! CourseData).careerPaths?.removeFromCourseList(course as! CourseData)
+            }
             managedObjectContext.delete(coreCareerPath)
         }
+    }
+    
+    static func removeCareerPathByID(_ id: UUID) {
+        removeCareerPathCoreByID(id)
+        self.save()
     }
     
     // Use only for development purposes
@@ -210,9 +230,11 @@ class CoreDataHelper {
         
         if let list = try? managedObjectContext.fetch(careerPathRequest) {
             for careerPath in list {
-                managedObjectContext.delete(careerPath)
+                removeCareerPathCoreByID(careerPath.id!)
             }
         }
+        
+        self.save()
     }
 
     // Convert skills array from Binary Data back to [String]

@@ -2,7 +2,7 @@
 //  CourseData+CoreDataProperties.swift
 //  Headlight
 //
-//  Created by Tuomas Pöyry on 30/04/2019.
+//  Created by Tuomas Pöyry on 02/05/2019.
 //  Copyright © 2019 iSchoolMusical. All rights reserved.
 //
 //
@@ -27,5 +27,6 @@ extension CourseData {
     @NSManaged public var skillsRequired: NSData?
     @NSManaged public var timeEnd: String?
     @NSManaged public var timeStart: String?
+    @NSManaged public var careerPaths: PathData?
 
 }

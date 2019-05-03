@@ -126,6 +126,7 @@
                                         <state key="normal" title="Next"/>
                                         <connections>
                                             <action selector="nextButton:" destination="mGD-DG-mLh" eventType="touchUpInside" id="Hhi-RR-zuQ"/>
+                                            <segue destination="j7d-6Z-iD8" kind="showDetail" id="e2m-vp-561"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBF-fO-TEL">
@@ -164,6 +165,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K1t-1w-oK4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2589.5999999999999" y="442.12893553223392"/>
+        </scene>
+        <!--Tuomas-->
+        <scene sceneID="Nrp-Vx-KXq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tuomas" id="j7d-6Z-iD8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6vM-sR-BkK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3467" y="441"/>
         </scene>
     </scenes>
     <resources>
