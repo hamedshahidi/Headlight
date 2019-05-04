@@ -143,7 +143,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bVl-Ir-90V">
                                 <rect key="frame" x="16" y="36" width="343" height="615"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyi-Xv-5xv">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your skills" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyi-Xv-5xv">
                                         <rect key="frame" x="87.5" y="0.0" width="168.5" height="43"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                         <nil key="textColor"/>
@@ -162,7 +162,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YN7-cl-shO">
-                                        <rect key="frame" x="0.0" y="125" width="343" height="371.5"/>
+                                        <rect key="frame" x="0.0" y="125" width="343" height="438"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
@@ -196,7 +196,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZzN-cZ-4yU">
-                                        <rect key="frame" x="0.0" y="504.5" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="571" width="343" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="b3R-E2-RL6"/>
                                         </constraints>
@@ -205,13 +205,6 @@
                                         <connections>
                                             <action selector="nextButton:" destination="mGD-DG-mLh" eventType="touchUpInside" id="Hhi-RR-zuQ"/>
                                             <segue destination="j7d-6Z-iD8" kind="showDetail" id="e2m-vp-561"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBF-fO-TEL">
-                                        <rect key="frame" x="119" y="556.5" width="105" height="58.5"/>
-                                        <state key="normal" title="Clear user data"/>
-                                        <connections>
-                                            <action selector="clearUserData:" destination="mGD-DG-mLh" eventType="touchUpInside" id="Ggf-Qh-okA"/>
                                         </connections>
                                     </button>
                                 </subviews>
