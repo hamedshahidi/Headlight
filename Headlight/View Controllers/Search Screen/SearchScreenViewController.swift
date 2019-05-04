@@ -34,7 +34,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         self.resultTableView.dataSource = self
         self.resultTableView.delegate = self
         self.searchResultData = []
-        course_data = CoreDataHelper.listAllCourses()
+        self.course_data = CoreDataHelper.listAllCourses()
     }
     
     
@@ -116,8 +116,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     func searchFunction(_ searchString: String){
         self.clearSearchData()
-        self.searchResultData =  CoreDataHelper.listAllCourses().filter{
- 
+        self.searchResultData =  course_data?.filter{
+            
             if (($0.name ?? "").lowercased()).contains(searchString){
                 return true
             }
