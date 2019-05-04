@@ -22,9 +22,9 @@ class CareerPathAlgorithm {
     }
     
     // Sort the courses in the order they need to be done
-    static internal func orderCourseListBasedOnRequirements(_ list: [CourseStruct.Course], _ missingSkills: [String]) -> [CourseStruct.Course] {
+    static internal func orderCourseListBasedOnRequirements(_ list: [CourseStruct.Course], _ existingSkills: [String], _ missingSkills: [String]) -> [CourseStruct.Course] {
         var sortedPath: [CourseStruct.Course] = []
-        var gainedSkills: [String] = missingSkills
+        var gainedSkills: [String] = Array(Set(missingSkills + existingSkills))
         repeat {
             for course in list {
                 if sortedPath.contains(where: { x in x.id == course.id }) { continue }
@@ -38,10 +38,10 @@ class CareerPathAlgorithm {
         return sortedPath
     }
     
-    static private func combineIntoCoursePath(_ coursePathTree: CareerPath) -> CareerPath {
-        let sortedPath = orderCourseListBasedOnRequirements(coursePathTree.path, coursePathTree.missingSkills)
+    static private func combineIntoCoursePath(_ coursePathTree: CareerPath, _ existingSkills: [String]) -> CareerPath {
+        let sortedPath = orderCourseListBasedOnRequirements(coursePathTree.path, existingSkills, coursePathTree.missingSkills)
         
-        return CareerPath(id: coursePathTree.id, career: coursePathTree.career, path: sortedPath, missingSkills: coursePathTree.missingSkills, gainedSkills: coursePathTree.missingSkills)
+        return CareerPath(id: coursePathTree.id, career: coursePathTree.career, path: sortedPath, missingSkills: coursePathTree.missingSkills, gainedSkills: coursePathTree.gainedSkills)
     }
     
     static private func createCoursePathTree(_ career: Career, _ courseList: [CourseStruct.Course], _ skillList: [String], _ user: User, _ path: CareerPath?) -> CareerPath {
@@ -132,11 +132,31 @@ class CareerPathAlgorithm {
         
         let path = createCoursePathTree(career, courseList, career.requiredSkills, user, nil)
     
-        let finalPath = combineIntoCoursePath(path)
+        let finalPath = combineIntoCoursePath(path, user.skills)
         for i in finalPath.path {
             print(i.name)
         }
         
         return finalPath;
+    }
+    
+    static func careerPathWithSelfStudy(_ careerPath: CareerPath) -> CareerPath {
+        let missingSkills = careerPath.missingSkills
+        var path: [CourseStruct.Course] = []
+        
+        var usedSkills: [String] = []
+        for course in careerPath.path {
+            let requiredSkills = course.skills?.required ?? []
+            let neededSkills = requiredSkills.filter { x in missingSkills.contains(x) && !usedSkills.contains(x) }
+            if neededSkills.count > 0 {
+                for skill in neededSkills {
+                    usedSkills.append(skill)
+                    path.append(CourseStruct.Course(id: "self-study", name: skills[skill], description: nil, location: nil, time: nil, organization: "Self Study", rating: nil, skills: nil ))
+                }
+            }
+            path.append(course)
+        }
+        
+        return CareerPath(id: careerPath.id, career: careerPath.career, path: path, missingSkills: missingSkills, gainedSkills: careerPath.gainedSkills)
     }
 }

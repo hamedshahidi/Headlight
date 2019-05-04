@@ -33,7 +33,7 @@ class CareerPathAlgorithmTests: XCTestCase {
     }
     
     func testCourseOrdering() {
-        let list = CareerPathAlgorithm.orderCourseListBasedOnRequirements(courseList, ["swift", "c++"])
+        let list = CareerPathAlgorithm.orderCourseListBasedOnRequirements(courseList, user.skills, ["swift", "c++"])
         
         XCTAssert(list[0].id == "test-1")
         XCTAssert(list[1].id == "test-3")

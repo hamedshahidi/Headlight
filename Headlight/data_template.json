@@ -30,7 +30,8 @@
       "unity",
       "csharp",
       "unreal",
-      "c++"
+      "c++",
+      "sql"
    ],
    "courses": [
       {
@@ -265,7 +266,8 @@
             "required": [
                "html",
                "css",
-               "javascript"
+               "js",
+               "sql"
             ]
          }
       },
@@ -290,7 +292,7 @@
                "java"
             ],
             "required": [
-               "javascript"
+               "js"
             ]
          }
       },
@@ -312,10 +314,10 @@
             "gained": [
                "android",
                "kotlin",
-               "android-studio",
-               "java"
+               "android-studio"
             ],
             "required": [
+               "java",
                "object-oriented-programming",
                "data-communications"
             ]
@@ -369,7 +371,7 @@
                "sass"
             ],
             "required": [
-               "javascript",
+               "js",
                "html",
                "css"
             ]
@@ -393,7 +395,9 @@
               "gained": [
                   "sql"
               ],
-              "required": []
+              "required": [
+                  "tier-2-mathematics"
+              ]
           }
       },
       {
@@ -412,10 +416,11 @@
           "rating": 4.0,
           "skills": {
               "gained": [
-                  "csharp",
                   "unity"
               ],
-              "required": []
+              "required": [
+                  "csharp"
+              ]
           }
       },
       {
@@ -477,10 +482,11 @@
           "rating": 3.5,
           "skills": {
               "gained": [
-                  "unreal",
-                  "c++"
+                  "unreal"
               ],
-              "required": []
+              "required": [
+                  "c++"
+              ]
           }
       },
       {

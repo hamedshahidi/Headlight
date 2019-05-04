@@ -2,7 +2,7 @@
 //  PathData+CoreDataProperties.swift
 //  Headlight
 //
-//  Created by Tuomas Pöyry on 30/04/2019.
+//  Created by Tuomas Pöyry on 02/05/2019.
 //  Copyright © 2019 iSchoolMusical. All rights reserved.
 //
 //
@@ -17,12 +17,12 @@ extension PathData {
         return NSFetchRequest<PathData>(entityName: "Path")
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var timeCreated: NSDate?
-    @NSManaged public var id: UUID?
-    @NSManaged public var requiredSkills: NSData?
     @NSManaged public var gainedSkills: NSData?
+    @NSManaged public var id: UUID?
     @NSManaged public var missingSkills: NSData?
+    @NSManaged public var name: String?
+    @NSManaged public var requiredSkills: NSData?
+    @NSManaged public var timeCreated: NSDate?
     @NSManaged public var courseList: NSOrderedSet?
 
 }

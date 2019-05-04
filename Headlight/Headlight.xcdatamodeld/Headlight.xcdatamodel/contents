@@ -11,6 +11,7 @@
         <attribute name="skillsRequired" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="timeEnd" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timeStart" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="careerPaths" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Path" inverseName="courseList" inverseEntity="Path" syncable="YES"/>
     </entity>
     <entity name="Path" representedClassName=".PathData" syncable="YES">
         <attribute name="gainedSkills" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -19,15 +20,15 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="requiredSkills" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="timeCreated" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="courseList" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Course" syncable="YES"/>
+        <relationship name="courseList" optional="YES" toMany="YES" deletionRule="No Action" ordered="YES" destinationEntity="Course" inverseName="careerPaths" inverseEntity="Course" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName=".UserData" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="skills" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Course" positionX="-143.16796875" positionY="-169.7265625" width="128" height="193"/>
-        <element name="User" positionX="29.0546875" positionY="-192.66015625" width="128" height="75"/>
+        <element name="Course" positionX="-143.16796875" positionY="-169.7265625" width="128" height="208"/>
         <element name="Path" positionX="67.6953125" positionY="-77.1171875" width="128" height="148"/>
+        <element name="User" positionX="29.0546875" positionY="-192.66015625" width="128" height="75"/>
     </elements>
 </model>

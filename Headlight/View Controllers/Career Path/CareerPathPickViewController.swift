@@ -15,15 +15,22 @@ class CareerPathPickViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var tableView: UITableView!
     
     var careerPath: CareerPath? = nil
+    var careerPathWithSelfStudy: CareerPath? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        careerPathWithSelfStudy = CareerPathAlgorithm.careerPathWithSelfStudy(careerPath!)
+        
+        self.navigationItem.title = careerPath?.career.name
+        
         tableView.dataSource = self
         tableView.delegate = self
         
-        careerName.text = careerPath?.career.name ?? "Unknown"
-        careerLength.text = String(careerPath?.path.count ?? 0) + " courses"
+        let pathLength = careerPathWithSelfStudy?.path.count ?? 0
+        let skillCount = careerPathWithSelfStudy?.gainedSkills.count ?? 0
+        careerName.text = String(pathLength) + (pathLength == 1 ? " course" : " courses")
+        careerLength.text = String(skillCount) + (skillCount == 1 ? " skills" : " skills")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -31,13 +38,24 @@ class CareerPathPickViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return careerPath?.path.count ?? 0
+        return careerPathWithSelfStudy?.path.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "careerPickViewCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "careerPickViewCell", for: indexPath) as? CourseTableCell else {
+            fatalError("Unable to find careerPickViewCell.")
+        }
         
-        cell.textLabel?.text = careerPath?.path[indexPath.row].name
+        let course = careerPathWithSelfStudy?.path[indexPath.row]
+        cell.courseTitle.text = course?.name ?? "Unknown"
+        cell.courseOrganization.text = course?.organization ?? "Unknown"
+        cell.courseNumber.text = String(indexPath.row + 1) + "."
+        
+        if course?.id == "self-study" {
+            cell.backgroundColor = #colorLiteral(red: 0.9050358534, green: 0.9051876664, blue: 0.9050158858, alpha: 1)
+        } else {
+            cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        }
         
         return cell
     }
@@ -49,10 +67,12 @@ class CareerPathPickViewController: UIViewController, UITableViewDataSource, UIT
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let viewController = segue.destination as! CourseInfoViewController
-        let course = careerPath?.path[tableView.indexPathForSelectedRow?.row ?? 0]
-        
-        viewController.course = course
+        if segue.destination is CourseInfoViewController {
+            let viewController = segue.destination as! CourseInfoViewController
+            let course = careerPath?.path[tableView.indexPathForSelectedRow?.row ?? 0]
+            
+            viewController.course = course
+        }
     }
 
 }

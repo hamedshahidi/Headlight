@@ -8,38 +8,33 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    // this is the general viewcontroller for the search page.
+    // the purpose of this class is to populate various tableviews at the page, and manage actions
+    // happening in them.
     
     @IBOutlet weak var searchBar: UISearchBar!
-    
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var resultTableView: UITableView!
     
     var searchContainers = ["Skills"]
     var course_data : [CourseStruct.Course]?
     var all_skills = skills
+    var searchResultData : [CourseStruct.Course?]?
+    private var searchString: String = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        resultTableView.dataSource = self
-        resultTableView.delegate = self
-        
-        course_data = CoreDataHelper.listAllCourses()
-        guard let usable_course_data = course_data else{ print("parsing course data failed in search");return}
-        
-        
-        
-        for var skill in skills {
-            print(skill)
-        }
-        // Do any additional setup after loading the view.
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        self.resultTableView.dataSource = self
+        self.resultTableView.delegate = self
+        self.searchResultData = []
+        self.course_data = CoreDataHelper.listAllCourses()
     }
     
     
@@ -56,7 +51,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         if tableView == self.tableView{
             return 1
         }else{
-            return 5
+            return (self.searchResultData?.count ?? 0)
         }
         
     }
@@ -81,19 +76,97 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             cell.cont_ref = self
             return cell
         }else{
-            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-            cell.textLabel?.text = "testi"
-             cell.detailTextLabel?.text = "extra information bla bla bla"
+            let cell = SearchResultCell(style: .subtitle, reuseIdentifier: nil)
+            cell.textLabel?.text = self.searchResultData?[indexPath.row]?.name ?? ""
+            cell.detailTextLabel?.text = self.searchResultData?[indexPath.row]?.description ?? ""
+            cell.course = self.searchResultData?[indexPath.row]
             return cell
         }
     }
     
+    // open the course page when clicked in search
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        if tableView == self.resultTableView{
+           performSegue(withIdentifier: "courseSegue", sender: self)
+        }
+    }
+    
+    // here is the prepare function Hamed mentioned, not sure if needed
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let viewController = segue.destination as! CourseInfoViewController
+        let course = searchResultData?[self.resultTableView.indexPathForSelectedRow?.row ?? 0]
+        
+        viewController.course = course
+    }
+    
+    // the appendToSearchString function is bit of a legacy function. The original plan was to concatenate
+    // the possible search strings into one long one, but the current implementation is better.
     
     func appendToSearchString(_ string: String){
-        
+        self.searchFunction(string)
+    }
+    
+    
+    // the searchfunction gets the list of all of the courses from core data helper class, and then
+    // compares the search string with values inside of it.
+    // it first clears the current search array (array that populates the resulting table view) and
+    // then does the actual search.
+    
+    func searchFunction(_ searchString: String){
+        self.clearSearchData()
+        self.searchResultData =  course_data?.filter{
+            
+            if (($0.name ?? "").lowercased()).contains(searchString){
+                return true
+            }
+            
+        for skill in $0.skills?.gained ?? []{
+            if(skill.contains(searchString)){
+                return true
+            }
+            
+        }
+        for skill in $0.skills?.required ?? []{
+            if(skill.contains(searchString)){
+                return true
+            }
+            
+        }
+       return false
+    }
+        DispatchQueue.main.async {
+            self.updateResultTableViewData()
+        }
+    }
+    
+    func updateResultTableViewData(){
+        self.resultTableView.reloadData()
+      //  print("data reloaded..")
+    }
+    
+    func clearSearchData(){
+        self.searchResultData?.removeAll()
     }
 
 }
 
-//create some sort of controller for the second table view, which will populate the search results
+// create some sort of extension for the search bar controller
+// keeping it as an extension because makes it easier to find search bar functionalities on this page
+
+extension SearchViewController: UISearchBarDelegate{
+    
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        self.clearSearchData()
+        self.updateResultTableViewData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    //    print("typing to searchbar")
+        self.appendToSearchString(searchText.lowercased())
+    }
+}
 

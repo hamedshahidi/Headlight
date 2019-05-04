@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="V29-0D-aU8" customClass="MainViewController" customModule="Headlight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G6b-io-2bR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1084"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVX-ts-F00">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1084"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fir-0m-X18">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
@@ -93,12 +93,12 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="135" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wcn-zY-KEm">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="135" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wcn-zY-KEm" customClass="CareerTableView" customModule="Headlight" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="381" width="375" height="365"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="140" id="nIh-cl-h7v" customClass="CourseRow" customModule="Headlight" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="careerTableCell" rowHeight="140" id="nIh-cl-h7v" customClass="CourseRow" customModule="Headlight" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nIh-cl-h7v" id="jU6-TW-cT4">
@@ -203,18 +203,17 @@
                                                                             <connections>
                                                                                 <outlet property="courseInfo" destination="0ZZ-gg-JAF" id="szz-j8-BMW"/>
                                                                                 <outlet property="courseName" destination="iPc-eJ-O2W" id="Cko-BJ-GBe"/>
-                                                                                <segue destination="65q-wy-aFq" kind="show" id="wfk-Xo-BU3"/>
                                                                             </connections>
                                                                         </collectionViewCell>
                                                                     </cells>
                                                                 </collectionView>
                                                             </subviews>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="collectionView" destination="G40-0m-0ha" id="7X7-nk-uuu"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="V29-0D-aU8" id="58a-qk-zqp"/>
-                                                </connections>
                                             </tableView>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mc1-T6-Eos" customClass="DesignableView" customModule="Headlight" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="809" width="343" height="238"/>
@@ -352,6 +351,7 @@
                         <outlet property="searchBar" destination="zm6-ik-OXs" id="jwx-Vo-TxP"/>
                         <outlet property="tableView" destination="wcn-zY-KEm" id="1Us-me-4Dy"/>
                         <segue destination="ULc-fp-yie" kind="show" identifier="searchSegue" id="oRa-2B-DmK"/>
+                        <segue destination="65q-wy-aFq" kind="show" identifier="courseInfoSegue" id="dEa-ug-4Oa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8w-rb-AA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -387,8 +387,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ep7-eN-iSs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e0s-WI-OwH">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="e0s-WI-OwH">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

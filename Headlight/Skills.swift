@@ -37,4 +37,5 @@ let skills: [String: String] = [
     "csharp": "C#",
     "unreal": "Unreal Engine",
     "c++": "C++",
+    "sql": "SQL"
 ]
