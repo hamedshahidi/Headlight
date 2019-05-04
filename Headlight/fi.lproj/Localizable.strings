@@ -12,15 +12,17 @@
 
 // Signup
 "get_started" = "Moi! Aloitetaan syöttämällä käyttäjänimesi.";
-"skill_pick" = "Valitse omat taitosi listasta.";
+"skill_pick" = "Hienoa! Nyt täytetään sinun taitosi. Valitse ne alla olevasta listasta 👇";
 "name_placeholder_text" = "Käyttäjänimi";
 "enter_button_text" = "Syötä";
 "next_button" = "Seuraava";
+"skills_chosen" = "taitoa valittu";
+"skill_chosen" = "taito valittu";
 
 // Career paths
 "pick_career_btn" = "Valitse opintopolku";
 "pick_this_path_btn" = "Valitse polku";
-"courses" = "kurssia"
+"courses" = "kurssia";
 "Front-End Developer" = "Front-End Kehittäjä";
 "Back-End Developer" = "Back-End Kehittäjä";
 "Full Stack Developer" = "Full Stack Kehittäjä";
