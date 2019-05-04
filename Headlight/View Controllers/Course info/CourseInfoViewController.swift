@@ -120,8 +120,8 @@ extension CourseInfoViewController
             if let cell = cell as? courseProviderAndDatesCell {
                 
                 cell.courseOrganizer?.text = course?.organization ?? "-"
-                cell.startDate?.text = course?.time.start ?? "-"
-                cell.endDate?.text = course?.time.end ?? "-"
+                cell.startDate?.text = course?.time?.start ?? "-"
+                cell.endDate?.text = course?.time?.end ?? "-"
             }
             return
 

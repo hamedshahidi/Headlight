@@ -82,8 +82,8 @@ class CoreDataHelper {
             courseCore.name = course.name ?? "Unkown"
             courseCore.desc = course.description ?? "Data for this course is missing."
             courseCore.location = convertToCoreDataLocation(course.location)
-            courseCore.timeEnd = course.time.end
-            courseCore.timeStart = course.time.start
+            courseCore.timeEnd = course.time?.end
+            courseCore.timeStart = course.time?.start
             courseCore.organization = course.organization
             courseCore.rating = course.rating ?? 0
             courseCore.skillsGained = convertToCoreDataSkills(course.skills?.gained ?? [])

@@ -6,4 +6,10 @@
 //  Copyright © 2019 iSchoolMusical. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class CourseTableCell: UITableViewCell {
+    @IBOutlet weak var courseTitle: UILabel!
+    @IBOutlet weak var courseOrganization: UILabel!
+    @IBOutlet weak var courseNumber: UILabel!
+}

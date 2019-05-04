@@ -30,7 +30,8 @@
       "unity",
       "csharp",
       "unreal",
-      "c++"
+      "c++",
+      "sql"
    ],
    "courses": [
       {
@@ -265,7 +266,8 @@
             "required": [
                "html",
                "css",
-               "js"
+               "js",
+               "sql"
             ]
          }
       },

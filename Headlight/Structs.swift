@@ -19,12 +19,11 @@ class CourseStruct {
         var id : String?;
         var name : String?;
         var description : String?;
-        var location : Location;
-        var time : Time;
+        var location : Location?;
+        var time : Time?;
         var organization : String?;
         var rating : Double?;
         var skills : Skills?;
-        
     }
 
     struct Time : Codable {
