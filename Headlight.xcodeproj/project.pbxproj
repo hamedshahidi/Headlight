@@ -15,6 +15,10 @@
 		6A48C545226E12D70079B4A1 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C544226E12D70079B4A1 /* DataFetcher.swift */; };
 		6A48C5482271CAE60079B4A1 /* SearchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C5472271CAE60079B4A1 /* SearchScreenViewController.swift */; };
 		6A48C54A2271DD1E0079B4A1 /* SearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C5492271DD1E0079B4A1 /* SearchRow.swift */; };
+		6A48C54C22783BCD0079B4A1 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C54B22783BCD0079B4A1 /* CollectionViewController.swift */; };
+		6A636694227C40A4009F10E1 /* CoursePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A636693227C40A4009F10E1 /* CoursePageViewController.swift */; };
+		6A63669D227C9545009F10E1 /* SkillListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A63669B227C9545009F10E1 /* SkillListCell.swift */; };
+		6A63669E227C9545009F10E1 /* SkillListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A63669C227C9545009F10E1 /* SkillListCell.xib */; };
 		6A48C54E227C75B20079B4A1 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C54D227C75B20079B4A1 /* SearchResultCell.swift */; };
 		6A8DBC092270A62000613A5F /* CourseInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC082270A62000613A5F /* CourseInfoViewController.swift */; };
 		6A8DBC0C2270B91700613A5F /* courseInfoHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC0A2270B91700613A5F /* courseInfoHeaderCell.swift */; };
@@ -91,6 +95,10 @@
 		6A48C544226E12D70079B4A1 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		6A48C5472271CAE60079B4A1 /* SearchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewController.swift; sourceTree = "<group>"; };
 		6A48C5492271DD1E0079B4A1 /* SearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRow.swift; sourceTree = "<group>"; };
+		6A48C54B22783BCD0079B4A1 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		6A636693227C40A4009F10E1 /* CoursePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePageViewController.swift; sourceTree = "<group>"; };
+		6A63669B227C9545009F10E1 /* SkillListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillListCell.swift; sourceTree = "<group>"; };
+		6A63669C227C9545009F10E1 /* SkillListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkillListCell.xib; sourceTree = "<group>"; };
 		6A48C54D227C75B20079B4A1 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		6A8DBC082270A62000613A5F /* CourseInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfoViewController.swift; sourceTree = "<group>"; };
 		6A8DBC0A2270B91700613A5F /* courseInfoHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseInfoHeaderCell.swift; sourceTree = "<group>"; };
@@ -198,6 +206,7 @@
 			children = (
 				6AD749542275E62000D4F324 /* Cells */,
 				6A8DBC082270A62000613A5F /* CourseInfoViewController.swift */,
+				6A636693227C40A4009F10E1 /* CoursePageViewController.swift */,
 			);
 			path = "Course info";
 			sourceTree = "<group>";
@@ -240,7 +249,8 @@
 				6A8DBC0E2270BB8D00613A5F /* courseDescAndMapCell.swift */,
 				6A8DBC122270F3CE00613A5F /* courseProviderAndTimeCell.swift */,
 				6A8DBC1A2271021F00613A5F /* courseSkillsCell.swift */,
-				6ACE7BA9227749E800AF0287 /* skillCell.swift */,
+				6A63669B227C9545009F10E1 /* SkillListCell.swift */,
+				6A63669C227C9545009F10E1 /* SkillListCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -451,6 +461,7 @@
 				9542976C2265C2A900AA8E8F /* LaunchScreen.storyboard in Resources */,
 				954297982265C38800AA8E8F /* Elias.storyboard in Resources */,
 				954297962265C37F00AA8E8F /* Janne.storyboard in Resources */,
+				6A63669E227C9545009F10E1 /* SkillListCell.xib in Resources */,
 				954297692265C2A900AA8E8F /* Assets.xcassets in Resources */,
 				6AC3C4962279D5FB00E3C595 /* Localizable.strings in Resources */,
 				954297942265C37600AA8E8F /* Tuomas.storyboard in Resources */,
@@ -482,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				954297BF2277259400AA8E8F /* CareerPathViewController.swift in Sources */,
+				6A636694227C40A4009F10E1 /* CoursePageViewController.swift in Sources */,
 				954297BC227720CC00AA8E8F /* CareerPathAlgorithm.swift in Sources */,
 				954297CA2278310500AA8E8F /* PathData+CoreDataClass.swift in Sources */,
 				9542979E226DB1AC00AA8E8F /* CoreDataHelper.swift in Sources */,
@@ -494,6 +506,7 @@
 				6A36550C226EFB23009C8FA2 /* MainViewController.swift in Sources */,
 				9535B9C1227D8C63004AFED6 /* CourseTableCell.swift in Sources */,
 				6ACE7BAA227749E800AF0287 /* skillCell.swift in Sources */,
+				6A130CEF2279B5FF007E12BE /* SkillsCell.swift in Sources */,
 				954297672265C2A700AA8E8F /* Headlight.xcdatamodeld in Sources */,
 				6A8DBC142270F3CE00613A5F /* courseProviderAndTimeCell.swift in Sources */,
 				6A8DBC102270BB8D00613A5F /* courseDescAndMapCell.swift in Sources */,
@@ -512,6 +525,7 @@
 				954297A8226DB5C700AA8E8F /* Skills.swift in Sources */,
 				6AC3C4912277227800E3C595 /* Theme.swift in Sources */,
 				954297612265C2A700AA8E8F /* ViewController.swift in Sources */,
+				6A63669D227C9545009F10E1 /* SkillListCell.swift in Sources */,
 				6A8DBC092270A62000613A5F /* CourseInfoViewController.swift in Sources */,
 				6A48C54A2271DD1E0079B4A1 /* SearchRow.swift in Sources */,
 				954297B2226DBC7D00AA8E8F /* UserData+CoreDataProperties.swift in Sources */,
