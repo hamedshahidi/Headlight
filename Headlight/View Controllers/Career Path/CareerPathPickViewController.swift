@@ -53,8 +53,8 @@ class CareerPathPickViewController: UIViewController, UITableViewDataSource, UIT
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.destination is CourseInfoViewController {
-            let viewController = segue.destination as! CourseInfoViewController
+        if segue.destination is CoursePageViewController {
+            let viewController = segue.destination as! CoursePageViewController
             let course = careerPath?.path[tableView.indexPathForSelectedRow?.row ?? 0]
             
             viewController.course = course
