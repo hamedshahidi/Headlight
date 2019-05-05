@@ -21,6 +21,7 @@
 		6A636694227C40A4009F10E1 /* CoursePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A636693227C40A4009F10E1 /* CoursePageViewController.swift */; };
 		6A63669D227C9545009F10E1 /* SkillListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A63669B227C9545009F10E1 /* SkillListCell.swift */; };
 		6A63669E227C9545009F10E1 /* SkillListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A63669C227C9545009F10E1 /* SkillListCell.xib */; };
+		6A48C54E227C75B20079B4A1 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C54D227C75B20079B4A1 /* SearchResultCell.swift */; };
 		6A8DBC092270A62000613A5F /* CourseInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC082270A62000613A5F /* CourseInfoViewController.swift */; };
 		6A8DBC0C2270B91700613A5F /* courseInfoHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC0A2270B91700613A5F /* courseInfoHeaderCell.swift */; };
 		6A8DBC102270BB8D00613A5F /* courseDescAndMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC0E2270BB8D00613A5F /* courseDescAndMapCell.swift */; };
@@ -34,6 +35,8 @@
 		6AC3C4912277227800E3C595 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C4902277227800E3C595 /* Theme.swift */; };
 		6AC3C4932277228D00E3C595 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AC3C4922277228D00E3C595 /* Colors.xcassets */; };
 		6AC3C4962279D5FB00E3C595 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AC3C4982279D5FB00E3C595 /* Localizable.strings */; };
+		6ACE7BAA227749E800AF0287 /* skillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE7BA9227749E800AF0287 /* skillCell.swift */; };
+		9535B9C1227D8C63004AFED6 /* CourseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535B9C0227D8C63004AFED6 /* CourseTableCell.swift */; };
 		9542975F2265C2A700AA8E8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9542975E2265C2A700AA8E8F /* AppDelegate.swift */; };
 		954297612265C2A700AA8E8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297602265C2A700AA8E8F /* ViewController.swift */; };
 		954297642265C2A700AA8E8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954297622265C2A700AA8E8F /* Main.storyboard */; };
@@ -100,6 +103,7 @@
 		6A636693227C40A4009F10E1 /* CoursePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePageViewController.swift; sourceTree = "<group>"; };
 		6A63669B227C9545009F10E1 /* SkillListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillListCell.swift; sourceTree = "<group>"; };
 		6A63669C227C9545009F10E1 /* SkillListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkillListCell.xib; sourceTree = "<group>"; };
+		6A48C54D227C75B20079B4A1 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		6A8DBC082270A62000613A5F /* CourseInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfoViewController.swift; sourceTree = "<group>"; };
 		6A8DBC0A2270B91700613A5F /* courseInfoHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseInfoHeaderCell.swift; sourceTree = "<group>"; };
 		6A8DBC0E2270BB8D00613A5F /* courseDescAndMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseDescAndMapCell.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 		6AC3C4992279D60C00E3C595 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Main.strings; sourceTree = "<group>"; };
 		6AC3C49A2279D60C00E3C595 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		6AC3C49B2279D60C00E3C595 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6ACE7BA9227749E800AF0287 /* skillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skillCell.swift; sourceTree = "<group>"; };
+		9535B9C0227D8C63004AFED6 /* CourseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableCell.swift; sourceTree = "<group>"; };
 		9542975B2265C2A700AA8E8F /* Headlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Headlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9542975E2265C2A700AA8E8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		954297602265C2A700AA8E8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -196,7 +202,7 @@
 			children = (
 				6A48C5472271CAE60079B4A1 /* SearchScreenViewController.swift */,
 				6A48C5492271DD1E0079B4A1 /* SearchRow.swift */,
-				6A48C54B22783BCD0079B4A1 /* CollectionViewController.swift */,
+				6A48C54D227C75B20079B4A1 /* SearchResultCell.swift */,
 			);
 			path = "Search Screen";
 			sourceTree = "<group>";
@@ -347,6 +353,7 @@
 				954297BE2277259400AA8E8F /* CareerPathViewController.swift */,
 				954297C4227731BD00AA8E8F /* CareerPathPickViewController.swift */,
 				954297C0227725AF00AA8E8F /* CareerPickerTableViewController.swift */,
+				9535B9C0227D8C63004AFED6 /* CourseTableCell.swift */,
 			);
 			path = "Career Path";
 			sourceTree = "<group>";
@@ -496,17 +503,18 @@
 				954297BC227720CC00AA8E8F /* CareerPathAlgorithm.swift in Sources */,
 				954297CA2278310500AA8E8F /* PathData+CoreDataClass.swift in Sources */,
 				9542979E226DB1AC00AA8E8F /* CoreDataHelper.swift in Sources */,
+				6A48C54E227C75B20079B4A1 /* SearchResultCell.swift in Sources */,
 				6A8DBC0C2270B91700613A5F /* courseInfoHeaderCell.swift in Sources */,
 				6AC3C48E22705FAC00E3C595 /* SkillColor.swift in Sources */,
 				6AC3C488226F03C000E3C595 /* SignupSkillsViewController.swift in Sources */,
 				954297C5227731BD00AA8E8F /* CareerPathPickViewController.swift in Sources */,
 				954297CB2278310500AA8E8F /* PathData+CoreDataProperties.swift in Sources */,
 				6A36550C226EFB23009C8FA2 /* MainViewController.swift in Sources */,
+				9535B9C1227D8C63004AFED6 /* CourseTableCell.swift in Sources */,
 				6A130CEF2279B5FF007E12BE /* SkillsCell.swift in Sources */,
 				954297672265C2A700AA8E8F /* Headlight.xcdatamodeld in Sources */,
 				6A8DBC142270F3CE00613A5F /* courseProviderAndTimeCell.swift in Sources */,
 				6A8DBC102270BB8D00613A5F /* courseDescAndMapCell.swift in Sources */,
-				6A48C54C22783BCD0079B4A1 /* CollectionViewController.swift in Sources */,
 				6A36550E226EFF1F009C8FA2 /* CourseRow.swift in Sources */,
 				6A130CE522783F3D007E12BE /* CourseCell.swift in Sources */,
 				6A8DBC1C2271021F00613A5F /* courseSkillsCell.swift in Sources */,

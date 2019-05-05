@@ -15,12 +15,14 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var guideText: UILabel!
+    @IBOutlet weak var skillNumberLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Theme.background
         nextBtn.backgroundColor = Theme.tint
         nextBtn.tintColor = Theme.background
+        tableView.layer.cornerRadius = 16
         nextBtn.layer.cornerRadius = 4
         tableView.dataSource = self
         tableView.delegate = self
@@ -39,12 +41,16 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "skillCell", for: indexPath)
         cell.textLabel?.text = NSLocalizedString(Array(skills.keys)[indexPath.row], comment: "skill name")
+        cell.textLabel?.textColor = Theme.dark1
         
         // Check accessory type while reusing cells
         if selectedSkills[Array(skills.keys)[indexPath.row]] != nil {
             cell.accessoryType = .checkmark
+            cell.textLabel?.textColor = UIColor.black
+
         } else {
             cell.accessoryType = .none
+            cell.textLabel?.textColor = Theme.dark1
         }
 
         return cell
@@ -56,12 +62,26 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
         if selectedSkills[Array(skills.keys)[indexPath.row]] == nil {
             selectedSkills[Array(skills.keys)[indexPath.row]] = Array(skills.keys)[indexPath.row]
             self.tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+            self.tableView.cellForRow(at: indexPath)?.textLabel?.textColor = UIColor.black
+            self.updateSkillNumber()
         } else {
             selectedSkills.removeValue(forKey: Array(skills.keys)[indexPath.row])
             self.tableView.cellForRow(at: indexPath)?.accessoryType = .none
+            self.tableView.cellForRow(at: indexPath)?.textLabel?.textColor = Theme.dark1
+            self.updateSkillNumber()
         }
         tableView.deselectRow(at: indexPath, animated: true)
 
+    }
+    
+    func updateSkillNumber() {
+        let localizedStr: String
+        if selectedSkills.count == 1 {
+            localizedStr = NSLocalizedString("skill_chosen", comment: "")
+        } else {
+            localizedStr = NSLocalizedString("skills_chosen", comment: "")
+        }
+        skillNumberLabel.text = String(selectedSkills.count) + " " + localizedStr
     }
 
     /*

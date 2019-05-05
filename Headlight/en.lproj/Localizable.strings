@@ -11,11 +11,13 @@
 "err_name_creation" = "Please enter a name between 1-20 characters.";
 
 // Signup
-"get_started" = "Hello! Lets get started by entering your username.";
-"skill_pick" = "Now let's fill out your skills. Please choose all relevant skills.";
+"get_started" = "Hello! Let's get started by entering your username.";
+"skill_pick" = "Great! Now let's fill out your existing skills. Pick the skills from the list down below 👇";
 "name_placeholder_text" = "Username";
 "enter_button_text" = "Enter";
 "next_button" = "Next";
+"skills_chosen" = "skills chosen";
+"skill_chosen" = "skill chosen";
 
 // Career paths
 "pick_career_btn" = "Pick a learning path";
