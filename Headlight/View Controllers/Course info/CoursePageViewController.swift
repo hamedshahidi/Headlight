@@ -11,7 +11,6 @@ import UIKit
 class CoursePageViewController: UIViewController {
     
     var course: CourseStruct.Course?
-    var usedColors: [UIColor] = []
     
     struct tableViews {
         static let gained = "TableViewGainedSkills"
@@ -45,10 +44,6 @@ class CoursePageViewController: UIViewController {
         super.viewDidLoad()
         initializeTableViewSettings()
         populateUIElements()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        usedColors = []
     }
     
     // Observer to autosize UITableView height based on its content size
