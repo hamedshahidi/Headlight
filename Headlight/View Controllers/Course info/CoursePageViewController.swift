@@ -47,6 +47,10 @@ class CoursePageViewController: UIViewController {
         populateUIElements()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        usedColors = []
+    }
+    
     // Observer to autosize UITableView height based on its content size
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         tableViewGainedSkills.layer.removeAllAnimations()

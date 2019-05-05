@@ -63,6 +63,22 @@ extension UIColor {
         
         return 0.2126 * adjust(colorComponent: ciColor.red) + 0.7152 * adjust(colorComponent: ciColor.green) + 0.0722 * adjust(colorComponent: ciColor.blue)
     }
+    
+    // generates random UIColor
+    static func random() -> UIColor {
+        return UIColor(red:   .random(),
+                       green: .random(),
+                       blue:  .random(),
+                       alpha: 1.0)
+    }
+    
+}
+
+// produce random CGFloats in the range 0 to 1
+extension CGFloat {
+    static func random() -> CGFloat {
+        return CGFloat(arc4random()) / CGFloat(UInt32.max)
+    }
 }
 
 class SkillColor {
@@ -113,8 +129,11 @@ class SkillColor {
         // Random search for non-repeated colors with good contrast rate in between
         repeat {
             
-            let colorIndex = Int.random(in: 0 ..< colors.count)
-            color = UIColor(hex: colors.shuffled()[colorIndex]) ?? .cyan
+//            let colorIndex = Int.random(in: 0 ..< colors.count)
+//            color = UIColor(hex: colors.shuffled()[colorIndex]) ?? .cyan
+            
+            color = .random()
+            
             complementary = getComplementaryForColor(color: color)
             
         } while (
@@ -141,3 +160,7 @@ class SkillColor {
     }
     
 }
+
+
+
+
