@@ -18,7 +18,7 @@ class CoursePageViewController: UIViewController {
         static let required = "TableViewRequiredSkills"
     }
     struct headers {
-        static let gained = "Provides skills:"
+        static let gained = "You will learn these skills:"
         static let required = "Required skills:"
     }
     struct placeholders {
@@ -87,8 +87,8 @@ class CoursePageViewController: UIViewController {
         rateLabel?.text = "\(course?.rating ?? 0)"
         descLabel?.text = course?.description ?? "-"
         orginizerLabel?.text = course?.organization ?? "-"
-        startLabel?.text = course?.time.start ?? "-"
-        endLabel?.text = course?.time.end ?? "-"
+        startLabel?.text = course?.time?.start ?? "-"
+        endLabel?.text = course?.time?.end ?? "-"
     }
 
 }
