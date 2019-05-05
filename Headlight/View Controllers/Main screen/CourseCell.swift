@@ -13,6 +13,7 @@ class CourseCell: UICollectionViewCell {
 
     @IBOutlet weak var courseName: UILabel!
     @IBOutlet weak var courseInfo: UILabel!
+    @IBOutlet weak var courseSkills: UILabel!
     
     override func prepareForReuse() {
         
