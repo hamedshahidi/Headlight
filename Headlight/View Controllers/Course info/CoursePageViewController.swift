@@ -281,25 +281,20 @@ extension CoursePageViewController: MKMapViewDelegate {
     
     func getCourseLocation () {
         
+        // Set map region based on location
         let lat = course?.location?.ltd
         let long = course?.location?.lgn
         let courseLocation = CLLocation(latitude: lat ?? 0, longitude: long ?? 0)
         let regionRadius: CLLocationDistance = 100.0
         let region = MKCoordinateRegion(center: courseLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-//        locationMap.setRegion(region, animated: true)
-//        locationMap.delegate = self
+        locationMap.setRegion(region, animated: false)
+
         
+        // Add a pin on location
+        let pin = MKPointAnnotation()
+        pin.coordinate = CLLocationCoordinate2D(latitude: lat ?? 0, longitude: long ?? 0)
+        locationMap.addAnnotation(pin)
         
-        DispatchQueue.main.async {
-//            let annotation = MKPointAnnotation()
-//            let courseLocation = CLLocation(latitude: lat ?? 0, longitude: long ?? 0)
-//            let cordinates: CLLocationCoordinate2D = courseLocation.coordinate
-//            annotation.coordinate = cordinates
-//            print(cordinates)
-            self.locationMap.setRegion(region, animated: true)
-//            self.locationMap.setCenter(cordinates, animated: true)
-        }
-//        locationMap.delegate = self
     }
     
     func mapViewWillStartRenderingMap(_ mapView: MKMapView) {
