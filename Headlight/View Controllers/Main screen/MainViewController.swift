@@ -128,13 +128,12 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     // Gets data for each course cell (name, description and skills)
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "courseCell", for: indexPath as IndexPath) as? CourseCell
+        guard var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "courseCell", for: indexPath as IndexPath) as? CourseCell
             else { fatalError("cell not working")}
         
         let course = careerPath?.path[indexPath.row]
         
         var skillString: String = ""
-        
         for skill in course?.skills?.gained ?? [""] {
             let aSkill = NSLocalizedString(skill, comment: "")
              if(indexPath.row < placeHolderCurrentCourse - 1){
@@ -144,25 +143,30 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             }
         }
         
-        // Different cell and text colors for already done courses
-        if(indexPath.row < placeHolderCurrentCourse - 1){
-            cell.backgroundColor = Theme.dark3
-            cell.courseName.textColor = Theme.dark2
-            cell.courseInfo.textColor = Theme.dark2
-            cell.courseSkills.textColor = Theme.dark2
-            cell.courseSkills.text = skillString
-        } else {
-            cell.courseName.textColor = UIColor.darkText
-            cell.courseInfo.textColor = UIColor.darkText
-            cell.backgroundColor = UIColor.white
-            cell.courseSkills.attributedText = setColoredLabel(skillString: skillString)
-        }
-        
+        cell = changeCellColors(cell: cell, indexPath: indexPath, skillString: skillString)
         cell.course = course
         cell.courseName.text = course?.name ?? "Unknown"
         cell.courseInfo.text = course?.description ?? ""
         
         return cell
+    }
+    
+    // Different cell and text colors for already done courses
+    func changeCellColors(cell: CourseCell, indexPath: IndexPath, skillString: String) -> CourseCell{
+        if(indexPath.row < placeHolderCurrentCourse - 1){
+            cell.backgroundColor = Theme.gray
+            cell.courseName.textColor = Theme.dark2
+            cell.courseInfo.textColor = Theme.dark2
+            cell.courseSkills.textColor = Theme.dark2
+            cell.courseSkills.text = skillString
+            return cell
+        } else {
+            cell.courseName.textColor = UIColor.darkText
+            cell.courseInfo.textColor = UIColor.darkText
+            cell.backgroundColor = UIColor.white
+            cell.courseSkills.attributedText = setColoredLabel(skillString: skillString)
+            return cell
+        }
     }
 
     // Displays the current course in the career path collectionview
@@ -218,7 +222,6 @@ extension NSMutableAttributedString {
             self.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
         //}
     }
-    
 }
 
 // Sets color for each skill
