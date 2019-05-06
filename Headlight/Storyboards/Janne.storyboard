@@ -223,7 +223,7 @@
                                                     <string>Title</string>
                                                 </scopeButtonTitles>
                                             </searchBar>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N9h-NI-zoU">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N9h-NI-zoU">
                                                 <rect key="frame" x="16" y="418" width="343" height="165"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mc1-T6-Eos">
@@ -359,6 +359,25 @@
                                                     <segue destination="0aS-DY-j3z" kind="showDetail" id="RHF-yG-9gR"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLT-U3-PZQ">
+                                                <rect key="frame" x="99" y="490" width="177" height="47"/>
+                                                <color key="backgroundColor" name="Tint"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="47" id="q2J-Al-lb7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Pick a career path">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="oU6-fd-rym" kind="show" id="jXh-NA-P8O"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" name="Background"/>
                                         <constraints>
@@ -369,13 +388,16 @@
                                             <constraint firstItem="1Fi-g6-ify" firstAttribute="centerX" secondItem="wcn-zY-KEm" secondAttribute="centerX" id="KAM-Jw-MzC"/>
                                             <constraint firstItem="3BF-4F-aKK" firstAttribute="leading" secondItem="fir-0m-X18" secondAttribute="leading" id="LOP-hj-laQ"/>
                                             <constraint firstItem="N9h-NI-zoU" firstAttribute="top" secondItem="wcn-zY-KEm" secondAttribute="bottom" constant="15" id="LUd-PM-dpd"/>
+                                            <constraint firstAttribute="trailing" secondItem="TLT-U3-PZQ" secondAttribute="trailing" constant="99" id="MMj-A8-MEV"/>
                                             <constraint firstAttribute="height" constant="684" id="MeB-44-OXF"/>
                                             <constraint firstItem="wcn-zY-KEm" firstAttribute="top" secondItem="1Fi-g6-ify" secondAttribute="bottom" constant="15" id="MmX-1k-uUU"/>
                                             <constraint firstItem="1Fi-g6-ify" firstAttribute="leading" secondItem="zm6-ik-OXs" secondAttribute="leading" constant="16" id="P2q-iL-1a4"/>
                                             <constraint firstItem="N9h-NI-zoU" firstAttribute="leading" secondItem="1Fi-g6-ify" secondAttribute="leading" id="U7P-mY-5uP"/>
+                                            <constraint firstItem="TLT-U3-PZQ" firstAttribute="leading" secondItem="fir-0m-X18" secondAttribute="leading" constant="99" id="Wl3-iA-Ngk"/>
                                             <constraint firstItem="wcn-zY-KEm" firstAttribute="leading" secondItem="fir-0m-X18" secondAttribute="leading" id="eCa-OV-sfO"/>
                                             <constraint firstItem="1Fi-g6-ify" firstAttribute="top" secondItem="3BF-4F-aKK" secondAttribute="bottom" constant="15" id="fX8-13-0Pb"/>
                                             <constraint firstItem="zm6-ik-OXs" firstAttribute="top" secondItem="fir-0m-X18" secondAttribute="top" id="gMI-qg-pxN"/>
+                                            <constraint firstItem="TLT-U3-PZQ" firstAttribute="top" secondItem="wcn-zY-KEm" secondAttribute="bottom" constant="87" id="iZ6-2Y-Xtz"/>
                                             <constraint firstItem="zm6-ik-OXs" firstAttribute="leading" secondItem="fir-0m-X18" secondAttribute="leading" id="ocs-zT-4PU"/>
                                             <constraint firstItem="1Fi-g6-ify" firstAttribute="trailing" secondItem="zm6-ik-OXs" secondAttribute="trailing" constant="-16" id="sT7-UV-Bmp"/>
                                             <constraint firstItem="DLq-Fb-v3v" firstAttribute="bottom" secondItem="fir-0m-X18" secondAttribute="bottomMargin" id="wQO-Ei-DtP"/>
@@ -410,6 +432,7 @@
                         <outlet property="currentCourseRating" destination="S7m-fz-646" id="mDK-x1-ocP"/>
                         <outlet property="currentCourseSkills" destination="Pr0-jY-QcJ" id="Qr0-Pj-ccc"/>
                         <outlet property="currentCourseView" destination="N9h-NI-zoU" id="8GH-sS-wQ0"/>
+                        <outlet property="pickCareerButton" destination="TLT-U3-PZQ" id="66V-ZE-WKH"/>
                         <outlet property="precentageCoursesDone" destination="UeV-Fn-MRn" id="0Iz-4L-U9O"/>
                         <outlet property="profileCoursesDone" destination="nD2-75-Kgl" id="aLu-dO-mFm"/>
                         <outlet property="profileCoursesLeft" destination="uEv-lq-QqE" id="WQe-Rx-1d9"/>
@@ -440,6 +463,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="645-Es-EzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1958" y="-11"/>
+        </scene>
+        <!--Tuomas-->
+        <scene sceneID="eJA-8t-vfF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tuomas" id="oU6-fd-rym" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bb9-wu-kzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1909" y="152"/>
         </scene>
         <!--Main-->
         <scene sceneID="HcS-Xp-Rxh">

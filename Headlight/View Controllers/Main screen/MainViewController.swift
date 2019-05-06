@@ -24,6 +24,9 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     @IBOutlet weak var currentCourseRating: UILabel!
     @IBOutlet weak var currentCourseSkills: UILabel!
     
+    // Button - Pick career path
+    @IBOutlet weak var pickCareerButton: UIButton!
+    
     
     // Search bar
     @IBOutlet weak var searchBar: UISearchBar!
@@ -56,13 +59,13 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         // Removes lines ontop and under the search bar
         searchBar.setBackgroundImage(UIImage.init(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
         
-       
-        
+        // Adds onclick effect for current course view
         let gesture = UITapGestureRecognizer(target: self , action:  #selector(self.checkAction))
         currentCourseView.addGestureRecognizer(gesture)
 
     }
     
+    // When you re-enter main view, collectionview will scroll to the ongoing course
     override func viewDidDisappear(_ animated: Bool) {
         scrollOnceOnly = false
     }
@@ -83,6 +86,16 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         precentageCoursesDone.text = NSString(format: "%.1f", percentage) as String + "%"
         
         //Sets current course info
+        //Current course info is hidden if there is no career path or if the career path is done
+        if(careerPath == nil || coursesDone == (careerPath?.path.count ?? 0)){
+            currentCourseView.isHidden = true
+            pickCareerButton.isHidden = false
+        } else {
+            currentCourseView.isHidden = false
+            pickCareerButton.isHidden = true
+        }
+        
+        // Gets the gained skills of current course and builds a string of them
         currentCourse = (careerPath?.path.count ?? 0 > 0) ? careerPath?.path[currentCareerPathIndex] : nil
         var stringOfSkills: String = ""
         for skills in currentCourse?.skills?.gained ?? [""] {
@@ -122,7 +135,6 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         cell.collectionView.delegate = self
         cell.collectionView.dataSource = self
         cell.collectionView.reloadData()
-        
         return cell
     }
     
@@ -155,6 +167,7 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         let user = CoreDataHelper.getUserData()
         let userHasDoneThisCourse = user?.history.contains(course?.id ?? "") ?? false
         
+        // Builds a string of skills gained per course
         var skillString: String = ""
         for skill in course?.skills?.gained ?? [""] {
             let aSkill = NSLocalizedString(skill, comment: "")
@@ -169,7 +182,6 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         cell.course = course
         cell.courseName.text = course?.name ?? "Unknown"
         cell.courseInfo.text = course?.description ?? ""
-        
         return cell
     }
     
@@ -226,14 +238,17 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         performSegue(withIdentifier: "courseInfoSegue", sender: self)
     }
 
+    // DEV ONLY --- Clears career path data and user data
     @IBAction func clearCareerPathData(_ sender: Any) {
         CoreDataHelper.clearCareerPathData()
         CoreDataHelper.clearUserData()
     }
     
+    // Prepares for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if(segue.destination is CoursePageViewController){
             if(segue.identifier == "courseInfoSegue"){
             let viewController = segue.destination as? CoursePageViewController
             viewController?.course = selectedCourse
@@ -242,8 +257,10 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                 let viewController = segue.destination as? CoursePageViewController
                 viewController?.course = currentCourse
             }
+        }
     }
     
+    // If current course view is clicked -> performs segue
     @objc func checkAction(sender : UITapGestureRecognizer) {
         performSegue(withIdentifier: "currentCourseSegue", sender: self)
     }
