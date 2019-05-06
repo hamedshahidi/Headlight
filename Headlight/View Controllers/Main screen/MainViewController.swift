@@ -27,7 +27,6 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     // Button - Pick career path
     @IBOutlet weak var pickCareerButton: UIButton!
     
-    
     // Search bar
     @IBOutlet weak var searchBar: UISearchBar!
   
@@ -75,7 +74,7 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         let user = CoreDataHelper.getUserData()
         let currentCareerPathIndex = user?.getCareerPathProgress(careerPath) ?? 0
 
-        // Sets profile info
+        // If there is no career path, hides the tableView which also contains the collectionView
         if(careerPath == nil){
             tableView.isHidden = true
         }
@@ -87,19 +86,20 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                 coursesDone += 1
             }
         }
-        
         let coursesLeft = (careerPath?.path.count ?? 0) - coursesDone
-        profileName.text = user?.name
-        profileCoursesDone.text = String(coursesDone)
-        profileCoursesLeft.text = String(coursesLeft)
-
+        
+        // Calculates how many precentage of courses has the user done regarding to the career path
         var percentage = (Float(coursesDone) / Float(careerPath?.path.count ?? 0)) * 100
         if coursesDone == 0 {
             percentage = 0
         }
+        
+        // Sets profile info
+        profileName.text = user?.name
+        profileCoursesDone.text = String(coursesDone)
+        profileCoursesLeft.text = String(coursesLeft)
         precentageCoursesDone.text = NSString(format: "%.1f", percentage) as String + "%"
         
-        // Sets current course info
         // Current course info is hidden if there is no career path or if the career path is done
         if(careerPath == nil || coursesLeft <= 0 ){
             currentCourseView.isHidden = true
@@ -109,14 +109,16 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             pickCareerButton.isHidden = true
         }
         
+         currentCourse = (careerPath?.path.count ?? 0 > 0) ? careerPath?.path[currentCareerPathIndex] : nil
+        
         // Gets the gained skills of current course and builds a string of them
-        currentCourse = (careerPath?.path.count ?? 0 > 0) ? careerPath?.path[currentCareerPathIndex] : nil
         var stringOfSkills: String = ""
         for skills in currentCourse?.skills?.gained ?? [""] {
             let aSkill = NSLocalizedString(skills, comment: "")
             stringOfSkills.append(aSkill + ",  ")
         }
         
+        // Sets current course info
         currentCourseName.text = currentCourse?.name
         currentCourseOrganization.text = currentCourse?.organization
         currentCourseDescription.text = currentCourse?.description
@@ -151,12 +153,6 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         cell.collectionView.reloadData()
         return cell
     }
-    
-    // Makes title's background color white
-    /*func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        (view as! UITableViewHeaderFooterView).backgroundView?.backgroundColor = UIColor.white
-    }*/
-    
     
     // Creates title
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -201,7 +197,6 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     // Different cell and text colors for already done courses
     func changeCellColors(cell: CourseCell, indexPath: IndexPath, skillString: String, userHasDoneThisCourse: Bool) -> CourseCell{
-        // Different cell and text colors for already done courses
         if userHasDoneThisCourse {
             cell.backgroundColor = Theme.gray
             cell.courseName.textColor = Theme.dark2
