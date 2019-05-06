@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class CoursePageViewController: UIViewController {
     
@@ -40,10 +41,13 @@ class CoursePageViewController: UIViewController {
     
     @IBOutlet weak var arrowImageView: UIImageView!
     
+    @IBOutlet weak var locationMap: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeTableViewSettings()
         populateUIElements()
+        getCourseLocation()
     }
     
     // Observer to autosize UITableView height based on its content size
@@ -183,4 +187,24 @@ extension CoursePageViewController: UITableViewDataSource, UITableViewDelegate {
             label?.sizeToFit()
         }
     }
+}
+
+extension CoursePageViewController: MKMapViewDelegate {
+    
+    func getCourseLocation () {
+        let lat = course?.location?.ltd
+        let long = course?.location?.lgn
+        print("lat: \(lat)")
+        print("long: \(long)")
+        let courseLocation = CLLocation(latitude: lat ?? 0, longitude: long ?? 0)
+        let regionRadius = 1000.0
+        let region = MKCoordinateRegion(center: courseLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        locationMap.setRegion(region, animated: true)
+//        locationMap.delegate = self
+    }
+    
+    func mapViewWillStartRenderingMap(_ mapView: MKMapView) {
+        print("rendering map...")
+    }
+    
 }
