@@ -467,7 +467,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQ3-vH-I0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-78" y="96"/>
+            <point key="canvasLocation" x="-402" y="168"/>
         </scene>
         <!--Course Page View Controller-->
         <scene sceneID="20s-rP-fSG">
@@ -597,11 +597,13 @@
                                                     </label>
                                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JRb-kA-tci">
                                                         <rect key="frame" x="223" y="0.0" width="152" height="164"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="152" id="gHf-0m-abr"/>
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="delegate" destination="zXX-Qc-GOl" id="aOu-bO-FqI"/>
+                                                            <outletCollection property="gestureRecognizers" destination="ncM-f8-vFn" appends="YES" id="DvX-Mh-EPF"/>
                                                         </connections>
                                                     </mapView>
                                                 </subviews>
@@ -881,24 +883,42 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdL-y1-cff" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ncM-f8-vFn">
+                    <connections>
+                        <segue destination="y3E-fe-x0Y" kind="show" identifier="mapSegue" id="Gbv-tu-Fu0"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1573.5999999999999" y="94.452773613193415"/>
+            <point key="canvasLocation" x="854" y="40"/>
         </scene>
-        <!--Course Page View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="f9w-2Z-YTi">
             <objects>
-                <viewController storyboardIdentifier="coursePage02" id="y3E-fe-x0Y" customClass="CoursePageViewController" customModule="Headlight" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="coursePage02" id="y3E-fe-x0Y" customClass="MapViewController" customModule="Headlight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HZh-Nz-Acw" userLabel="CoursePageView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sVy-Bw-Wgb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="sVy-Bw-Wgb" firstAttribute="leading" secondItem="zsH-kb-q92" secondAttribute="leading" id="3I9-pk-O8d"/>
+                            <constraint firstItem="sVy-Bw-Wgb" firstAttribute="top" secondItem="zsH-kb-q92" secondAttribute="top" id="AYb-x4-W3A"/>
+                            <constraint firstItem="zsH-kb-q92" firstAttribute="trailing" secondItem="sVy-Bw-Wgb" secondAttribute="trailing" id="UHi-Zw-fcq"/>
+                            <constraint firstItem="zsH-kb-q92" firstAttribute="bottom" secondItem="sVy-Bw-Wgb" secondAttribute="bottom" id="jR0-gk-q5d"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zsH-kb-q92"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1000"/>
+                    <connections>
+                        <outlet property="map" destination="sVy-Bw-Wgb" id="hOm-fN-IXN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TOW-OS-FfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="687" y="79"/>
+            <point key="canvasLocation" x="1666" y="-245"/>
         </scene>
     </scenes>
     <resources>
