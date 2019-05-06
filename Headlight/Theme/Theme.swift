@@ -15,5 +15,6 @@ class Theme {
     static let dark1 = UIColor(named: "Dark_1")
     static let dark2 = UIColor(named: "Dark_2")
     static let dark3 = UIColor(named: "Dark_3")
+    static let gray = UIColor(named: "LightGray")
 
 }

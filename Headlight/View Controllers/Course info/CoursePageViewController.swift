@@ -45,6 +45,7 @@ class CoursePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Course Information"
         initializeTableViewSettings()
         populateUIElements()
         getCourseLocation()
@@ -62,15 +63,20 @@ class CoursePageViewController: UIViewController {
         }
     }
     
-    /*
+    
     // MARK: - Navigation
+     
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the course to the new view controller.
+ if segue.destination is MapViewController {
+ let viewController = segue.destination as! MapViewController
+    
+ viewController.course = self.course
+ }
+ }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+
     
     func initializeTableViewSettings() {
         
@@ -195,9 +201,21 @@ extension CoursePageViewController: MKMapViewDelegate {
         print("lat: \(lat)")
         print("long: \(long)")
         let courseLocation = CLLocation(latitude: lat ?? 0, longitude: long ?? 0)
-        let regionRadius = 1000.0
+        let regionRadius: CLLocationDistance = 100.0
         let region = MKCoordinateRegion(center: courseLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-        locationMap.setRegion(region, animated: true)
+//        locationMap.setRegion(region, animated: true)
+//        locationMap.delegate = self
+        
+        
+        DispatchQueue.main.async {
+//            let annotation = MKPointAnnotation()
+//            let courseLocation = CLLocation(latitude: lat ?? 0, longitude: long ?? 0)
+//            let cordinates: CLLocationCoordinate2D = courseLocation.coordinate
+//            annotation.coordinate = cordinates
+//            print(cordinates)
+            self.locationMap.setRegion(region, animated: true)
+//            self.locationMap.setCenter(cordinates, animated: true)
+        }
 //        locationMap.delegate = self
     }
     
