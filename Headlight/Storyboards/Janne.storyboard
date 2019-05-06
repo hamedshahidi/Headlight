@@ -229,8 +229,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mc1-T6-Eos">
                                                         <rect key="frame" x="0.0" y="28" width="343" height="137"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Course name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oug-n8-jzw">
-                                                                <rect key="frame" x="8" y="8" width="249" height="27"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Course name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oug-n8-jzw">
+                                                                <rect key="frame" x="8" y="8" width="240" height="27"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -250,7 +250,7 @@
                                                                 <color key="textColor" name="Dark_1"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7m-fz-646">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7m-fz-646">
                                                                 <rect key="frame" x="284" y="11" width="51" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -277,8 +277,7 @@
                                                             <constraint firstItem="oug-n8-jzw" firstAttribute="top" secondItem="S7m-fz-646" secondAttribute="top" constant="-3" id="7kJ-xQ-OVF"/>
                                                             <constraint firstItem="S7m-fz-646" firstAttribute="leading" secondItem="pMl-Kf-N7Z" secondAttribute="trailing" id="EYp-tS-P6x"/>
                                                             <constraint firstItem="0RM-k5-OKt" firstAttribute="top" secondItem="oug-n8-jzw" secondAttribute="bottom" constant="8" symbolic="YES" id="GRq-tL-xDd"/>
-                                                            <constraint firstItem="S7m-fz-646" firstAttribute="leading" secondItem="oug-n8-jzw" secondAttribute="trailing" constant="27" id="Ndn-Yp-gVY"/>
-                                                            <constraint firstItem="S7m-fz-646" firstAttribute="trailing" secondItem="mc1-T6-Eos" secondAttribute="trailingMargin" id="OVw-v1-RLy"/>
+                                                            <constraint firstItem="S7m-fz-646" firstAttribute="leading" secondItem="oug-n8-jzw" secondAttribute="trailing" constant="36" id="Ndn-Yp-gVY"/>
                                                             <constraint firstItem="oug-n8-jzw" firstAttribute="leading" secondItem="mc1-T6-Eos" secondAttribute="leadingMargin" id="Rps-YQ-4of"/>
                                                             <constraint firstAttribute="trailing" secondItem="Pr0-jY-QcJ" secondAttribute="trailing" constant="8" id="ZpA-kG-UP9"/>
                                                             <constraint firstItem="d5o-Uu-hj9" firstAttribute="centerX" secondItem="mc1-T6-Eos" secondAttribute="centerX" constant="-2" id="b2B-Ne-3sR"/>
@@ -289,8 +288,10 @@
                                                             <constraint firstItem="oug-n8-jzw" firstAttribute="top" secondItem="mc1-T6-Eos" secondAttribute="topMargin" id="oJN-OV-o5d"/>
                                                             <constraint firstItem="Pr0-jY-QcJ" firstAttribute="top" secondItem="d5o-Uu-hj9" secondAttribute="bottom" constant="8" id="oMt-WO-5cr"/>
                                                             <constraint firstAttribute="bottom" secondItem="Pr0-jY-QcJ" secondAttribute="bottom" constant="7" id="oct-v5-DQ7"/>
+                                                            <constraint firstItem="S7m-fz-646" firstAttribute="top" secondItem="mc1-T6-Eos" secondAttribute="top" constant="11" id="tZq-cf-CWG"/>
                                                             <constraint firstItem="pMl-Kf-N7Z" firstAttribute="top" secondItem="mc1-T6-Eos" secondAttribute="top" constant="11" id="u6z-Q8-KSC"/>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="137" id="vtK-t2-FRT"/>
+                                                            <constraint firstItem="d5o-Uu-hj9" firstAttribute="top" secondItem="S7m-fz-646" secondAttribute="bottom" constant="40" id="wvZ-yv-JRz"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -318,7 +319,9 @@
                                                 <color key="backgroundColor" name="Tint"/>
                                                 <constraints>
                                                     <constraint firstItem="Lhk-wa-nmm" firstAttribute="leading" secondItem="N9h-NI-zoU" secondAttribute="leadingMargin" id="4yS-CF-FAF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="mc1-T6-Eos" secondAttribute="trailing" id="869-pw-5Tc"/>
                                                     <constraint firstAttribute="trailing" secondItem="mc1-T6-Eos" secondAttribute="trailing" id="9WG-1t-cER"/>
+                                                    <constraint firstItem="mc1-T6-Eos" firstAttribute="leading" secondItem="N9h-NI-zoU" secondAttribute="leading" id="Awm-G9-7vV"/>
                                                     <constraint firstItem="mc1-T6-Eos" firstAttribute="top" secondItem="Lhk-wa-nmm" secondAttribute="bottom" constant="-1" id="a9V-Zh-Vce"/>
                                                     <constraint firstAttribute="bottom" secondItem="mc1-T6-Eos" secondAttribute="bottom" id="ico-Bw-AIK"/>
                                                     <constraint firstItem="mc1-T6-Eos" firstAttribute="leading" secondItem="N9h-NI-zoU" secondAttribute="leading" id="rL5-9O-17V"/>
@@ -393,6 +396,7 @@
                                             <constraint firstAttribute="height" constant="684" id="MeB-44-OXF"/>
                                             <constraint firstItem="wcn-zY-KEm" firstAttribute="top" secondItem="1Fi-g6-ify" secondAttribute="bottom" constant="15" id="MmX-1k-uUU"/>
                                             <constraint firstItem="1Fi-g6-ify" firstAttribute="leading" secondItem="zm6-ik-OXs" secondAttribute="leading" constant="16" id="P2q-iL-1a4"/>
+                                            <constraint firstAttribute="trailing" secondItem="N9h-NI-zoU" secondAttribute="trailing" constant="16" id="PfW-rK-aWU"/>
                                             <constraint firstItem="N9h-NI-zoU" firstAttribute="leading" secondItem="1Fi-g6-ify" secondAttribute="leading" id="U7P-mY-5uP"/>
                                             <constraint firstItem="TLT-U3-PZQ" firstAttribute="leading" secondItem="fir-0m-X18" secondAttribute="leading" constant="99" id="Wl3-iA-Ngk"/>
                                             <constraint firstItem="wcn-zY-KEm" firstAttribute="leading" secondItem="fir-0m-X18" secondAttribute="leading" id="eCa-OV-sfO"/>
@@ -401,6 +405,7 @@
                                             <constraint firstItem="TLT-U3-PZQ" firstAttribute="top" secondItem="wcn-zY-KEm" secondAttribute="bottom" constant="87" id="iZ6-2Y-Xtz"/>
                                             <constraint firstItem="zm6-ik-OXs" firstAttribute="leading" secondItem="fir-0m-X18" secondAttribute="leading" id="ocs-zT-4PU"/>
                                             <constraint firstItem="1Fi-g6-ify" firstAttribute="trailing" secondItem="zm6-ik-OXs" secondAttribute="trailing" constant="-16" id="sT7-UV-Bmp"/>
+                                            <constraint firstItem="N9h-NI-zoU" firstAttribute="leading" secondItem="fir-0m-X18" secondAttribute="leading" constant="16" id="wLE-yb-mnl"/>
                                             <constraint firstItem="DLq-Fb-v3v" firstAttribute="bottom" secondItem="fir-0m-X18" secondAttribute="bottomMargin" id="wQO-Ei-DtP"/>
                                             <constraint firstItem="N9h-NI-zoU" firstAttribute="trailing" secondItem="1Fi-g6-ify" secondAttribute="trailing" id="yvE-5H-EkY"/>
                                         </constraints>
