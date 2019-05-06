@@ -16,6 +16,8 @@
 		6A48C5482271CAE60079B4A1 /* SearchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C5472271CAE60079B4A1 /* SearchScreenViewController.swift */; };
 		6A48C54A2271DD1E0079B4A1 /* SearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C5492271DD1E0079B4A1 /* SearchRow.swift */; };
 		6A48C54E227C75B20079B4A1 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C54D227C75B20079B4A1 /* SearchResultCell.swift */; };
+		6A48C5502280376D0079B4A1 /* SearchPageUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C54F2280376D0079B4A1 /* SearchPageUnitTests.swift */; };
+		6A48C55622804B8C0079B4A1 /* SearchPageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48C55522804B8C0079B4A1 /* SearchPageUITests.swift */; };
 		6A636694227C40A4009F10E1 /* CoursePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A636693227C40A4009F10E1 /* CoursePageViewController.swift */; };
 		6A63669D227C9545009F10E1 /* SkillListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A63669B227C9545009F10E1 /* SkillListCell.swift */; };
 		6A63669E227C9545009F10E1 /* SkillListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A63669C227C9545009F10E1 /* SkillListCell.xib */; };
@@ -94,6 +96,8 @@
 		6A48C5472271CAE60079B4A1 /* SearchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewController.swift; sourceTree = "<group>"; };
 		6A48C5492271DD1E0079B4A1 /* SearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRow.swift; sourceTree = "<group>"; };
 		6A48C54D227C75B20079B4A1 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		6A48C54F2280376D0079B4A1 /* SearchPageUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageUnitTests.swift; sourceTree = "<group>"; };
+		6A48C55522804B8C0079B4A1 /* SearchPageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageUITests.swift; sourceTree = "<group>"; };
 		6A636693227C40A4009F10E1 /* CoursePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePageViewController.swift; sourceTree = "<group>"; };
 		6A63669B227C9545009F10E1 /* SkillListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillListCell.swift; sourceTree = "<group>"; };
 		6A63669C227C9545009F10E1 /* SkillListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkillListCell.xib; sourceTree = "<group>"; };
@@ -315,6 +319,7 @@
 				954297B9226EFE2100AA8E8F /* CourseCoreDataTests.swift */,
 				954297CC227840BB00AA8E8F /* CareerPathAlgorithmTests.swift */,
 				954297CE227844F700AA8E8F /* CareerPathCoreDataTests.swift */,
+				6A48C54F2280376D0079B4A1 /* SearchPageUnitTests.swift */,
 			);
 			path = HeadlightTests;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 				954297812265C2A900AA8E8F /* HeadlightUITests.swift */,
 				954297832265C2A900AA8E8F /* Info.plist */,
 				6AC3C49C227F0D0C00E3C595 /* SignupUITests.swift */,
+				6A48C55522804B8C0079B4A1 /* SearchPageUITests.swift */,
 			);
 			path = HeadlightUITests;
 			sourceTree = "<group>";
@@ -542,6 +548,7 @@
 				954297BA226EFE2100AA8E8F /* CourseCoreDataTests.swift in Sources */,
 				954297CD227840BB00AA8E8F /* CareerPathAlgorithmTests.swift in Sources */,
 				954297B4226DC3D000AA8E8F /* UserCoreDataTests.swift in Sources */,
+				6A48C5502280376D0079B4A1 /* SearchPageUnitTests.swift in Sources */,
 				954297CF227844F700AA8E8F /* CareerPathCoreDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,6 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				954297822265C2A900AA8E8F /* HeadlightUITests.swift in Sources */,
+				6A48C55622804B8C0079B4A1 /* SearchPageUITests.swift in Sources */,
 				6AC3C49D227F0D0C00E3C595 /* SignupUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

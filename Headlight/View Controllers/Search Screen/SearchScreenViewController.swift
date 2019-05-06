@@ -23,7 +23,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     var searchContainers = ["Skills"]
     var course_data : [CourseStruct.Course]?
     var all_skills = skills
-    var searchResultData : [CourseStruct.Course?]?
+    open var searchResultData : [CourseStruct.Course?]?
     private var searchString: String = ""
     
     
@@ -35,6 +35,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         self.resultTableView.delegate = self
         self.searchResultData = []
         self.course_data = CoreDataHelper.listAllCourses()
+        
+        self.navigationItem.title = "Search"
     }
     
     
