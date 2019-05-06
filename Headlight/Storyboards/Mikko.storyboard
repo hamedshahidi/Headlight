@@ -28,11 +28,11 @@
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalCentering" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Lfd-si-68H">
                                                 <rect key="frame" x="16" y="48" width="343" height="603"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="343" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="iTy-UH-Vv7">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="343" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="iTy-UH-Vv7">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
                                                     </imageView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7tN-vi-0qv">
-                                                        <rect key="frame" x="0.0" y="397" width="343" height="206"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7tN-vi-0qv">
+                                                        <rect key="frame" x="0.0" y="394" width="343" height="209"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headlight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRy-G4-OQA">
                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
@@ -41,7 +41,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="100" verticalCompressionResistancePriority="100" text="Hello! Let's get started by entering your username." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxG-vP-1Fp">
-                                                                <rect key="frame" x="0.0" y="58" width="343" height="42"/>
+                                                                <rect key="frame" x="0.0" y="59" width="343" height="42"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="42" id="rAX-RG-odV"/>
                                                                 </constraints>
@@ -50,7 +50,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="100" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qAt-3z-fQh">
-                                                                <rect key="frame" x="0.0" y="115" width="343" height="32"/>
+                                                                <rect key="frame" x="0.0" y="117" width="343" height="32"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="32" id="8ba-yj-7Gp"/>
                                                                 </constraints>
@@ -62,7 +62,7 @@
                                                                 </connections>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPS-bB-ANi">
-                                                                <rect key="frame" x="0.0" y="162" width="343" height="44"/>
+                                                                <rect key="frame" x="0.0" y="165" width="343" height="44"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="44" id="8yb-TA-FiH"/>
                                                                 </constraints>

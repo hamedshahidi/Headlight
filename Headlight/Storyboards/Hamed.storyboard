@@ -600,6 +600,9 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="152" id="gHf-0m-abr"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="zXX-Qc-GOl" id="aOu-bO-FqI"/>
+                                                        </connections>
                                                     </mapView>
                                                 </subviews>
                                                 <color key="backgroundColor" name="Background"/>
@@ -719,6 +722,7 @@
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="skillName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLa-1C-jWi">
                                                                     <rect key="frame" x="150.5" y="7" width="74" height="30"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="eFt-T2-D9w"/>
                                                                     </constraints>
@@ -867,6 +871,7 @@
                         <outlet property="heightConstraintGainedSkills" destination="4lR-zU-cWY" id="Bv6-kp-4VX"/>
                         <outlet property="heightConstraintsRequiredSkills" destination="eL5-rN-vO1" id="SHI-qI-rFl"/>
                         <outlet property="locationLabel" destination="RLV-NU-mK8" id="SYe-3e-QGN"/>
+                        <outlet property="locationMap" destination="JRb-kA-tci" id="pii-dO-ko6"/>
                         <outlet property="orginizerLabel" destination="Wkc-92-Qv7" id="WdG-GU-cq9"/>
                         <outlet property="rateLabel" destination="TH9-dF-a9L" id="7KC-mz-LR3"/>
                         <outlet property="startLabel" destination="aAZ-AH-SUs" id="h4M-Ku-Is4"/>
