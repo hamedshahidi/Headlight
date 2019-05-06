@@ -223,14 +223,14 @@
                                                     <string>Title</string>
                                                 </scopeButtonTitles>
                                             </searchBar>
-                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N9h-NI-zoU">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N9h-NI-zoU">
                                                 <rect key="frame" x="16" y="418" width="343" height="165"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mc1-T6-Eos">
                                                         <rect key="frame" x="0.0" y="28" width="343" height="137"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Course name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oug-n8-jzw">
-                                                                <rect key="frame" x="8" y="8" width="259" height="27"/>
+                                                                <rect key="frame" x="8" y="8" width="249" height="27"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -277,13 +277,14 @@
                                                             <constraint firstItem="oug-n8-jzw" firstAttribute="top" secondItem="S7m-fz-646" secondAttribute="top" constant="-3" id="7kJ-xQ-OVF"/>
                                                             <constraint firstItem="S7m-fz-646" firstAttribute="leading" secondItem="pMl-Kf-N7Z" secondAttribute="trailing" id="EYp-tS-P6x"/>
                                                             <constraint firstItem="0RM-k5-OKt" firstAttribute="top" secondItem="oug-n8-jzw" secondAttribute="bottom" constant="8" symbolic="YES" id="GRq-tL-xDd"/>
-                                                            <constraint firstItem="S7m-fz-646" firstAttribute="leading" secondItem="oug-n8-jzw" secondAttribute="trailing" constant="17" id="Ndn-Yp-gVY"/>
+                                                            <constraint firstItem="S7m-fz-646" firstAttribute="leading" secondItem="oug-n8-jzw" secondAttribute="trailing" constant="27" id="Ndn-Yp-gVY"/>
                                                             <constraint firstItem="S7m-fz-646" firstAttribute="trailing" secondItem="mc1-T6-Eos" secondAttribute="trailingMargin" id="OVw-v1-RLy"/>
                                                             <constraint firstItem="oug-n8-jzw" firstAttribute="leading" secondItem="mc1-T6-Eos" secondAttribute="leadingMargin" id="Rps-YQ-4of"/>
                                                             <constraint firstAttribute="trailing" secondItem="Pr0-jY-QcJ" secondAttribute="trailing" constant="8" id="ZpA-kG-UP9"/>
                                                             <constraint firstItem="d5o-Uu-hj9" firstAttribute="centerX" secondItem="mc1-T6-Eos" secondAttribute="centerX" constant="-2" id="b2B-Ne-3sR"/>
                                                             <constraint firstItem="d5o-Uu-hj9" firstAttribute="top" secondItem="0RM-k5-OKt" secondAttribute="bottom" constant="8" symbolic="YES" id="cc0-ID-nMl"/>
                                                             <constraint firstItem="Pr0-jY-QcJ" firstAttribute="leading" secondItem="mc1-T6-Eos" secondAttribute="leading" constant="8" id="eK7-jN-Ifi"/>
+                                                            <constraint firstAttribute="trailing" secondItem="S7m-fz-646" secondAttribute="trailing" constant="8" id="kwU-2n-nxK"/>
                                                             <constraint firstAttribute="trailing" secondItem="0RM-k5-OKt" secondAttribute="trailing" constant="234" id="mFI-YT-iue"/>
                                                             <constraint firstItem="oug-n8-jzw" firstAttribute="top" secondItem="mc1-T6-Eos" secondAttribute="topMargin" id="oJN-OV-o5d"/>
                                                             <constraint firstItem="Pr0-jY-QcJ" firstAttribute="top" secondItem="d5o-Uu-hj9" secondAttribute="bottom" constant="8" id="oMt-WO-5cr"/>
@@ -359,7 +360,7 @@
                                                     <segue destination="0aS-DY-j3z" kind="showDetail" id="RHF-yG-9gR"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLT-U3-PZQ">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLT-U3-PZQ">
                                                 <rect key="frame" x="99" y="490" width="177" height="47"/>
                                                 <color key="backgroundColor" name="Tint"/>
                                                 <constraints>

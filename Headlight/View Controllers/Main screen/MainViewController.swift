@@ -80,7 +80,14 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             tableView.isHidden = true
         }
         
-        let coursesDone = user?.history.count ?? 0
+        // Calculates how many courses have been completed from the current career path
+        var coursesDone: Int = 0
+        for course in careerPath?.path ?? []{
+            if(user?.history.contains(course.id ?? "") ?? false){
+                coursesDone += 1
+            }
+        }
+        
         let coursesLeft = (careerPath?.path.count ?? 0) - coursesDone
         profileName.text = user?.name
         profileCoursesDone.text = String(coursesDone)
@@ -184,7 +191,7 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                 skillString.append(aSkill + ",  ")
             }
         }
-        
+
         cell = changeCellColors(cell: cell, indexPath: indexPath, skillString: skillString, userHasDoneThisCourse: userHasDoneThisCourse)
         cell.course = course
         cell.courseName.text = course?.name ?? "Unknown"
@@ -235,7 +242,7 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     // Creates onclick animation for collecitionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 1.5, animations: {
             collectionView.cellForItem(at: indexPath)?.alpha = 0.1
         })
         selectedCourse = (collectionView.cellForItem(at: indexPath) as! CourseCell).course
