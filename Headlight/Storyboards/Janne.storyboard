@@ -230,7 +230,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="343" height="137"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Course name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oug-n8-jzw">
-                                                                <rect key="frame" x="8" y="8" width="259" height="27"/>
+                                                                <rect key="frame" x="8" y="8" width="249" height="27"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -277,13 +277,14 @@
                                                             <constraint firstItem="oug-n8-jzw" firstAttribute="top" secondItem="S7m-fz-646" secondAttribute="top" constant="-3" id="7kJ-xQ-OVF"/>
                                                             <constraint firstItem="S7m-fz-646" firstAttribute="leading" secondItem="pMl-Kf-N7Z" secondAttribute="trailing" id="EYp-tS-P6x"/>
                                                             <constraint firstItem="0RM-k5-OKt" firstAttribute="top" secondItem="oug-n8-jzw" secondAttribute="bottom" constant="8" symbolic="YES" id="GRq-tL-xDd"/>
-                                                            <constraint firstItem="S7m-fz-646" firstAttribute="leading" secondItem="oug-n8-jzw" secondAttribute="trailing" constant="17" id="Ndn-Yp-gVY"/>
+                                                            <constraint firstItem="S7m-fz-646" firstAttribute="leading" secondItem="oug-n8-jzw" secondAttribute="trailing" constant="27" id="Ndn-Yp-gVY"/>
                                                             <constraint firstItem="S7m-fz-646" firstAttribute="trailing" secondItem="mc1-T6-Eos" secondAttribute="trailingMargin" id="OVw-v1-RLy"/>
                                                             <constraint firstItem="oug-n8-jzw" firstAttribute="leading" secondItem="mc1-T6-Eos" secondAttribute="leadingMargin" id="Rps-YQ-4of"/>
                                                             <constraint firstAttribute="trailing" secondItem="Pr0-jY-QcJ" secondAttribute="trailing" constant="8" id="ZpA-kG-UP9"/>
                                                             <constraint firstItem="d5o-Uu-hj9" firstAttribute="centerX" secondItem="mc1-T6-Eos" secondAttribute="centerX" constant="-2" id="b2B-Ne-3sR"/>
                                                             <constraint firstItem="d5o-Uu-hj9" firstAttribute="top" secondItem="0RM-k5-OKt" secondAttribute="bottom" constant="8" symbolic="YES" id="cc0-ID-nMl"/>
                                                             <constraint firstItem="Pr0-jY-QcJ" firstAttribute="leading" secondItem="mc1-T6-Eos" secondAttribute="leading" constant="8" id="eK7-jN-Ifi"/>
+                                                            <constraint firstAttribute="trailing" secondItem="S7m-fz-646" secondAttribute="trailing" constant="8" id="kwU-2n-nxK"/>
                                                             <constraint firstAttribute="trailing" secondItem="0RM-k5-OKt" secondAttribute="trailing" constant="234" id="mFI-YT-iue"/>
                                                             <constraint firstItem="oug-n8-jzw" firstAttribute="top" secondItem="mc1-T6-Eos" secondAttribute="topMargin" id="oJN-OV-o5d"/>
                                                             <constraint firstItem="Pr0-jY-QcJ" firstAttribute="top" secondItem="d5o-Uu-hj9" secondAttribute="bottom" constant="8" id="oMt-WO-5cr"/>
@@ -359,6 +360,25 @@
                                                     <segue destination="0aS-DY-j3z" kind="showDetail" id="RHF-yG-9gR"/>
                                                 </connections>
                                             </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLT-U3-PZQ">
+                                                <rect key="frame" x="99" y="490" width="177" height="47"/>
+                                                <color key="backgroundColor" name="Tint"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="47" id="q2J-Al-lb7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                <state key="normal" title="Pick a career path">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="oU6-fd-rym" kind="show" id="jXh-NA-P8O"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" name="Background"/>
                                         <constraints>
@@ -369,13 +389,16 @@
                                             <constraint firstItem="1Fi-g6-ify" firstAttribute="centerX" secondItem="wcn-zY-KEm" secondAttribute="centerX" id="KAM-Jw-MzC"/>
                                             <constraint firstItem="3BF-4F-aKK" firstAttribute="leading" secondItem="fir-0m-X18" secondAttribute="leading" id="LOP-hj-laQ"/>
                                             <constraint firstItem="N9h-NI-zoU" firstAttribute="top" secondItem="wcn-zY-KEm" secondAttribute="bottom" constant="15" id="LUd-PM-dpd"/>
+                                            <constraint firstAttribute="trailing" secondItem="TLT-U3-PZQ" secondAttribute="trailing" constant="99" id="MMj-A8-MEV"/>
                                             <constraint firstAttribute="height" constant="684" id="MeB-44-OXF"/>
                                             <constraint firstItem="wcn-zY-KEm" firstAttribute="top" secondItem="1Fi-g6-ify" secondAttribute="bottom" constant="15" id="MmX-1k-uUU"/>
                                             <constraint firstItem="1Fi-g6-ify" firstAttribute="leading" secondItem="zm6-ik-OXs" secondAttribute="leading" constant="16" id="P2q-iL-1a4"/>
                                             <constraint firstItem="N9h-NI-zoU" firstAttribute="leading" secondItem="1Fi-g6-ify" secondAttribute="leading" id="U7P-mY-5uP"/>
+                                            <constraint firstItem="TLT-U3-PZQ" firstAttribute="leading" secondItem="fir-0m-X18" secondAttribute="leading" constant="99" id="Wl3-iA-Ngk"/>
                                             <constraint firstItem="wcn-zY-KEm" firstAttribute="leading" secondItem="fir-0m-X18" secondAttribute="leading" id="eCa-OV-sfO"/>
                                             <constraint firstItem="1Fi-g6-ify" firstAttribute="top" secondItem="3BF-4F-aKK" secondAttribute="bottom" constant="15" id="fX8-13-0Pb"/>
                                             <constraint firstItem="zm6-ik-OXs" firstAttribute="top" secondItem="fir-0m-X18" secondAttribute="top" id="gMI-qg-pxN"/>
+                                            <constraint firstItem="TLT-U3-PZQ" firstAttribute="top" secondItem="wcn-zY-KEm" secondAttribute="bottom" constant="87" id="iZ6-2Y-Xtz"/>
                                             <constraint firstItem="zm6-ik-OXs" firstAttribute="leading" secondItem="fir-0m-X18" secondAttribute="leading" id="ocs-zT-4PU"/>
                                             <constraint firstItem="1Fi-g6-ify" firstAttribute="trailing" secondItem="zm6-ik-OXs" secondAttribute="trailing" constant="-16" id="sT7-UV-Bmp"/>
                                             <constraint firstItem="DLq-Fb-v3v" firstAttribute="bottom" secondItem="fir-0m-X18" secondAttribute="bottomMargin" id="wQO-Ei-DtP"/>
@@ -410,6 +433,7 @@
                         <outlet property="currentCourseRating" destination="S7m-fz-646" id="mDK-x1-ocP"/>
                         <outlet property="currentCourseSkills" destination="Pr0-jY-QcJ" id="Qr0-Pj-ccc"/>
                         <outlet property="currentCourseView" destination="N9h-NI-zoU" id="8GH-sS-wQ0"/>
+                        <outlet property="pickCareerButton" destination="TLT-U3-PZQ" id="66V-ZE-WKH"/>
                         <outlet property="precentageCoursesDone" destination="UeV-Fn-MRn" id="0Iz-4L-U9O"/>
                         <outlet property="profileCoursesDone" destination="nD2-75-Kgl" id="aLu-dO-mFm"/>
                         <outlet property="profileCoursesLeft" destination="uEv-lq-QqE" id="WQe-Rx-1d9"/>
@@ -440,6 +464,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="645-Es-EzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1958" y="-11"/>
+        </scene>
+        <!--Tuomas-->
+        <scene sceneID="eJA-8t-vfF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tuomas" id="oU6-fd-rym" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bb9-wu-kzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1909" y="152"/>
         </scene>
         <!--Main-->
         <scene sceneID="HcS-Xp-Rxh">
