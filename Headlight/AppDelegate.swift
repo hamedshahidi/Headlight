@@ -16,9 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     static let viewContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    static var isUITestingEnabled: Bool {
+        get {
+            return ProcessInfo.processInfo.arguments.contains("UI-Testing")
+        }
+    }
+    
+    private func setStateForUITesting() {
+        if AppDelegate.isUITestingEnabled {
+            UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+            CoreDataHelper.clearUserData()
+            CoreDataHelper.clearCourseData()
+        }
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        setStateForUITesting()
+
         // Load course data
         let fetcher = DataFetcher()
         fetcher.FetchInitialData()
@@ -33,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let viewController = mainStoryboard.instantiateViewController(withIdentifier: "onboardingView")
             self.window!.rootViewController = viewController
         }
-        
         return true
     }
 

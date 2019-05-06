@@ -12,6 +12,7 @@ import MapKit
 class CoursePageViewController: UIViewController {
     
     var course: CourseStruct.Course?
+    var user = CoreDataHelper.getUserData()
     
     struct tableViews {
         static let gained = "TableViewGainedSkills"
@@ -43,12 +44,25 @@ class CoursePageViewController: UIViewController {
     
     @IBOutlet weak var locationMap: MKMapView!
     
+    @IBOutlet weak var btnDone: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Course Information"
+        modifyUI()
         initializeTableViewSettings()
-        populateUIElements()
         getCourseLocation()
+        populateUIElements()
+        
+        
+        if let history = user?.history,
+            let course = course?.id
+        {
+            if history.contains(course) {
+                btnDone.borderColor = .gray
+                btnDone.titleLabel?.textColor = .gray
+            }
+        }
     }
     
     // Observer to autosize UITableView height based on its content size
@@ -63,6 +77,23 @@ class CoursePageViewController: UIViewController {
         }
     }
     
+    func modifyUI() {
+        btnDone.layer.cornerRadius = 8
+        btnDone.backgroundColor = Theme.tint
+        btnDone.tintColor = Theme.background
+        btnDone.borderWidth = 0
+    }
+    
+    @IBAction func markAsDone(_ sender: UIButton) {
+        if let course = self.course {
+            CoreDataHelper.addToUserHistory(course)
+            btnDone.backgroundColor = Theme.dark3
+            btnDone.titleLabel?.text = "Already done"
+        }
+    }
+    
+
+    
     
     // MARK: - Navigation
      
@@ -70,10 +101,10 @@ class CoursePageViewController: UIViewController {
  // Get the new view controller using segue.destination.
  // Pass the course to the new view controller.
  if segue.destination is MapViewController {
- let viewController = segue.destination as! MapViewController
+    let viewController = segue.destination as! MapViewController
     
- viewController.course = self.course
- }
+    viewController.course = self.course
+    }
  }
 
 
@@ -196,10 +227,9 @@ extension CoursePageViewController: UITableViewDataSource, UITableViewDelegate {
 extension CoursePageViewController: MKMapViewDelegate {
     
     func getCourseLocation () {
+        
         let lat = course?.location?.ltd
         let long = course?.location?.lgn
-        print("lat: \(lat)")
-        print("long: \(long)")
         let courseLocation = CLLocation(latitude: lat ?? 0, longitude: long ?? 0)
         let regionRadius: CLLocationDistance = 100.0
         let region = MKCoordinateRegion(center: courseLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)

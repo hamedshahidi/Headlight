@@ -67,10 +67,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1F-r8-9QE" userLabel="DescriptionView">
-                                                <rect key="frame" x="0.0" y="130" width="375" height="94"/>
+                                                <rect key="frame" x="0.0" y="130" width="375" height="114"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLg-jQ-OTt">
-                                                        <rect key="frame" x="16" y="16" width="83" height="18"/>
+                                                        <rect key="frame" x="16" y="36" width="83" height="18"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="18" id="dM1-pW-JFH"/>
                                                         </constraints>
@@ -79,7 +79,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYC-8J-CJC">
-                                                        <rect key="frame" x="24" y="42" width="327" height="36"/>
+                                                        <rect key="frame" x="24" y="62" width="327" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="msi-2d-lOR"/>
                                                         </constraints>
@@ -87,19 +87,40 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohn-WE-IPL">
+                                                        <rect key="frame" x="258" y="8" width="101" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title=" Mark as done "/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="markAsDone:" destination="zXX-Qc-GOl" eventType="touchUpInside" id="HM3-rI-n6H"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="yLg-jQ-OTt" firstAttribute="leading" secondItem="p1F-r8-9QE" secondAttribute="leading" constant="16" id="JmC-Wl-uEb"/>
                                                     <constraint firstAttribute="bottom" secondItem="XYC-8J-CJC" secondAttribute="bottom" constant="16" id="OJN-y4-w0y"/>
                                                     <constraint firstItem="XYC-8J-CJC" firstAttribute="top" secondItem="yLg-jQ-OTt" secondAttribute="bottom" constant="8" id="XhS-sQ-BLp"/>
-                                                    <constraint firstItem="yLg-jQ-OTt" firstAttribute="top" secondItem="p1F-r8-9QE" secondAttribute="top" constant="16" id="g5b-eI-bcg"/>
+                                                    <constraint firstItem="yLg-jQ-OTt" firstAttribute="top" secondItem="p1F-r8-9QE" secondAttribute="top" constant="36" id="g5b-eI-bcg"/>
                                                     <constraint firstAttribute="trailing" secondItem="XYC-8J-CJC" secondAttribute="trailing" constant="24" id="hxX-Zu-OXq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ohn-WE-IPL" secondAttribute="trailing" constant="16" id="k5u-lG-WRQ"/>
                                                     <constraint firstItem="XYC-8J-CJC" firstAttribute="leading" secondItem="p1F-r8-9QE" secondAttribute="leading" constant="24" id="t4r-Gh-Gdp"/>
+                                                    <constraint firstItem="Ohn-WE-IPL" firstAttribute="top" secondItem="p1F-r8-9QE" secondAttribute="top" constant="8" id="yVW-Q4-d5R"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzV-0w-HAr" userLabel="LocationView">
-                                                <rect key="frame" x="0.0" y="224" width="375" height="164"/>
+                                                <rect key="frame" x="0.0" y="244" width="375" height="164"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtS-Wu-KDs">
                                                         <rect key="frame" x="16" y="16" width="63" height="18"/>
@@ -168,7 +189,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yej-9h-Tf7" userLabel="DatesView">
-                                                <rect key="frame" x="0.0" y="388" width="375" height="90"/>
+                                                <rect key="frame" x="0.0" y="408" width="375" height="90"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ana-De-dD7" userLabel="InnerDatesView">
                                                         <rect key="frame" x="81" y="17.5" width="213.5" height="55"/>
@@ -228,7 +249,7 @@
                                                 </constraints>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableViewGainedSkills" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EB8-il-3U4" userLabel="TableViewGainedSkills">
-                                                <rect key="frame" x="0.0" y="494" width="375" height="300"/>
+                                                <rect key="frame" x="0.0" y="514" width="375" height="300"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="750" constant="300" id="4lR-zU-cWY"/>
@@ -297,7 +318,7 @@
                                                 </connections>
                                             </tableView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableViewRequiredSkills" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Ou-h2-Thw" userLabel="TableViewRequiredSkills">
-                                                <rect key="frame" x="0.0" y="878" width="375" height="300"/>
+                                                <rect key="frame" x="0.0" y="898" width="375" height="300"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="eL5-rN-vO1"/>
@@ -355,7 +376,7 @@
                                                 </connections>
                                             </tableView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="wop-bj-4p3" userLabel="ImageViewArrow">
-                                                <rect key="frame" x="167.5" y="810" width="40" height="60"/>
+                                                <rect key="frame" x="167.5" y="830" width="40" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="dEG-rl-XFQ"/>
                                                     <constraint firstAttribute="height" constant="60" id="hY2-2P-X8h"/>
@@ -410,6 +431,7 @@
                     <size key="freeformSize" width="375" height="1300"/>
                     <connections>
                         <outlet property="arrowImageView" destination="wop-bj-4p3" id="TZa-Ir-qGl"/>
+                        <outlet property="btnDone" destination="Ohn-WE-IPL" id="6HQ-0g-4a0"/>
                         <outlet property="descLabel" destination="XYC-8J-CJC" id="C7x-Tq-Uqy"/>
                         <outlet property="endLabel" destination="bE4-Po-gSD" id="ZdH-UF-aVt"/>
                         <outlet property="heightConstraintGainedSkills" destination="4lR-zU-cWY" id="Bv6-kp-4VX"/>
