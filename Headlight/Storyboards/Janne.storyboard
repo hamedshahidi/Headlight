@@ -215,7 +215,7 @@
                                             <searchBar contentMode="redraw" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zm6-ik-OXs">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" name="Background"/>
                                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <scopeButtonTitles>
@@ -304,12 +304,12 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ongoing course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhk-wa-nmm">
-                                                        <rect key="frame" x="8" y="0.0" width="125" height="32"/>
+                                                        <rect key="frame" x="8" y="0.0" width="125" height="29"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="32" id="4ET-Rb-XSd"/>
+                                                            <constraint firstAttribute="height" constant="29" id="4ET-Rb-XSd"/>
                                                             <constraint firstAttribute="width" constant="125" id="tey-u7-Jvb"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -318,7 +318,7 @@
                                                 <constraints>
                                                     <constraint firstItem="Lhk-wa-nmm" firstAttribute="leading" secondItem="N9h-NI-zoU" secondAttribute="leadingMargin" id="4yS-CF-FAF"/>
                                                     <constraint firstAttribute="trailing" secondItem="mc1-T6-Eos" secondAttribute="trailing" id="9WG-1t-cER"/>
-                                                    <constraint firstItem="mc1-T6-Eos" firstAttribute="top" secondItem="Lhk-wa-nmm" secondAttribute="bottom" constant="-4" id="a9V-Zh-Vce"/>
+                                                    <constraint firstItem="mc1-T6-Eos" firstAttribute="top" secondItem="Lhk-wa-nmm" secondAttribute="bottom" constant="-1" id="a9V-Zh-Vce"/>
                                                     <constraint firstAttribute="bottom" secondItem="mc1-T6-Eos" secondAttribute="bottom" id="ico-Bw-AIK"/>
                                                     <constraint firstItem="mc1-T6-Eos" firstAttribute="leading" secondItem="N9h-NI-zoU" secondAttribute="leading" id="rL5-9O-17V"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="165" id="uDC-2s-Wi2"/>

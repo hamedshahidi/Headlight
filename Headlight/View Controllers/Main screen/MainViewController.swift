@@ -56,8 +56,21 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         // Removes lines ontop and under the search bar
         searchBar.setBackgroundImage(UIImage.init(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
         
+       
+        
+        let gesture = UITapGestureRecognizer(target: self , action:  #selector(self.checkAction))
+        currentCourseView.addGestureRecognizer(gesture)
+
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        scrollOnceOnly = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         let user = CoreDataHelper.getUserData()
         let currentCareerPathIndex = user?.getCareerPathProgress(careerPath) ?? 0
+        print(currentCareerPathIndex)
         
         //Sets profile info
         let coursesDone = user?.history.count ?? 0
@@ -66,7 +79,7 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         profileCoursesLeft.text = String((careerPath?.path.count ?? 0) - coursesDone)
         var percentage = (Float(coursesDone) / Float(careerPath?.path.count ?? 0)) * 100
         if coursesDone == 0 {
-             percentage = 0
+            percentage = 0
         }
         precentageCoursesDone.text = NSString(format: "%.1f", percentage) as String + "%"
         
@@ -83,10 +96,7 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         currentCourseDescription.text = currentCourse?.description
         currentCourseRating.text = NSString(format: "%.1f", currentCourse?.rating ?? 0 ) as String
         currentCourseSkills.attributedText = setColoredLabel(skillString: stringOfSkills)
-        
-        let gesture = UITapGestureRecognizer(target: self , action:  #selector(self.checkAction))
-        currentCourseView.addGestureRecognizer(gesture)
-
+        tableView.reloadData()
     }
 
     // Search bar click
