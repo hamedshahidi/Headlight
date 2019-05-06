@@ -144,7 +144,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func updateResultTableViewData(){
-        self.resultTableView.reloadData()
+        self.resultTableView?.reloadData()
       //  print("data reloaded..")
     }
     
