@@ -14,7 +14,7 @@
         <!--Signup Name View Controller-->
         <scene sceneID="eQq-Dz-NtJ">
             <objects>
-                <viewController id="Vl9-34-D5h" customClass="SignupNameViewController" customModule="Headlight" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboardingView" id="Vl9-34-D5h" customClass="SignupNameViewController" customModule="Headlight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Een-d7-ul5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
