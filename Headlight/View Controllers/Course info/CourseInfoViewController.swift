@@ -17,7 +17,6 @@ class CourseInfoViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        tableView.separatorColor = UIColor.clear
         
         // for development only
         // course = CoreDataHelper.findCourseByID("metropolia-mobile-05")
@@ -160,36 +159,37 @@ extension CourseInfoViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "skillCell", for: indexPath) as? skillCell
-            else { fatalError("skillcell error")}
-        
-        let skills = course?.skills
-        
-        switch collectionView.restorationIdentifier {
-            
-        case "skillsRequiredCV":
-
-            cell.requiredSkillLabel?.text = skills?.required?[indexPath.row]
-
-            let colors = SkillColor.getPairColors()
-            cell.requiredSkillLabel?.textColor = colors.0
-            cell.requiredSkillLabel?.backgroundColor = colors.1
-            
-            return cell
-            
-        case "skillsGainedCV":
-
-            cell.gainedSkillLabel?.text = skills?.gained?[indexPath.row]
-
-            let colors = SkillColor.getPairColors()
-            cell.gainedSkillLabel?.textColor = colors.1
-            cell.gainedSkillLabel?.backgroundColor = colors.0
-
-            return cell
-            
-        default:
-            return cell
-        }
+//
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "skillCell", for: indexPath) as? skillCell
+//            else { fatalError("skillcell error")}
+//
+//        let skills = course?.skills
+//
+//        switch collectionView.restorationIdentifier {
+//
+//        case "skillsRequiredCV":
+//
+//            cell.requiredSkillLabel?.text = skills?.required?[indexPath.row]
+//
+//            let colors = SkillColor.getPairColors()
+//            cell.requiredSkillLabel?.textColor = colors.0
+//            cell.requiredSkillLabel?.backgroundColor = colors.1
+//
+//            return cell
+//
+//        case "skillsGainedCV":
+//
+//            cell.gainedSkillLabel?.text = skills?.gained?[indexPath.row]
+//
+//            let colors = SkillColor.getPairColors()
+//            cell.gainedSkillLabel?.textColor = colors.1
+//            cell.gainedSkillLabel?.backgroundColor = colors.0
+//
+//            return cell
+//
+//        default:
+//            return cell
+//        }
+        return UICollectionViewCell()
     }
 }
