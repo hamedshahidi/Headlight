@@ -13,6 +13,8 @@ class CoursePageViewController: UIViewController {
     
     var course: CourseStruct.Course?
     var user = CoreDataHelper.getUserData()
+    var careerPath: CareerPath? = nil
+    var courseIsDone: Bool = false
     
     struct tableViews {
         static let gained = "TableViewGainedSkills"
@@ -48,21 +50,19 @@ class CoursePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Course Information"
-        modifyUI()
+        
+        initializeUISettings()
         initializeTableViewSettings()
+        getCareerPathInfo()
         getCourseLocation()
         populateUIElements()
-        
-        
-        if let history = user?.history,
-            let course = course?.id
-        {
-            if history.contains(course) {
-                btnDone.borderColor = .gray
-                btnDone.titleLabel?.textColor = .gray
-            }
-        }
+    }
+    
+    // set initial UI properties programatically
+    func initializeUISettings() {
+        self.navigationItem.title = "Course Information"
+        btnDone.layer.cornerRadius = 8
+        btnDone.borderWidth = 2
     }
     
     // Observer to autosize UITableView height based on its content size
@@ -71,43 +71,85 @@ class CoursePageViewController: UIViewController {
         tableViewRequiredSkills.layer.removeAllAnimations()
         heightConstraintGainedSkills.constant = tableViewGainedSkills.contentSize.height
         heightConstraintsRequiredSkills.constant = tableViewRequiredSkills.contentSize.height
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
             self.updateViewConstraints()
             self.loadViewIfNeeded()
         }
     }
     
-    func modifyUI() {
-        btnDone.layer.cornerRadius = 8
-        btnDone.backgroundColor = Theme.tint
-        btnDone.tintColor = Theme.background
-        btnDone.borderWidth = 0
-    }
-    
-    @IBAction func markAsDone(_ sender: UIButton) {
+    // Handle click on course state button
+    @IBAction func clickDoneBtn(_ sender: UIButton) {
         if let course = self.course {
-            CoreDataHelper.addToUserHistory(course)
-            btnDone.backgroundColor = Theme.dark3
-            btnDone.titleLabel?.text = "Already done"
+            courseIsDone = !courseIsDone
+            
+            switch courseIsDone {
+            case true:
+                CoreDataHelper.addToUserHistory(course)
+                updateButtonUI(courseIsDone)
+                return
+            
+            default:
+                CoreDataHelper.removeFromUserHistory(course)
+                updateButtonUI(courseIsDone)
+                return
+            }
         }
     }
     
-
-    
-    
-    // MARK: - Navigation
-     
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destination.
- // Pass the course to the new view controller.
- if segue.destination is MapViewController {
-    let viewController = segue.destination as! MapViewController
-    
-    viewController.course = self.course
+    // check the state of the course if it is done already
+    func checkIfCourseIsDone() -> Bool {
+        var state: Bool = false
+        if let history = user?.history,
+            let course = course?.id
+        {
+            if history.contains(course) { state = true }
+            else { state = false }
+        }
+        return state
     }
- }
-
-
+    
+    // Get career path informations and update UI accordingly
+    func getCareerPathInfo() {
+        
+        // 1.Get career path
+        let careerPaths = CoreDataHelper.listAllCareerPaths()
+                if careerPaths.count > 0 {
+                    careerPath = careerPaths[0]
+                } else {
+                    print("career path does not exist")
+                }
+        
+        courseIsDone = checkIfCourseIsDone()
+        
+        // 2.Update UI
+        switch courseIsDone {
+        case true:
+            updateButtonUI(courseIsDone)
+        default:
+            updateButtonUI(courseIsDone)
+        }
+    }
+    
+    // Update course state button UI based on course state
+    func updateButtonUI(_ courseIsDone: Bool) {
+        switch courseIsDone {
+        case true:
+            btnDone.backgroundColor = Theme.tint
+            btnDone.borderColor = Theme.tint
+            btnDone.tintColor = .white
+            btnDone.borderWidth = 2
+            btnDone.setTitle("Already done", for: UIControl.State.normal)
+            btnDone.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        default:
+            btnDone.backgroundColor = .clear
+            btnDone.borderColor = Theme.accent
+            btnDone.tintColor = Theme.accent
+            btnDone.borderWidth = 2
+            btnDone.setTitle("Mark as done", for: UIControl.State.normal)
+            btnDone.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        }
+    }
+    
     
     func initializeTableViewSettings() {
         
@@ -130,7 +172,18 @@ class CoursePageViewController: UIViewController {
         startLabel?.text = course?.time?.start ?? "-"
         endLabel?.text = course?.time?.end ?? "-"
     }
+    
+    // MARK: - Navigation
+    
+    // Navigate to map page
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
+        if segue.destination is MapViewController {
+            let viewController = segue.destination as! MapViewController
+            
+            viewController.course = self.course
+        }
+    }
 }
 
 // TableViewController
@@ -189,7 +242,7 @@ extension CoursePageViewController: UITableViewDataSource, UITableViewDelegate {
         if labels.0 == nil { label = labels.1}
         else { label = labels.0 }
         
-        // Indentify table and update UI with related data
+        // Indentify table and update UI accordingly
         switch tableView.restorationIdentifier {
         case tableViews.gained:
             header = headers.gained

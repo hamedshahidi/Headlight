@@ -88,8 +88,11 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohn-WE-IPL">
-                                                        <rect key="frame" x="258" y="8" width="101" height="30"/>
+                                                        <rect key="frame" x="239" y="8" width="120" height="30"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="120" id="aLB-h6-sEE"/>
+                                                        </constraints>
                                                         <state key="normal" title=" Mark as done "/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -99,11 +102,11 @@
                                                                 <real key="value" value="3"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="markAsDone:" destination="zXX-Qc-GOl" eventType="touchUpInside" id="HM3-rI-n6H"/>
+                                                            <action selector="clickDoneBtn:" destination="zXX-Qc-GOl" eventType="touchUpInside" id="qJk-Z1-ysM"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
