@@ -10,13 +10,13 @@ import UIKit
 
 class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    //Profile info
+    // Profile info
     @IBOutlet weak var profileCoursesDone: UILabel!
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var precentageCoursesDone: UILabel!
     @IBOutlet weak var profileCoursesLeft: UILabel!
     
-    //Current course
+    // Current course
     @IBOutlet weak var currentCourseView: UIView!
     @IBOutlet weak var currentCourseName: UILabel!
     @IBOutlet weak var currentCourseOrganization: UILabel!
@@ -58,6 +58,7 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                 
         // Removes lines ontop and under the search bar
         searchBar.setBackgroundImage(UIImage.init(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
+        searchBar.placeholder = NSLocalizedString("Search", comment: "")
         
         // Adds onclick effect for current course view
         let gesture = UITapGestureRecognizer(target: self , action:  #selector(self.checkAction))
@@ -73,21 +74,27 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     override func viewWillAppear(_ animated: Bool) {
         let user = CoreDataHelper.getUserData()
         let currentCareerPathIndex = user?.getCareerPathProgress(careerPath) ?? 0
+
+        // Sets profile info
+        if(careerPath == nil){
+            tableView.isHidden = true
+        }
         
-        //Sets profile info
         let coursesDone = user?.history.count ?? 0
+        let coursesLeft = (careerPath?.path.count ?? 0) - coursesDone
         profileName.text = user?.name
         profileCoursesDone.text = String(coursesDone)
-        profileCoursesLeft.text = String((careerPath?.path.count ?? 0) - coursesDone)
+        profileCoursesLeft.text = String(coursesLeft)
+
         var percentage = (Float(coursesDone) / Float(careerPath?.path.count ?? 0)) * 100
         if coursesDone == 0 {
             percentage = 0
         }
         precentageCoursesDone.text = NSString(format: "%.1f", percentage) as String + "%"
         
-        //Sets current course info
-        //Current course info is hidden if there is no career path or if the career path is done
-        if(careerPath == nil || coursesDone == (careerPath?.path.count ?? 0)){
+        // Sets current course info
+        // Current course info is hidden if there is no career path or if the career path is done
+        if(careerPath == nil || coursesLeft <= 0 ){
             currentCourseView.isHidden = true
             pickCareerButton.isHidden = false
         } else {
@@ -111,7 +118,7 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         tableView.reloadData()
     }
 
-    // Search bar click
+    // Open search page when search bar is clicked
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         performSegue(withIdentifier: "searchSegue", sender: self)
         return false
