@@ -27,7 +27,7 @@ class User {
         }
         
         for course in careerPath!.path {
-            if self.history.contains(course.id ?? "") {
+            if !self.history.contains(course.id ?? "") {
                 return index
             }
             index += 1

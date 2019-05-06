@@ -70,7 +70,6 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     override func viewWillAppear(_ animated: Bool) {
         let user = CoreDataHelper.getUserData()
         let currentCareerPathIndex = user?.getCareerPathProgress(careerPath) ?? 0
-        print(currentCareerPathIndex)
         
         //Sets profile info
         let coursesDone = user?.history.count ?? 0
@@ -84,7 +83,7 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         precentageCoursesDone.text = NSString(format: "%.1f", percentage) as String + "%"
         
         //Sets current course info
-        currentCourse = careerPath?.path[currentCareerPathIndex]
+        currentCourse = (careerPath?.path.count ?? 0 > 0) ? careerPath?.path[currentCareerPathIndex] : nil
         var stringOfSkills: String = ""
         for skills in currentCourse?.skills?.gained ?? [""] {
             let aSkill = NSLocalizedString(skills, comment: "")
