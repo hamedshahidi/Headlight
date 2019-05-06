@@ -95,7 +95,7 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
     */
     @IBAction func nextButton(_ sender: Any) {
         CoreDataHelper.saveUserData(name: name)
-        CoreDataHelper.addToUsersSkills(skills: Array(selectedSkills.values))
+        CoreDataHelper.addToUserSkills(skills: Array(selectedSkills.values))
         print(CoreDataHelper.getUserData()?.name, CoreDataHelper.getUserData()?.skills)
     }
     @IBAction func clearUserData(_ sender: Any) {

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import GameKit
 
 extension UIColor {
     public convenience init?(hex: String) {
@@ -121,10 +122,18 @@ class SkillColor {
     
     // Finds two complementary colors for text and background
     // with a contrast rate suitable for reading.
-    static func getPairColors () -> (UIColor,UIColor) {
+
+    // TODO: Fix this, causes an endless loop after 15 colors...
+
+    /*
+    static func getPairColors () -> (UIColor, UIColor) {
         
         var color: UIColor = .white
         var complementary: UIColor = .black
+        
+        let source = GKARC4RandomSource(seed: "hello world".data(using: .utf8)!)
+        source.dropValues(1024)
+        source.nextInt()
         
         // Random search for non-repeated colors with good contrast rate in between
         repeat {
@@ -136,15 +145,23 @@ class SkillColor {
             
             complementary = getComplementaryForColor(color: color)
             
+            print("color")
+            print(colorIndex)
+            print(usedColors.count)
+            print(colors.count)
+            
         } while (
-            usedColors.contains(color) ||
-                UIColor.contrastRatio(between: color, and: complementary) < 6
+            (usedColors.contains(color) ||
+                UIColor.contrastRatio(between: color, and: complementary) < 6) && usedColors.count < colors.count
         )
+        
+        print("found")
         
         usedColors.append(color)
         
         return (color, complementary)
     }
+    */
     
     // Generates complementary color of given color
     static func getComplementaryForColor(color: UIColor) -> UIColor {

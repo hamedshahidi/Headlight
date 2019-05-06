@@ -11,7 +11,7 @@ import XCTest
 
 class CareerPathAlgorithmTests: XCTestCase {
     var courseList: [CourseStruct.Course] = []
-    var user: User = User(name: "Test", skills: ["c++"])
+    var user: User = User(name: "Test", skills: ["c++"], history: [])
 
     override func setUp() {
         courseList = []
