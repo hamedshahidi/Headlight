@@ -80,7 +80,7 @@ extension UIView {
             return layer.shadowRadius
         }
         set {
-            layer.shadowRadius = newValue
+            layer.shadowRadius = CGFloat(newValue)
         }
     }
     
