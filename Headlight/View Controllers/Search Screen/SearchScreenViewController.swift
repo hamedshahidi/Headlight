@@ -95,7 +95,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     // here is the prepare function Hamed mentioned, not sure if needed
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let viewController = segue.destination as! CourseInfoViewController
+        let viewController = segue.destination as! CoursePageViewController
         let course = searchResultData?[self.resultTableView.indexPathForSelectedRow?.row ?? 0]
         
         viewController.course = course

@@ -14,7 +14,7 @@
         <!--Signup Name View Controller-->
         <scene sceneID="eQq-Dz-NtJ">
             <objects>
-                <viewController id="Vl9-34-D5h" customClass="SignupNameViewController" customModule="Headlight" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboardingView" id="Vl9-34-D5h" customClass="SignupNameViewController" customModule="Headlight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Een-d7-ul5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,7 +204,7 @@
                                         <state key="normal" title="Next"/>
                                         <connections>
                                             <action selector="nextButton:" destination="mGD-DG-mLh" eventType="touchUpInside" id="Hhi-RR-zuQ"/>
-                                            <segue destination="j7d-6Z-iD8" kind="showDetail" id="e2m-vp-561"/>
+                                            <segue destination="j7d-6Z-iD8" kind="show" id="e2m-vp-561"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -253,7 +253,7 @@
             <color red="0.37647058823529411" green="0.39215686274509803" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Dark_3">
-            <color red="0.66274509803921566" green="0.6705882352941176" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.74901960784313726" green="0.74901960784313726" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

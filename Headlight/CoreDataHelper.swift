@@ -29,13 +29,25 @@ class CoreDataHelper {
         self.save()
     }
     
-    static func addToUsersSkills(skills: [String]) {
+    static func addToUserSkills(skills: [String]) {
         let user = getUserCoreData()
     
         if let coreUser = user {
             let existingSkills = parseFromCoreDataSkills(coreUser.skills)
             let combinedSkills = Array(Set(existingSkills + skills))
             coreUser.skills = convertToCoreDataSkills(combinedSkills)
+        }
+        
+        self.save()
+    }
+    
+    static func addToUserHistory(_ course: CourseStruct.Course) {
+        let user = getUserCoreData()
+        
+        if let coreUser = user, let id = course.id {
+            var existingHistory = parseFromCoreDataSkills(coreUser.history)
+            if !existingHistory.contains(id) { existingHistory.append(id) }
+            coreUser.history = convertToCoreDataSkills(existingHistory)
         }
         
         self.save()
@@ -68,7 +80,7 @@ class CoreDataHelper {
         let user = getUserCoreData()
         
         if let coreUser = user {
-            return User(name: coreUser.name ?? "Unknown", skills: parseFromCoreDataSkills(coreUser.skills))
+            return User(name: coreUser.name ?? "Unknown", skills: parseFromCoreDataSkills(coreUser.skills), history: parseFromCoreDataSkills(coreUser.history))
         } else {
             return nil
         }

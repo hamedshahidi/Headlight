@@ -31,8 +31,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
         setStateForUITesting()
 
+        // Load course data
+        let fetcher = DataFetcher()
+        fetcher.FetchInitialData()
+        
+        let user = CoreDataHelper.getUserData()
+        if user != nil && user?.name.count ?? 0 > 0 {
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Janne", bundle: nil)
+            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "overviewView")
+            self.window!.rootViewController = viewController
+        } else {
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Mikko", bundle: nil)
+            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "onboardingView")
+            self.window!.rootViewController = viewController
+        }
         return true
     }
 

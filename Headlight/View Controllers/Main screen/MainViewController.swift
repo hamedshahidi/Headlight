@@ -34,9 +34,6 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     var careerPath: CareerPath? = nil
     var selectedCourse: CourseStruct.Course? = nil
     
-    //Placeholder
-    var placeHolderCurrentCourse = 4
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,16 +52,22 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         // Removes lines ontop and under the search bar
         searchBar.setBackgroundImage(UIImage.init(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
         
+        let user = CoreDataHelper.getUserData()
+        let currentCareerPathIndex = user?.getCareerPathProgress(careerPath) ?? 0
+        
         //Sets profile info
-        let coursesDone = placeHolderCurrentCourse - 1
-        profileName.text = CoreDataHelper.getUserData()?.name
+        let coursesDone = user?.history.count ?? 0
+        profileName.text = user?.name
         profileCoursesDone.text = String(coursesDone)
         profileCoursesLeft.text = String((careerPath?.path.count ?? 0) - coursesDone)
-        let precentage = Float(careerPath?.path.count ?? 0) / Float(coursesDone) * 10
-        precentageCoursesDone.text = NSString(format: "%.1f", precentage ) as String + "%"
+        var percentage = (Float(coursesDone) / Float(careerPath?.path.count ?? 0)) * 100
+        if coursesDone == 0 {
+             percentage = 0
+        }
+        precentageCoursesDone.text = NSString(format: "%.1f", percentage) as String + "%"
         
         //Sets current course info
-        let currentCourse = careerPath?.path[(placeHolderCurrentCourse - 1)]
+        let currentCourse = careerPath?.path[currentCareerPathIndex]
         var stringOfSkills: String = ""
         for skills in currentCourse?.skills?.gained ?? [""] {
             let aSkill = NSLocalizedString(skills, comment: "")
@@ -128,48 +131,58 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     // Gets data for each course cell (name, description and skills)
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "courseCell", for: indexPath as IndexPath) as? CourseCell
+        guard var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "courseCell", for: indexPath as IndexPath) as? CourseCell
             else { fatalError("cell not working")}
         
         let course = careerPath?.path[indexPath.row]
+        let user = CoreDataHelper.getUserData()
+        let userHasDoneThisCourse = user?.history.contains(course?.id ?? "") ?? false
         
         var skillString: String = ""
-        
         for skill in course?.skills?.gained ?? [""] {
             let aSkill = NSLocalizedString(skill, comment: "")
-             if(indexPath.row < placeHolderCurrentCourse - 1){
-            skillString.append(aSkill + "  ")
-             } else {
+            if userHasDoneThisCourse {
+                skillString.append(aSkill + "  ")
+            } else {
                 skillString.append(aSkill + ",  ")
             }
         }
         
-        // Different cell and text colors for already done courses
-        if(indexPath.row < placeHolderCurrentCourse - 1){
-            cell.backgroundColor = Theme.dark3
-            cell.courseName.textColor = Theme.dark2
-            cell.courseInfo.textColor = Theme.dark2
-            cell.courseSkills.textColor = Theme.dark2
-            cell.courseSkills.text = skillString
-        } else {
-            cell.courseName.textColor = UIColor.darkText
-            cell.courseInfo.textColor = UIColor.darkText
-            cell.backgroundColor = UIColor.white
-            cell.courseSkills.attributedText = setColoredLabel(skillString: skillString)
-        }
-        
+        cell = changeCellColors(cell: cell, indexPath: indexPath, skillString: skillString, userHasDoneThisCourse: userHasDoneThisCourse)
         cell.course = course
         cell.courseName.text = course?.name ?? "Unknown"
         cell.courseInfo.text = course?.description ?? ""
         
         return cell
     }
+    
+    // Different cell and text colors for already done courses
+    func changeCellColors(cell: CourseCell, indexPath: IndexPath, skillString: String, userHasDoneThisCourse: Bool) -> CourseCell{
+        // Different cell and text colors for already done courses
+        if userHasDoneThisCourse {
+            cell.backgroundColor = Theme.gray
+            cell.courseName.textColor = Theme.dark2
+            cell.courseInfo.textColor = Theme.dark2
+            cell.courseSkills.textColor = Theme.dark2
+            cell.courseSkills.text = skillString
+            return cell
+        } else {
+            cell.courseName.textColor = UIColor.darkText
+            cell.courseInfo.textColor = UIColor.darkText
+            cell.backgroundColor = UIColor.white
+            cell.courseSkills.attributedText = setColoredLabel(skillString: skillString)
+            return cell
+        }
+    }
 
     // Displays the current course in the career path collectionview
     var scrollOnceOnly = false
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let user = CoreDataHelper.getUserData()
+        let currentCareerPathIndex = user?.getCareerPathProgress(careerPath) ?? 0
+
         if !scrollOnceOnly {
-            let indexToScrollTo = IndexPath(item: placeHolderCurrentCourse - 1, section: 0)
+            let indexToScrollTo = IndexPath(item: currentCareerPathIndex, section: 0)
             collectionView.scrollToItem(at: indexToScrollTo, at: .centeredHorizontally, animated: false)
             scrollOnceOnly = true
         }
@@ -218,7 +231,6 @@ extension NSMutableAttributedString {
             self.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
         //}
     }
-    
 }
 
 // Sets color for each skill

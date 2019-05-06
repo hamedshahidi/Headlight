@@ -7,11 +7,11 @@
 //
 
 import UIKit
+import MapKit
 
 class CoursePageViewController: UIViewController {
     
     var course: CourseStruct.Course?
-    var usedColors: [UIColor] = []
     
     struct tableViews {
         static let gained = "TableViewGainedSkills"
@@ -41,10 +41,14 @@ class CoursePageViewController: UIViewController {
     
     @IBOutlet weak var arrowImageView: UIImageView!
     
+    @IBOutlet weak var locationMap: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Course Information"
         initializeTableViewSettings()
         populateUIElements()
+        getCourseLocation()
     }
     
     // Observer to autosize UITableView height based on its content size
@@ -59,15 +63,20 @@ class CoursePageViewController: UIViewController {
         }
     }
     
-    /*
+    
     // MARK: - Navigation
+     
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the course to the new view controller.
+ if segue.destination is MapViewController {
+ let viewController = segue.destination as! MapViewController
+    
+ viewController.course = self.course
+ }
+ }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+
     
     func initializeTableViewSettings() {
         
@@ -138,8 +147,6 @@ extension CoursePageViewController: UITableViewDataSource, UITableViewDelegate {
         var labels: ( UILabel?, UILabel?)
         var label: UILabel?
         
-        let colors = SkillColor.getPairColors()
-        
         guard let cell = cell as? SkillListCell else {
             print("Cell does not exist")
             return
@@ -171,17 +178,49 @@ extension CoursePageViewController: UITableViewDataSource, UITableViewDelegate {
         
         // Populate table with data
         switch indexPath.row {
-        case 0:
-            label?.text = header
-            cell.backgroundColor = Theme.background
+            case 0:
+                label?.text = header
+                cell.backgroundColor = Theme.background
             
-        default:
-            label?.borderWidth = 2
-            label?.borderColor = colors.0
-            label?.layer.cornerRadius = 8
-            label?.font = UIFont.boldSystemFont(ofSize: 16)
-            label?.text = "  " + (skills?[indexPath.row - 1] ?? "") + "  "
-            label?.sizeToFit()
+            default:
+                label?.borderWidth = 2
+                label?.borderColor = SkillColor.getColor(str: skills?[indexPath.row - 1] ?? "")
+                label?.layer.cornerRadius = 8
+                label?.font = UIFont.boldSystemFont(ofSize: 16)
+                label?.text = "  " + (skills?[indexPath.row - 1] ?? "") + "  "
+                label?.sizeToFit()
         }
     }
+}
+
+extension CoursePageViewController: MKMapViewDelegate {
+    
+    func getCourseLocation () {
+        let lat = course?.location?.ltd
+        let long = course?.location?.lgn
+        print("lat: \(lat)")
+        print("long: \(long)")
+        let courseLocation = CLLocation(latitude: lat ?? 0, longitude: long ?? 0)
+        let regionRadius: CLLocationDistance = 100.0
+        let region = MKCoordinateRegion(center: courseLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+//        locationMap.setRegion(region, animated: true)
+//        locationMap.delegate = self
+        
+        
+        DispatchQueue.main.async {
+//            let annotation = MKPointAnnotation()
+//            let courseLocation = CLLocation(latitude: lat ?? 0, longitude: long ?? 0)
+//            let cordinates: CLLocationCoordinate2D = courseLocation.coordinate
+//            annotation.coordinate = cordinates
+//            print(cordinates)
+            self.locationMap.setRegion(region, animated: true)
+//            self.locationMap.setCenter(cordinates, animated: true)
+        }
+//        locationMap.delegate = self
+    }
+    
+    func mapViewWillStartRenderingMap(_ mapView: MKMapView) {
+        print("rendering map...")
+    }
+    
 }
