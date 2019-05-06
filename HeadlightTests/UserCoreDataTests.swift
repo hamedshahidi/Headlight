@@ -11,9 +11,13 @@ import XCTest
 
 class UserCoreDataTests: XCTestCase {
     var user: User?
+    var course1: CourseStruct.Course?
+    var course2: CourseStruct.Course?
 
     override func setUp() {
+        course1 = CourseStruct.Course(id: "test-1", name: "Test course 1", description: "Test 1 course description", location: CourseStruct.Location(lgn: 10, ltd: 20), time: CourseStruct.Time(start: "10.10.2019", end: "10.11.2019"), organization: "Test", rating: 2.3, skills: CourseStruct.Skills(gained: ["css", "js"], required: ["html"]))
         
+        course2 = CourseStruct.Course(id: "test-2", name: "Test course 2", description: "Test 2 course description", location: CourseStruct.Location(lgn: 10, ltd: 20), time: CourseStruct.Time(start: "10.10.2019", end: "10.11.2019"), organization: "Test", rating: 2.3, skills: CourseStruct.Skills(gained: ["css", "js"], required: ["html"]))
     }
     
     override func tearDown() {
@@ -36,7 +40,7 @@ class UserCoreDataTests: XCTestCase {
     
     func testUserSkillAdding() {
         CoreDataHelper.saveUserData(name: "Test User")
-        CoreDataHelper.addToUsersSkills(skills: ["css", "js", "html"])
+        CoreDataHelper.addToUserSkills(skills: ["css", "js", "html"])
         
         let user = CoreDataHelper.getUserData()
         XCTAssert(user?.skills.count == 3)
@@ -47,10 +51,35 @@ class UserCoreDataTests: XCTestCase {
 
     func testUserSkillAddingDuplicates() {
         CoreDataHelper.saveUserData(name: "Test User")
-        CoreDataHelper.addToUsersSkills(skills: ["css", "js", "html"])
-        CoreDataHelper.addToUsersSkills(skills: ["js", "html", "css"])
+        CoreDataHelper.addToUserSkills(skills: ["css", "js", "html"])
+        CoreDataHelper.addToUserSkills(skills: ["js", "html", "css"])
         
         let user = CoreDataHelper.getUserData()
         XCTAssert(user?.skills.count == 3)
+    }
+    
+    func testUserHistoryAdding() {
+        CoreDataHelper.saveUserData(name: "Test User")
+        CoreDataHelper.addToUserHistory(course1!)
+        
+        var user = CoreDataHelper.getUserData()
+        XCTAssert(user?.history.count == 1)
+        XCTAssert(user?.history.contains(course1?.id ?? "") ?? false)
+        
+        CoreDataHelper.addToUserHistory(course2!)
+        
+        user = CoreDataHelper.getUserData()
+        XCTAssert(user?.history.count == 2)
+        XCTAssert(user?.history[0] == course1?.id)
+        XCTAssert(user?.history[1] == course2?.id)
+    }
+    
+    func testUserHistoryAddingDuplicates() {
+        CoreDataHelper.saveUserData(name: "Test User")
+        CoreDataHelper.addToUserHistory(course2!)
+        CoreDataHelper.addToUserHistory(course2!)
+        
+        let user = CoreDataHelper.getUserData()
+        XCTAssert(user?.history.count == 1)
     }
 }
