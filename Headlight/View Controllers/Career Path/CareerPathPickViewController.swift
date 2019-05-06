@@ -61,6 +61,7 @@ class CareerPathPickViewController: UIViewController, UITableViewDataSource, UIT
     }
 
     @IBAction func pickPath(_ sender: Any) {
+        CoreDataHelper.clearCareerPathData()
         CoreDataHelper.saveCareerPath(careerPath: careerPath!)
     }
     
