@@ -23,6 +23,7 @@ class SignupNameViewController: UIViewController, UITextFieldDelegate {
         nameField.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        scaleLogo()
         view.backgroundColor = Theme.background
         contentView.backgroundColor = Theme.background
         enterButton.backgroundColor = Theme.dark3
@@ -31,6 +32,32 @@ class SignupNameViewController: UIViewController, UITextFieldDelegate {
         welcomeText.text = NSLocalizedString("get_started", comment: "")
         nameField.placeholder = NSLocalizedString("name_placeholder_text", comment: "")
         enterButton.setTitle(NSLocalizedString("enter_button_text", comment: ""), for: .normal)
+    }
+    
+    // Scale the logo size for different devices
+    func scaleLogo() {
+        let screenHeight = UIScreen.main.fixedCoordinateSpace.bounds.height
+        // iPhone 5s, SE
+        if screenHeight == 568 {
+            logoView.image = scaleUIImageToSize(logoView.image!, CGSize(width: contentView.frame.width - 128, height: contentView.frame.width - 128))
+        // iPhone 8, 7, 6
+        } else if screenHeight == 667 || screenHeight == 736 {
+            logoView.image = scaleUIImageToSize(logoView.image!, CGSize(width: contentView.frame.width - 32, height: contentView.frame.width - 32))
+        }
+        
+    }
+    
+    func scaleUIImageToSize(_ image: UIImage, _ size: CGSize) -> UIImage {
+        let hasAlpha = true
+        let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
+        
+        UIGraphicsBeginImageContextWithOptions(size, !hasAlpha, scale)
+        image.draw(in: CGRect(origin: CGPoint.zero, size: size))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return scaledImage!
     }
     
     @IBAction func nameFieldOnChange(_ sender: Any) {
