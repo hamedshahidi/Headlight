@@ -17,6 +17,7 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     @IBOutlet weak var profileCoursesLeft: UILabel!
     
     //Current course
+    @IBOutlet weak var currentCourseView: UIView!
     @IBOutlet weak var currentCourseName: UILabel!
     @IBOutlet weak var currentCourseOrganization: UILabel!
     @IBOutlet weak var currentCourseDescription: UILabel!
@@ -33,6 +34,9 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     // Career path
     var careerPath: CareerPath? = nil
     var selectedCourse: CourseStruct.Course? = nil
+    
+    // Current course
+    var currentCourse: CourseStruct.Course? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +71,7 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         precentageCoursesDone.text = NSString(format: "%.1f", percentage) as String + "%"
         
         //Sets current course info
-        let currentCourse = careerPath?.path[currentCareerPathIndex]
+        currentCourse = careerPath?.path[currentCareerPathIndex]
         var stringOfSkills: String = ""
         for skills in currentCourse?.skills?.gained ?? [""] {
             let aSkill = NSLocalizedString(skills, comment: "")
@@ -79,6 +83,10 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         currentCourseDescription.text = currentCourse?.description
         currentCourseRating.text = NSString(format: "%.1f", currentCourse?.rating ?? 0 ) as String
         currentCourseSkills.attributedText = setColoredLabel(skillString: stringOfSkills)
+        
+        let gesture = UITapGestureRecognizer(target: self , action:  #selector(self.checkAction))
+        currentCourseView.addGestureRecognizer(gesture)
+
     }
 
     // Search bar click
@@ -217,10 +225,18 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.destination is CoursePageViewController {
+            if(segue.identifier == "courseInfoSegue"){
             let viewController = segue.destination as? CoursePageViewController
             viewController?.course = selectedCourse
-        }
+            }
+            else if(segue.identifier == "currentCourseSegue"){
+                let viewController = segue.destination as? CoursePageViewController
+                viewController?.course = currentCourse
+            }
+    }
+    
+    @objc func checkAction(sender : UITapGestureRecognizer) {
+        performSegue(withIdentifier: "currentCourseSegue", sender: self)
     }
 }
 
