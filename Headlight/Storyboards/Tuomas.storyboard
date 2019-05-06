@@ -204,7 +204,7 @@
                                                     <outlet property="courseNumber" destination="rWa-5L-GaT" id="SvJ-B4-Y1U"/>
                                                     <outlet property="courseOrganization" destination="AWh-yA-DG8" id="l80-Ls-sxX"/>
                                                     <outlet property="courseTitle" destination="PAC-T6-Qnu" id="GWS-y5-7zJ"/>
-                                                    <segue destination="4z2-PJ-a90" kind="show" id="2HB-4s-wtZ"/>
+                                                    <segue destination="4z2-PJ-a90" kind="show" identifier="courseSegue" id="2HB-4s-wtZ"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

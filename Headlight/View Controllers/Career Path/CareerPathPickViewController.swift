@@ -64,12 +64,21 @@ class CareerPathPickViewController: UIViewController, UITableViewDataSource, UIT
         CoreDataHelper.saveCareerPath(careerPath: careerPath!)
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "courseSegue" {
+            let course = careerPathWithSelfStudy?.path[tableView.indexPathForSelectedRow?.row ?? 0]
+            if course?.id == "self-study" { return false }
+        }
+        
+        return true
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if segue.destination is CoursePageViewController {
             let viewController = segue.destination as! CoursePageViewController
-            let course = careerPath?.path[tableView.indexPathForSelectedRow?.row ?? 0]
+            let course = careerPathWithSelfStudy?.path[tableView.indexPathForSelectedRow?.row ?? 0]
             
             viewController.course = course
         }

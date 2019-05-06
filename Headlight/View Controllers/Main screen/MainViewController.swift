@@ -34,9 +34,6 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     var careerPath: CareerPath? = nil
     var selectedCourse: CourseStruct.Course? = nil
     
-    //Placeholder
-    var placeHolderCurrentCourse = 4
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,16 +52,22 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         // Removes lines ontop and under the search bar
         searchBar.setBackgroundImage(UIImage.init(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
         
+        let user = CoreDataHelper.getUserData()
+        let currentCareerPathIndex = user?.getCareerPathProgress(careerPath) ?? 0
+        
         //Sets profile info
-        let coursesDone = placeHolderCurrentCourse - 1
-        profileName.text = CoreDataHelper.getUserData()?.name
+        let coursesDone = user?.history.count ?? 0
+        profileName.text = user?.name
         profileCoursesDone.text = String(coursesDone)
         profileCoursesLeft.text = String((careerPath?.path.count ?? 0) - coursesDone)
-        let precentage = Float(careerPath?.path.count ?? 0) / Float(coursesDone) * 10
-        precentageCoursesDone.text = NSString(format: "%.1f", precentage ) as String + "%"
+        var percentage = (Float(careerPath?.path.count ?? 0) / Float(coursesDone)) * 10
+        if coursesDone == 0 {
+             percentage = 0
+        }
+        precentageCoursesDone.text = NSString(format: "%.1f", percentage) as String + "%"
         
         //Sets current course info
-        let currentCourse = careerPath?.path[(placeHolderCurrentCourse - 1)]
+        let currentCourse = careerPath?.path[currentCareerPathIndex]
         var stringOfSkills: String = ""
         for skills in currentCourse?.skills?.gained ?? [""] {
             let aSkill = NSLocalizedString(skills, comment: "")
@@ -132,18 +135,20 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             else { fatalError("cell not working")}
         
         let course = careerPath?.path[indexPath.row]
+        let user = CoreDataHelper.getUserData()
+        let userHasDoneThisCourse = user?.history.contains(course?.id ?? "") ?? false
         
         var skillString: String = ""
         for skill in course?.skills?.gained ?? [""] {
             let aSkill = NSLocalizedString(skill, comment: "")
-             if(indexPath.row < placeHolderCurrentCourse - 1){
-            skillString.append(aSkill + "  ")
-             } else {
+            if userHasDoneThisCourse {
+                skillString.append(aSkill + "  ")
+            } else {
                 skillString.append(aSkill + ",  ")
             }
         }
         
-        cell = changeCellColors(cell: cell, indexPath: indexPath, skillString: skillString)
+        cell = changeCellColors(cell: cell, indexPath: indexPath, skillString: skillString, userHasDoneThisCourse: userHasDoneThisCourse)
         cell.course = course
         cell.courseName.text = course?.name ?? "Unknown"
         cell.courseInfo.text = course?.description ?? ""
@@ -152,8 +157,9 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     }
     
     // Different cell and text colors for already done courses
-    func changeCellColors(cell: CourseCell, indexPath: IndexPath, skillString: String) -> CourseCell{
-        if(indexPath.row < placeHolderCurrentCourse - 1){
+    func changeCellColors(cell: CourseCell, indexPath: IndexPath, skillString: String, userHasDoneThisCourse: Bool) -> CourseCell{
+        // Different cell and text colors for already done courses
+        if userHasDoneThisCourse {
             cell.backgroundColor = Theme.gray
             cell.courseName.textColor = Theme.dark2
             cell.courseInfo.textColor = Theme.dark2
@@ -172,8 +178,11 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     // Displays the current course in the career path collectionview
     var scrollOnceOnly = false
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let user = CoreDataHelper.getUserData()
+        let currentCareerPathIndex = user?.getCareerPathProgress(careerPath) ?? 0
+
         if !scrollOnceOnly {
-            let indexToScrollTo = IndexPath(item: placeHolderCurrentCourse - 1, section: 0)
+            let indexToScrollTo = IndexPath(item: currentCareerPathIndex, section: 0)
             collectionView.scrollToItem(at: indexToScrollTo, at: .centeredHorizontally, animated: false)
             scrollOnceOnly = true
         }

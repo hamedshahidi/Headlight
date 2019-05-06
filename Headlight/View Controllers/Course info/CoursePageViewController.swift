@@ -141,8 +141,6 @@ extension CoursePageViewController: UITableViewDataSource, UITableViewDelegate {
         var labels: ( UILabel?, UILabel?)
         var label: UILabel?
         
-        let colors = SkillColor.getPairColors()
-        
         guard let cell = cell as? SkillListCell else {
             print("Cell does not exist")
             return
@@ -174,17 +172,17 @@ extension CoursePageViewController: UITableViewDataSource, UITableViewDelegate {
         
         // Populate table with data
         switch indexPath.row {
-        case 0:
-            label?.text = header
-            cell.backgroundColor = Theme.background
+            case 0:
+                label?.text = header
+                cell.backgroundColor = Theme.background
             
-        default:
-            label?.borderWidth = 2
-            label?.borderColor = colors.0
-            label?.layer.cornerRadius = 8
-            label?.font = UIFont.boldSystemFont(ofSize: 16)
-            label?.text = "  " + (skills?[indexPath.row - 1] ?? "") + "  "
-            label?.sizeToFit()
+            default:
+                label?.borderWidth = 2
+                label?.borderColor = SkillColor.getColor(str: skills?[indexPath.row - 1] ?? "")
+                label?.layer.cornerRadius = 8
+                label?.font = UIFont.boldSystemFont(ofSize: 16)
+                label?.text = "  " + (skills?[indexPath.row - 1] ?? "") + "  "
+                label?.sizeToFit()
         }
     }
 }
