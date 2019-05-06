@@ -60,7 +60,7 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         profileName.text = user?.name
         profileCoursesDone.text = String(coursesDone)
         profileCoursesLeft.text = String((careerPath?.path.count ?? 0) - coursesDone)
-        var percentage = (Float(careerPath?.path.count ?? 0) / Float(coursesDone)) * 10
+        var percentage = (Float(coursesDone) / Float(careerPath?.path.count ?? 0)) * 100
         if coursesDone == 0 {
              percentage = 0
         }
