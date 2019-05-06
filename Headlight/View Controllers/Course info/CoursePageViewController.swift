@@ -27,6 +27,11 @@ class CoursePageViewController: UIViewController {
     struct placeholders {
         static let noSkillRequired = "Requires no previous skills"
     }
+    struct coordinates {
+        static var lat = 0.0
+        static var long = 0.0
+    }
+    
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
@@ -281,10 +286,10 @@ extension CoursePageViewController: MKMapViewDelegate {
     
     func getCourseLocation () {
         
+        getCoordinates()
+        
         // Set map region based on location
-        let lat = course?.location?.ltd
-        let long = course?.location?.lgn
-        let courseLocation = CLLocation(latitude: lat ?? 0, longitude: long ?? 0)
+        let courseLocation = CLLocation(latitude: coordinates.lat, longitude: coordinates.long)
         let regionRadius: CLLocationDistance = 100.0
         let region = MKCoordinateRegion(center: courseLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         locationMap.setRegion(region, animated: false)
@@ -292,9 +297,13 @@ extension CoursePageViewController: MKMapViewDelegate {
         
         // Add a pin on location
         let pin = MKPointAnnotation()
-        pin.coordinate = CLLocationCoordinate2D(latitude: lat ?? 0, longitude: long ?? 0)
+        pin.coordinate = CLLocationCoordinate2D(latitude: coordinates.lat, longitude: coordinates.long)
         locationMap.addAnnotation(pin)
-        
+    }
+    
+    func getCoordinates() {
+        coordinates.lat = course?.location?.ltd ?? 0.0
+        coordinates.long = course?.location?.lgn ?? 0.0
     }
     
     func mapViewWillStartRenderingMap(_ mapView: MKMapView) {

@@ -12,7 +12,7 @@ import MapKit
 class MapViewController: UIViewController {
     
     var course: CourseStruct.Course? = nil
-    struct cordinates {
+    struct coordinates {
         static var lat = 0.0
         static var long = 0.0
     }
@@ -21,30 +21,23 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getCourseCordinates()
-//        let location = CLLocation(latitude: 37.334722, longitude: -122.008889)
-        let location = CLLocation(latitude: cordinates.lat, longitude: cordinates.long)
+        getCoordinates()
+        
+        // Set map region based on location
+        let location = CLLocation(latitude: coordinates.lat, longitude: coordinates.long)
         let regionRadius: CLLocationDistance = 1000.0
         let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         map.setRegion(region, animated: true)
         
-
+        // Add a pin on location
+        let pin = MKPointAnnotation()
+        pin.title = course?.organization ?? ""
+        pin.coordinate = CLLocationCoordinate2D(latitude: coordinates.lat, longitude: coordinates.long)
+        map.addAnnotation(pin)
     }
     
-    func getCourseCordinates() {
-        cordinates.lat = course?.location?.ltd ?? 0.0
-        cordinates.long = course?.location?.lgn ?? 0.0
+    func getCoordinates() {
+        coordinates.lat = course?.location?.ltd ?? 0.0
+        coordinates.long = course?.location?.lgn ?? 0.0
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
