@@ -41,12 +41,26 @@ class CoreDataHelper {
         self.save()
     }
     
+    // Add a course to user history
     static func addToUserHistory(_ course: CourseStruct.Course) {
         let user = getUserCoreData()
         
         if let coreUser = user, let id = course.id {
             var existingHistory = parseFromCoreDataSkills(coreUser.history)
             if !existingHistory.contains(id) { existingHistory.append(id) }
+            coreUser.history = convertToCoreDataSkills(existingHistory)
+        }
+        
+        self.save()
+    }
+    
+    // Remove a course from user history
+    static func removeFromUserHistory(_ course: CourseStruct.Course) {
+        let user = getUserCoreData()
+        
+        if let coreUser = user, let id = course.id {
+            var existingHistory = parseFromCoreDataSkills(coreUser.history)
+            if existingHistory.contains(id) { existingHistory.removeAll { $0 == id } }
             coreUser.history = convertToCoreDataSkills(existingHistory)
         }
         
