@@ -212,8 +212,8 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.destination is CourseInfoViewController {
-            let viewController = segue.destination as? CourseInfoViewController
+        if segue.destination is CoursePageViewController {
+            let viewController = segue.destination as? CoursePageViewController
             viewController?.course = selectedCourse
         }
     }
