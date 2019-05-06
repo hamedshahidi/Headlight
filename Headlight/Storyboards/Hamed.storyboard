@@ -469,18 +469,35 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sVy-Bw-Wgb">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gTr-3o-WXk">
+                                <rect key="frame" x="109.5" y="599" width="156" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="WyW-Sr-w2j"/>
+                                    <constraint firstAttribute="width" constant="156" id="xtc-Wb-2wD"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="Satellite"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeMapType:" destination="y3E-fe-x0Y" eventType="valueChanged" id="VN6-8o-KGC"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="sVy-Bw-Wgb" firstAttribute="leading" secondItem="zsH-kb-q92" secondAttribute="leading" id="3I9-pk-O8d"/>
+                            <constraint firstItem="zsH-kb-q92" firstAttribute="bottom" secondItem="gTr-3o-WXk" secondAttribute="bottom" constant="36" id="6I4-8G-6gw"/>
                             <constraint firstItem="sVy-Bw-Wgb" firstAttribute="top" secondItem="zsH-kb-q92" secondAttribute="top" id="AYb-x4-W3A"/>
                             <constraint firstItem="zsH-kb-q92" firstAttribute="trailing" secondItem="sVy-Bw-Wgb" secondAttribute="trailing" id="UHi-Zw-fcq"/>
                             <constraint firstItem="zsH-kb-q92" firstAttribute="bottom" secondItem="sVy-Bw-Wgb" secondAttribute="bottom" id="jR0-gk-q5d"/>
+                            <constraint firstItem="gTr-3o-WXk" firstAttribute="centerX" secondItem="sVy-Bw-Wgb" secondAttribute="centerX" id="t5f-Qd-lsy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zsH-kb-q92"/>
                     </view>
                     <connections>
                         <outlet property="map" destination="sVy-Bw-Wgb" id="hOm-fN-IXN"/>
+                        <outlet property="mapTypeChanger" destination="gTr-3o-WXk" id="HDz-TN-wPb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TOW-OS-FfR" userLabel="First Responder" sceneMemberID="firstResponder"/>

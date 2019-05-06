@@ -19,9 +19,14 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var map: MKMapView!
     
+    @IBOutlet weak var mapTypeChanger: UISegmentedControl!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         getCoordinates()
+        initializeUISettings()
         
         // Set map region based on location
         let location = CLLocation(latitude: coordinates.lat, longitude: coordinates.long)
@@ -36,8 +41,32 @@ class MapViewController: UIViewController {
         map.addAnnotation(pin)
     }
     
+    @IBAction func changeMapType(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            map.mapType = .standard
+        default:
+            map.mapType = .satellite
+        }
+    }
+    
+    
     func getCoordinates() {
         coordinates.lat = course?.location?.ltd ?? 0.0
         coordinates.long = course?.location?.lgn ?? 0.0
     }
+    
+    func initializeUISettings() {
+        self.navigationItem.title = "Location"
+        mapTypeChanger.layer.cornerRadius = 8
+        mapTypeChanger.borderWidth = 2
+        mapTypeChanger.borderColor = Theme.accent
+        mapTypeChanger.backgroundColor = Theme.background
+        mapTypeChanger.tintColor = Theme.accent
+        mapTypeChanger.layer.masksToBounds = true
+        let font = UIFont.boldSystemFont(ofSize: 16)
+        mapTypeChanger.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+    }
+
 }

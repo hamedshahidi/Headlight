@@ -25,6 +25,7 @@
 		6A8DBC102270BB8D00613A5F /* courseDescAndMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC0E2270BB8D00613A5F /* courseDescAndMapCell.swift */; };
 		6A8DBC142270F3CE00613A5F /* courseProviderAndTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC122270F3CE00613A5F /* courseProviderAndTimeCell.swift */; };
 		6A8DBC1C2271021F00613A5F /* courseSkillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC1A2271021F00613A5F /* courseSkillsCell.swift */; };
+		6AC1B76A2280E1550016AECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AC1B7692280E1540016AECA /* Assets.xcassets */; };
 		6AC3C47C226C887700E3C595 /* SignupNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C47B226C887700E3C595 /* SignupNameViewController.swift */; };
 		6AC3C488226F03C000E3C595 /* SignupSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C487226F03C000E3C595 /* SignupSkillsViewController.swift */; };
 		6AC3C48E22705FAC00E3C595 /* SkillColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C48D22705FAC00E3C595 /* SkillColor.swift */; };
@@ -38,7 +39,6 @@
 		954297612265C2A700AA8E8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297602265C2A700AA8E8F /* ViewController.swift */; };
 		954297642265C2A700AA8E8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954297622265C2A700AA8E8F /* Main.storyboard */; };
 		954297672265C2A700AA8E8F /* Headlight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 954297652265C2A700AA8E8F /* Headlight.xcdatamodeld */; };
-		954297692265C2A900AA8E8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954297682265C2A900AA8E8F /* Assets.xcassets */; };
 		9542976C2265C2A900AA8E8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9542976A2265C2A900AA8E8F /* LaunchScreen.storyboard */; };
 		954297772265C2A900AA8E8F /* HeadlightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297762265C2A900AA8E8F /* HeadlightTests.swift */; };
 		954297822265C2A900AA8E8F /* HeadlightUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297812265C2A900AA8E8F /* HeadlightUITests.swift */; };
@@ -105,6 +105,7 @@
 		6A8DBC0E2270BB8D00613A5F /* courseDescAndMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseDescAndMapCell.swift; sourceTree = "<group>"; };
 		6A8DBC122270F3CE00613A5F /* courseProviderAndTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseProviderAndTimeCell.swift; sourceTree = "<group>"; };
 		6A8DBC1A2271021F00613A5F /* courseSkillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseSkillsCell.swift; sourceTree = "<group>"; };
+		6AC1B7692280E1540016AECA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AC3C47B226C887700E3C595 /* SignupNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupNameViewController.swift; sourceTree = "<group>"; };
 		6AC3C487226F03C000E3C595 /* SignupSkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSkillsViewController.swift; sourceTree = "<group>"; };
 		6AC3C48D22705FAC00E3C595 /* SkillColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillColor.swift; sourceTree = "<group>"; };
@@ -122,7 +123,6 @@
 		954297602265C2A700AA8E8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		954297632265C2A700AA8E8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		954297662265C2A700AA8E8F /* Headlight.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Headlight.xcdatamodel; sourceTree = "<group>"; };
-		954297682265C2A900AA8E8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9542976B2265C2A900AA8E8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9542976D2265C2A900AA8E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		954297722265C2A900AA8E8F /* HeadlightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeadlightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,10 +290,10 @@
 				6AC3C479226C880100E3C595 /* View Controllers */,
 				954297902265C2E000AA8E8F /* Storyboards */,
 				9542975E2265C2A700AA8E8F /* AppDelegate.swift */,
+				6AC1B7692280E1540016AECA /* Assets.xcassets */,
 				954297602265C2A700AA8E8F /* ViewController.swift */,
 				954297BB227720CC00AA8E8F /* CareerPathAlgorithm.swift */,
 				954297622265C2A700AA8E8F /* Main.storyboard */,
-				954297682265C2A900AA8E8F /* Assets.xcassets */,
 				9542976A2265C2A900AA8E8F /* LaunchScreen.storyboard */,
 				9542976D2265C2A900AA8E8F /* Info.plist */,
 				954297652265C2A700AA8E8F /* Headlight.xcdatamodeld */,
@@ -465,10 +465,10 @@
 			files = (
 				6AC3C4932277228D00E3C595 /* Colors.xcassets in Resources */,
 				9542976C2265C2A900AA8E8F /* LaunchScreen.storyboard in Resources */,
+				6AC1B76A2280E1550016AECA /* Assets.xcassets in Resources */,
 				954297982265C38800AA8E8F /* Elias.storyboard in Resources */,
 				954297962265C37F00AA8E8F /* Janne.storyboard in Resources */,
 				6A63669E227C9545009F10E1 /* SkillListCell.xib in Resources */,
-				954297692265C2A900AA8E8F /* Assets.xcassets in Resources */,
 				6AC3C4962279D5FB00E3C595 /* Localizable.strings in Resources */,
 				954297942265C37600AA8E8F /* Tuomas.storyboard in Resources */,
 				954297922265C31200AA8E8F /* Mikko.storyboard in Resources */,
