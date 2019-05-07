@@ -85,9 +85,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             return cell
         }else{
             let cell = SearchResultCell(style: .subtitle, reuseIdentifier: nil)
-            cell.textLabel?.text = self.searchResultData?[indexPath.row]?.name ?? ""
-            cell.detailTextLabel?.text = self.searchResultData?[indexPath.row]?.description ?? ""
-            cell.course = self.searchResultData?[indexPath.row]
+            
+            let course = self.searchResultData?.indices.contains(indexPath.row) ?? false ? self.searchResultData?[indexPath.row] : nil
+            
+            cell.textLabel?.text = course?.name ?? ""
+            cell.detailTextLabel?.text = course?.description ?? ""
+            cell.course = course
             return cell
         }
     }

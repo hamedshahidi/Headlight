@@ -50,4 +50,21 @@ class DataFetcher {
         }
         task.resume()
     }
+    
+    // For UI testing, load course info from file
+    func FetchInitialDataFromFile() {
+        if let path = Bundle.main.path(forResource: "data_template", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let decoder = JSONDecoder()
+                let parsedData = try decoder.decode(CourseStruct.FakeData.self, from: data) as CourseStruct.FakeData
+                
+                CoreDataHelper.saveCourseData(courseList: parsedData.courses)
+            } catch {
+                fatalError("data_template.json file was invalid.")
+            }
+        } else {
+            fatalError("No data_template.json file found.")
+        }
+    }
 }

@@ -16,6 +16,7 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var guideText: UILabel!
     @IBOutlet weak var skillNumberLabel: UILabel!
+    @IBOutlet weak var yourSkillsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,8 @@ class SignupSkillsViewController: UIViewController, UITableViewDataSource, UITab
         nextBtn.layer.cornerRadius = 4
         tableView.dataSource = self
         tableView.delegate = self
+        yourSkillsLabel.text = NSLocalizedString("your_skills", comment: "")
+        skillNumberLabel.text = "0 " + NSLocalizedString("skills_chosen", comment: "")
         guideText.text = NSLocalizedString("skill_pick", comment: "")
         nextBtn.setTitle(NSLocalizedString("next_button", comment: ""), for: .normal)
     }
