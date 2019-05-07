@@ -20,7 +20,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var resultTableView: UITableView!
     
-    var searchContainers = ["Skills"]
+    var skills_title_text : String = NSLocalizedString("skills_title", comment: "")
+    var searchContainers = [String]()
     var course_data : [CourseStruct.Course]?
     var all_skills = skills
     open var searchResultData : [CourseStruct.Course?]?
@@ -29,6 +30,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.searchContainers.append(self.skills_title_text)
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.resultTableView.dataSource = self
@@ -39,7 +41,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white], for: .normal)
         
-        self.navigationItem.title = "Search"
+        self.searchBar.placeholder = NSLocalizedString("search_page_placeholder", comment: "")
+        self.navigationItem.title = NSLocalizedString("search", comment:"" )
     }
     
     

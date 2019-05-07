@@ -31,7 +31,7 @@ class SearchRow : UITableViewCell, UICollectionViewDataSource, UICollectionViewD
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "entryCell", for: indexPath as IndexPath) as! SingleCellContent
         let skill = Array(self.all_skills)[indexPath.item]
-        cell.labelText.text = skill.value
+        cell.labelText.text = NSLocalizedString(skill.key, comment: "")
         cell.hiddenValue = skill.key
         return cell
     }

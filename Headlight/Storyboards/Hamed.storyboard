@@ -476,8 +476,8 @@
                                     <constraint firstAttribute="width" constant="156" id="xtc-Wb-2wD"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="Map"/>
-                                    <segment title="Satellite"/>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
                                 </segments>
                                 <connections>
                                     <action selector="changeMapType:" destination="y3E-fe-x0Y" eventType="valueChanged" id="VN6-8o-KGC"/>

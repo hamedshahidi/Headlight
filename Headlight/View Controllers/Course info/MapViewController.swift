@@ -58,7 +58,7 @@ class MapViewController: UIViewController {
     }
     
     func initializeUISettings() {
-        self.navigationItem.title = "Location"
+        self.navigationItem.title = NSLocalizedString("map_page_title", comment: "")
         mapTypeChanger.layer.cornerRadius = 8
         mapTypeChanger.borderWidth = 2
         mapTypeChanger.borderColor = Theme.accent
@@ -67,6 +67,8 @@ class MapViewController: UIViewController {
         mapTypeChanger.layer.masksToBounds = true
         let font = UIFont.boldSystemFont(ofSize: 16)
         mapTypeChanger.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        mapTypeChanger.setTitle(NSLocalizedString("map_changer_normal", comment: ""), forSegmentAt: 0)
+        mapTypeChanger.setTitle(NSLocalizedString("map_changer_satellite", comment: ""), forSegmentAt: 1)
     }
 
 }

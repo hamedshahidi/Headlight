@@ -51,11 +51,21 @@
 "provides" = "Provides";
 "header_gained" = "You will learn these skills:";
 "header_required" = "Required skills:";
-"header_noSkillRequired" = "Requires no previous skills";
+"header_no_skill_required" = "Requires no previous skills";
+"course_page_title" = "Course Information";
+"btn_already_done" = "Already done";
+"btn_mark_done" = "Mark as done";
+
+// Map view
+"map_page_title" = "Location";
+"map_changer_normal" = "Map";
+"map_changer_satellite" = "Satellite";
 
 // Search
 "searchbar_placeholder" = "Search for a course";
 "cancel_btn" = "Cancel";
+"skills_title" = "Skills";
+"search_page_placeholder" = "Search by course or subject";
 
 // Main view
 "overview" = "Overview";
