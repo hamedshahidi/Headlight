@@ -6,10 +6,6 @@
 //  Copyright © 2019 iSchoolMusical. All rights reserved.
 //
 
-
-//NSLocalizedString("get_started", comment: "")
-
-
 import UIKit
 import MapKit
 
@@ -17,7 +13,6 @@ class CoursePageViewController: UIViewController {
     
     var course: CourseStruct.Course?
     var user = CoreDataHelper.getUserData()
-    var careerPath: CareerPath? = nil
     var courseIsDone: Bool = false
     
     struct tableViews {
@@ -29,7 +24,7 @@ class CoursePageViewController: UIViewController {
         static let required = NSLocalizedString("header_required", comment: "")
     }
     struct placeholders {
-        static let noSkillRequired = NSLocalizedString("header_noSkillRequired", comment: "")
+        static let noSkillRequired = NSLocalizedString("header_no_skill_required", comment: "")
     }
     struct coordinates {
         static var lat = 0.0
@@ -62,14 +57,14 @@ class CoursePageViewController: UIViewController {
         
         initializeUISettings()
         initializeTableViewSettings()
-        getCareerPathInfo()
+        checkIfCourseIsDone()
         getCourseLocation()
         populateUIElements()
     }
     
-    // set initial UI properties programatically
+    // Set initial UI properties programatically
     func initializeUISettings() {
-        self.navigationItem.title = "Course Information"
+        self.navigationItem.title = NSLocalizedString("course_page_title", comment: "")
         btnDone.layer.cornerRadius = 8
         btnDone.borderWidth = 2
     }
@@ -105,30 +100,17 @@ class CoursePageViewController: UIViewController {
         }
     }
     
-    // check the state of the course if it is done already
-    func checkIfCourseIsDone() -> Bool {
+    // Check if user has done this course already and update UI accordingly
+    func checkIfCourseIsDone() {
         var state: Bool = false
         if let history = user?.history,
             let course = course?.id
         {
+            // 1.Check user course history
             if history.contains(course) { state = true }
             else { state = false }
         }
-        return state
-    }
-    
-    // Get career path informations and update UI accordingly
-    func getCareerPathInfo() {
-        
-        // 1.Get career path
-        let careerPaths = CoreDataHelper.listAllCareerPaths()
-                if careerPaths.count > 0 {
-                    careerPath = careerPaths[0]
-                } else {
-                    print("career path does not exist")
-                }
-        
-        courseIsDone = checkIfCourseIsDone()
+        courseIsDone = state
         
         // 2.Update UI
         switch courseIsDone {
@@ -147,14 +129,14 @@ class CoursePageViewController: UIViewController {
             btnDone.borderColor = Theme.tint
             btnDone.tintColor = .white
             btnDone.borderWidth = 2
-            btnDone.setTitle("Already done", for: UIControl.State.normal)
+            btnDone.setTitle(NSLocalizedString("btn_already_done", comment: ""), for: UIControl.State.normal)
             btnDone.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         default:
             btnDone.backgroundColor = .clear
             btnDone.borderColor = Theme.accent
             btnDone.tintColor = Theme.accent
             btnDone.borderWidth = 2
-            btnDone.setTitle("Mark as done", for: UIControl.State.normal)
+            btnDone.setTitle(NSLocalizedString("btn_mark_done", comment: ""), for: UIControl.State.normal)
             btnDone.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         }
     }
@@ -201,7 +183,7 @@ extension CoursePageViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         
-        // set table rows based on their related content
+        // Set table rows based on their related content
         switch tableView.restorationIdentifier {
         case tableViews.gained:
             return (course?.skills?.gained?.count ?? 0) + 1
@@ -222,7 +204,7 @@ extension CoursePageViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        // set row height
+        // Set row height
         switch indexPath.row {
         case 0:
             return 60
@@ -241,8 +223,7 @@ extension CoursePageViewController: UITableViewDataSource, UITableViewDelegate {
         var label: UILabel?
         
         guard let cell = cell as? SkillListCell else {
-            print("Cell does not exist")
-            return
+            fatalError("Skill cell does not exist!")
         }
         
         labels = (cell.gainedSkillLabel, cell.requiredSkillLabel)
@@ -309,9 +290,4 @@ extension CoursePageViewController: MKMapViewDelegate {
         coordinates.lat = course?.location?.ltd ?? 0.0
         coordinates.long = course?.location?.lgn ?? 0.0
     }
-    
-    func mapViewWillStartRenderingMap(_ mapView: MKMapView) {
-        print("rendering map...")
-    }
-    
 }
