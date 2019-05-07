@@ -13,6 +13,7 @@ class CareerPathPickViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var careerName: UILabel!
     @IBOutlet weak var careerLength: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var pickButton: UIButton!
     
     var careerPath: CareerPath? = nil
     var careerPathWithSelfStudy: CareerPath? = nil
@@ -22,15 +23,17 @@ class CareerPathPickViewController: UIViewController, UITableViewDataSource, UIT
         
         careerPathWithSelfStudy = CareerPathAlgorithm.careerPathWithSelfStudy(careerPath!)
         
-        self.navigationItem.title = careerPath?.career.name
+        self.navigationItem.title = NSLocalizedString(careerPath?.career.name ?? "unknown", comment: "")
+        
+        pickButton.setTitle(NSLocalizedString("pick_this_path", comment: ""), for: UIControl.State.normal)
         
         tableView.dataSource = self
         tableView.delegate = self
         
         let pathLength = careerPathWithSelfStudy?.path.count ?? 0
         let skillCount = careerPathWithSelfStudy?.gainedSkills.count ?? 0
-        careerName.text = String(pathLength) + (pathLength == 1 ? " course" : " courses")
-        careerLength.text = String(skillCount) + (skillCount == 1 ? " skills" : " skills")
+        careerName.text = String(pathLength) + " " + NSLocalizedString(pathLength == 1 ? "course" : "courses", comment: "")
+        careerLength.text = String(skillCount) + " " + NSLocalizedString(pathLength == 1 ? "skill" : "skills", comment: "")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,8 +50,8 @@ class CareerPathPickViewController: UIViewController, UITableViewDataSource, UIT
         }
         
         let course = careerPathWithSelfStudy?.path[indexPath.row]
-        cell.courseTitle.text = course?.name ?? "Unknown"
-        cell.courseOrganization.text = course?.organization ?? "Unknown"
+        cell.courseTitle.text = course?.name ?? NSLocalizedString("unknown", comment: "")
+        cell.courseOrganization.text = course?.organization ?? NSLocalizedString("unknown", comment: "")
         cell.courseNumber.text = String(indexPath.row + 1) + "."
         
         if course?.id == "self-study" {

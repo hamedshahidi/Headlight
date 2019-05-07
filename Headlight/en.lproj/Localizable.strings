@@ -20,9 +20,13 @@
 "skill_chosen" = "skill chosen";
 
 // Career paths
-"pick_career_btn" = "Pick a learning path";
-"pick_this_path_btn" = "Pick this path";
+"pick_this_path" = "Pick this path";
+"unkown" = "Unknown";
 "courses" = "courses";
+"course" = "course";
+"skills" = "skills";
+"skill" = "skill";
+"select_career" = "Select Career";
 "Front-End Developer" = "Front-End Developer";
 "Back-End Developer" = "Back-End Developer";
 "Full Stack Developer" = "Full Stack Developer";
@@ -32,6 +36,10 @@
 "iOS Developer" = "iOS Developer";
 "Mobile Developer" = "Mobile Developer";
 "Game Developer" = "Game Developer";
+"Web Development" = "Web Development";
+"Mobile Application Development" = "Mobile Application Development";
+"Video Game Development" = "Video Game Development";
+"Other" = "Other";
 
 // Course view
 "description" = "Description";
