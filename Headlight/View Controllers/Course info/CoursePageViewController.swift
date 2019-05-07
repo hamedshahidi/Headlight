@@ -34,10 +34,15 @@ class CoursePageViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
+    @IBOutlet weak var descTitleLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var locationTitleLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var orginizerLabel: UILabel!
+    @IBOutlet weak var organizerTitleLabel: UILabel!
+    @IBOutlet weak var organizerLabel: UILabel!
+    @IBOutlet weak var startTitleLabel: UILabel!
     @IBOutlet weak var startLabel: UILabel!
+    @IBOutlet weak var endTitleLabel: UILabel!
     @IBOutlet weak var endLabel: UILabel!
     
     @IBOutlet weak var tableViewGainedSkills: UITableView!
@@ -66,9 +71,14 @@ class CoursePageViewController: UIViewController {
     // Set initial UI properties programatically
     func initializeUISettings() {
         self.navigationItem.title = NSLocalizedString("course_page_title", comment: "")
+        descTitleLabel?.text = NSLocalizedString("description", comment: "")
+        locationTitleLabel?.text = NSLocalizedString("location_title", comment: "")
+        organizerTitleLabel?.text = NSLocalizedString("organized_by", comment: "")
+        startTitleLabel?.text = NSLocalizedString("starts", comment: "")
+        endTitleLabel?.text = NSLocalizedString("ends", comment: "")
         btnDone.layer.cornerRadius = 8
         btnDone.borderWidth = 2
-        btnDoneWidth.constant = btnDone.intrinsicContentSize.width + 10
+        btnDoneWidth.constant = btnDone.intrinsicContentSize.width + 50
     }
     
     // Observer to autosize UITableView height based on its content size
@@ -161,7 +171,7 @@ class CoursePageViewController: UIViewController {
         titleLabel?.text = course?.name ?? "-"
         rateLabel?.text = "\(course?.rating ?? 0)"
         descLabel?.text = course?.description ?? "-"
-        orginizerLabel?.text = course?.organization ?? "-"
+        organizerLabel?.text = course?.organization ?? "-"
         startLabel?.text = course?.time?.start ?? "-"
         endLabel?.text = course?.time?.end ?? "-"
     }

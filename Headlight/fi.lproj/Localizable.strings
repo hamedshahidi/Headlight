@@ -43,8 +43,9 @@
 "Other" = "Muut";
 
 // Course view
-"description" = "Kuvaus";
+"description" = "Kuvaus:";
 "organized_by" = "Järjestäjä:";
+"location_title" = "Sijainti:";
 "starts" = "Alkaa:";
 "ends" = "Loppuu:";
 "requires" = "Vaaditut";
