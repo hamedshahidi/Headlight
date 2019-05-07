@@ -55,6 +55,8 @@
 // Search
 "searchbar_placeholder" = "Search for a course";
 "cancel_btn" = "Cancel";
+"skills_title" = "Skills";
+"search_page_placeholder" = "Search by course or subject";
 
 // Main view
 "overview" = "Overview";
