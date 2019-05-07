@@ -35,6 +35,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         self.resultTableView.delegate = self
         self.searchResultData = []
         self.course_data = CoreDataHelper.listAllCourses()
+        resultTableView.tableFooterView = UIView()
+        
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white], for: .normal)
         
         self.navigationItem.title = "Search"
     }
@@ -158,6 +161,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
 // keeping it as an extension because makes it easier to find search bar functionalities on this page
 
 extension SearchViewController: UISearchBarDelegate{
+    
     
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
