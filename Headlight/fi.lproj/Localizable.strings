@@ -20,9 +20,13 @@
 "skill_chosen" = "taito valittu";
 
 // Career paths
-"pick_career_btn" = "Valitse opintopolku";
-"pick_this_path_btn" = "Valitse polku";
+"pick_this_path" = "Valitse tämä polku";
+"unkown" = "Tuntematon";
 "courses" = "kurssia";
+"course" = "kurssi";
+"skills" = "taitoa";
+"skill" = "taito";
+"select_career" = "Valitse Ura";
 "Front-End Developer" = "Front-End Kehittäjä";
 "Back-End Developer" = "Back-End Kehittäjä";
 "Full Stack Developer" = "Full Stack Kehittäjä";
@@ -32,6 +36,10 @@
 "iOS Developer" = "iOS Kehittäjä";
 "Mobile Developer" = "Mobiilikehittäjä";
 "Game Developer" = "Pelikehittäjä";
+"Web Development" = "Web-Kehitys";
+"Mobile Application Development" = "Mobiilikehitys";
+"Video Game Development" = "Pelinkehitys";
+"Other" = "Muut";
 
 // Course view
 "description" = "Kuvaus";

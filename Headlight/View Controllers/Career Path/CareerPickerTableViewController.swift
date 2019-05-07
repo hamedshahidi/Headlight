@@ -20,7 +20,7 @@ class CareerPickerTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Select Career"
+        self.navigationItem.title = NSLocalizedString("select_career", comment: "")
         
         /*
         for key in CareerData.careerCaregoryDictionary.keys {
@@ -38,7 +38,7 @@ class CareerPickerTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return indexList[section]
+        return NSLocalizedString(indexList[section], comment: "")
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,8 +51,9 @@ class CareerPickerTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "careerListViewCell", for: indexPath)
-
-        cell.textLabel?.text = CareerData.careerCaregoryDictionary[indexList[indexPath.section]]?[indexPath.row].name ?? "Unknown"
+        
+        let text = CareerData.careerCaregoryDictionary[indexList[indexPath.section]]?[indexPath.row].name ?? "unknown"
+        cell.textLabel?.text = NSLocalizedString(text, comment: "")
 
         return cell
     }

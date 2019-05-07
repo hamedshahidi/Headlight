@@ -48,7 +48,7 @@ class CareerPathAlgorithm {
         let list = sortCoursesByPreferenceFactor(courseList, skillList, user)
         
         var stepCourses: [CourseStruct.Course] = []
-        var fulfilledSkills: [String] = []
+        var fulfilledSkills: [String] = Array(Set(user.skills + (path?.gainedSkills ?? [])))
         var requiredSkills: [String] = []
         for course in list {
             let skills = calculateCareerGivenSkills(course, skillList)
