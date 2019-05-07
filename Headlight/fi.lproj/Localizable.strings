@@ -54,9 +54,11 @@
 "cancel_btn" = "Peruuta";
 
 // Main view
+"overview" = "Yleiskatsaus";
 "search" = "Haku";
-"current_course" = "Nykyinen kurssi";
+"ongoing_course" = "Nykyinen kurssi";
 "courses_left" = "Kursseja jäljellä: ";
+"courses_completed" = "Suoritetut kurssit: ";
 
 // Skills
 "html" = "HTML";
@@ -70,6 +72,8 @@
 "tier-3-mathematics" = "Korkeampi matematiikka";
 "basic-unix"  = "UNIX perusteet";
 "basic-logism" = "Logismin perusteet";
+"basic-logisim" = "Logismin perusteet";
+"advanced-logisim" = "Edistynyt logismi";
 "ionic" = "Ionic";
 "angular" = "Angular";
 "sass" = "SASS";
@@ -89,6 +93,7 @@
 "csharp" = "C#";
 "unreal" = "Unreal Engine";
 "c++" = "C++";
+"sql" = "SQL";
 
 // Courses
 "metropolia-web-01_name" = "Web-teknologioiden perusteet";

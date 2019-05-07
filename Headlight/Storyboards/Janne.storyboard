@@ -433,6 +433,7 @@
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="currentCourseDescription" destination="d5o-Uu-hj9" id="llk-lE-mNN"/>
+                        <outlet property="currentCourseHeader" destination="Lhk-wa-nmm" id="zpb-hW-KDX"/>
                         <outlet property="currentCourseName" destination="oug-n8-jzw" id="N55-uM-9rs"/>
                         <outlet property="currentCourseOrganization" destination="0RM-k5-OKt" id="BZF-OI-bgQ"/>
                         <outlet property="currentCourseRating" destination="S7m-fz-646" id="mDK-x1-ocP"/>
@@ -441,7 +442,9 @@
                         <outlet property="pickCareerButton" destination="TLT-U3-PZQ" id="66V-ZE-WKH"/>
                         <outlet property="precentageCoursesDone" destination="UeV-Fn-MRn" id="0Iz-4L-U9O"/>
                         <outlet property="profileCoursesDone" destination="nD2-75-Kgl" id="aLu-dO-mFm"/>
+                        <outlet property="profileCoursesDoneText" destination="jWC-bw-XFI" id="d5o-be-PnW"/>
                         <outlet property="profileCoursesLeft" destination="uEv-lq-QqE" id="WQe-Rx-1d9"/>
+                        <outlet property="profileCoursesLeftText" destination="Ucz-X7-MYV" id="hvD-iQ-bBC"/>
                         <outlet property="profileName" destination="7zm-Ag-tlD" id="I2D-Sg-u5k"/>
                         <outlet property="searchBar" destination="zm6-ik-OXs" id="LaG-Bz-zCc"/>
                         <outlet property="tableView" destination="wcn-zY-KEm" id="1Us-me-4Dy"/>

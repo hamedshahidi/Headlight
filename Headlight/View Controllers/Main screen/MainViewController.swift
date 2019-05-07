@@ -12,12 +12,15 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     // Profile info
     @IBOutlet weak var profileCoursesDone: UILabel!
+    @IBOutlet weak var profileCoursesDoneText: UILabel!
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var precentageCoursesDone: UILabel!
     @IBOutlet weak var profileCoursesLeft: UILabel!
+    @IBOutlet weak var profileCoursesLeftText: UILabel!
     
     // Current course
     @IBOutlet weak var currentCourseView: UIView!
+    @IBOutlet weak var currentCourseHeader: UILabel!
     @IBOutlet weak var currentCourseName: UILabel!
     @IBOutlet weak var currentCourseOrganization: UILabel!
     @IBOutlet weak var currentCourseDescription: UILabel!
@@ -42,8 +45,7 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.title = "Overview"
+        self.navigationItem.title = NSLocalizedString("overview", comment: "")
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
@@ -57,7 +59,7 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                 
         // Removes lines ontop and under the search bar
         searchBar.setBackgroundImage(UIImage.init(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
-        searchBar.placeholder = NSLocalizedString("Search", comment: "")
+        searchBar.placeholder = NSLocalizedString("search", comment: "")
         
         // Adds onclick effect for current course view
         let gesture = UITapGestureRecognizer(target: self , action:  #selector(self.checkAction))
@@ -97,7 +99,9 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         // Sets profile info
         profileName.text = user?.name
         profileCoursesDone.text = String(coursesDone)
+        profileCoursesDoneText.text = NSLocalizedString("courses_completed", comment: "")
         profileCoursesLeft.text = String(coursesLeft)
+        profileCoursesLeftText.text = NSLocalizedString("courses_left", comment: "")
         precentageCoursesDone.text = NSString(format: "%.1f", percentage) as String + "%"
         
         // Current course info is hidden if there is no career path or if the career path is done
@@ -119,9 +123,12 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         }
         
         // Sets current course info
-        currentCourseName.text = currentCourse?.name
+        currentCourseHeader.text = NSLocalizedString("ongoing_course", comment: "")
+        if let courseId = currentCourse?.id {
+            currentCourseName.text = NSLocalizedString(courseId + "_name", comment: "")
+            currentCourseDescription.text = NSLocalizedString(courseId + "_description", comment: "")
+        } 
         currentCourseOrganization.text = currentCourse?.organization
-        currentCourseDescription.text = currentCourse?.description
         currentCourseRating.text = NSString(format: "%.1f", currentCourse?.rating ?? 0 ) as String
         currentCourseSkills.attributedText = setColoredLabel(skillString: stringOfSkills)
         tableView.reloadData()
@@ -156,7 +163,7 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     // Creates title
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return careerPath?.career.name ?? "Career path"
+        return NSLocalizedString(careerPath?.career.name ?? "Career path", comment: "")
     }
 
     // Amount of courses in career path
@@ -190,8 +197,11 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
 
         cell = changeCellColors(cell: cell, indexPath: indexPath, skillString: skillString, userHasDoneThisCourse: userHasDoneThisCourse)
         cell.course = course
-        cell.courseName.text = course?.name ?? "Unknown"
-        cell.courseInfo.text = course?.description ?? ""
+        if let courseId = course?.id {
+            cell.courseName.text = NSLocalizedString(courseId + "_name", comment: "")
+            cell.courseInfo.text = NSLocalizedString(courseId + "_description", comment: "")
+        }
+
         return cell
     }
     
