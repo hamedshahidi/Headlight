@@ -46,7 +46,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Load course data
         let fetcher = DataFetcher()
-        fetcher.FetchInitialData()
+        if AppDelegate.isUITestingEnabled {
+            // Fetch local data bundled with testing build
+            fetcher.FetchInitialDataFromFile()
+        } else {
+            fetcher.FetchInitialData()
+        }
         
         let user = CoreDataHelper.getUserData()
         if user != nil && user?.name.count ?? 0 > 0 {
