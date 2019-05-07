@@ -46,9 +46,11 @@
 "cancel_btn" = "Cancel";
 
 // Main view
+"overview" = "Overview";
 "search" = "Search";
-"current_course" = "Current course";
+"ongoing_course" = "Ongoing course";
 "courses_left" = "Courses left: ";
+"courses_completed" = "Courses completed: ";
 
 // Skills
 "html" = "HTML";
@@ -62,6 +64,8 @@
 "tier-3-mathematics" = "Additional Advanced Mathematics";
 "basic-unix"  = "UNIX Basics";
 "basic-logism" = "Basics of logism";
+"basic-logisim" = "Basics of logism";
+"advanced-logisim" = "Advanced logism";
 "ionic" = "Ionic";
 "angular" = "Angular";
 "sass" = "SASS";
@@ -81,6 +85,7 @@
 "csharp" = "C#";
 "unreal" = "Unreal Engine";
 "c++" = "C++";
+"sql" = "SQL";
 
 // Courses
 "metropolia-web-01_name" = "Web Basics";

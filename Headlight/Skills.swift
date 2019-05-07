@@ -18,6 +18,7 @@ let skills: [String: String] = [
     "tier-3-mathematics": "Additional Advanced Mathematics",
     "basic-unix" : "UNIX Basics",
     "basic-logism": "Basics of logism",
+    "advanced-logisim": "Advanced logism",
     "ionic": "Ionic",
     "angular": "Angular",
     "sass": "SASS",
