@@ -22,11 +22,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    static var isUserDataRequested: Bool {
+        get {
+            return ProcessInfo.processInfo.arguments.contains("UI-User")
+        }
+    }
+    
     private func setStateForUITesting() {
         if AppDelegate.isUITestingEnabled {
             UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
             CoreDataHelper.clearUserData()
             CoreDataHelper.clearCourseData()
+        }
+        
+        if AppDelegate.isUserDataRequested {
+            CoreDataHelper.saveUserData(name: "Test")
         }
     }
     

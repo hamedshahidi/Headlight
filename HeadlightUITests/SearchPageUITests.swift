@@ -9,6 +9,7 @@
 import XCTest
 
 class SearchPageUITests: XCTestCase {
+    // var user: User = User(name: "Test", skills: ["c++"], history: [])
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -17,7 +18,9 @@ class SearchPageUITests: XCTestCase {
         continueAfterFailure = false
 
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
+        let app = XCUIApplication()
+        app.launchArguments += ["UI-Testing", "UI-User"]
+        app.launch()
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
@@ -50,7 +53,8 @@ class SearchPageUITests: XCTestCase {
         let app = XCUIApplication()
         let frontPageSearchBar = app.scrollViews.otherElements.searchFields["Search"]
         frontPageSearchBar.tap()
-        XCUIApplication().navigationBars["overviewView"].buttons["Overview"].tap()
+        // Back button
+        XCUIApplication().navigationBars.buttons.element.tap()
         XCTAssertTrue(frontPageSearchBar.exists)
     }
     
