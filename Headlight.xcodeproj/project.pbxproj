@@ -34,6 +34,7 @@
 		6AC3C4962279D5FB00E3C595 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AC3C4982279D5FB00E3C595 /* Localizable.strings */; };
 		6AC3C49D227F0D0C00E3C595 /* SignupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C49C227F0D0C00E3C595 /* SignupUITests.swift */; };
 		6AC9AC8B22802842006D01AE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC9AC8A22802842006D01AE /* MapViewController.swift */; };
+		95030A0822817F290061D739 /* data_template.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A48C4FE2265D6910079B4A1 /* data_template.json */; };
 		9535B9C1227D8C63004AFED6 /* CourseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535B9C0227D8C63004AFED6 /* CourseTableCell.swift */; };
 		9542975F2265C2A700AA8E8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9542975E2265C2A700AA8E8F /* AppDelegate.swift */; };
 		954297612265C2A700AA8E8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297602265C2A700AA8E8F /* ViewController.swift */; };
@@ -65,6 +66,8 @@
 		954297CB2278310500AA8E8F /* PathData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297C92278310500AA8E8F /* PathData+CoreDataProperties.swift */; };
 		954297CD227840BB00AA8E8F /* CareerPathAlgorithmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297CC227840BB00AA8E8F /* CareerPathAlgorithmTests.swift */; };
 		954297CF227844F700AA8E8F /* CareerPathCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954297CE227844F700AA8E8F /* CareerPathCoreDataTests.swift */; };
+		95E37D2922817B78006C851D /* data_template.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A48C4FE2265D6910079B4A1 /* data_template.json */; };
+		95E37D2B22817BC9006C851D /* data_template.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A48C4FE2265D6910079B4A1 /* data_template.json */; };
 		95EE55ED228030600039BADF /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EE55EC228030600039BADF /* SplashViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -470,6 +473,7 @@
 				954297962265C37F00AA8E8F /* Janne.storyboard in Resources */,
 				6A63669E227C9545009F10E1 /* SkillListCell.xib in Resources */,
 				6AC3C4962279D5FB00E3C595 /* Localizable.strings in Resources */,
+				95030A0822817F290061D739 /* data_template.json in Resources */,
 				954297942265C37600AA8E8F /* Tuomas.storyboard in Resources */,
 				954297922265C31200AA8E8F /* Mikko.storyboard in Resources */,
 				9542979A2265C39500AA8E8F /* Hamed.storyboard in Resources */,
@@ -481,6 +485,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95E37D2B22817BC9006C851D /* data_template.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +493,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95E37D2922817B78006C851D /* data_template.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

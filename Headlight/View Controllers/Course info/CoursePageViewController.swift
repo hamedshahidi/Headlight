@@ -6,6 +6,10 @@
 //  Copyright © 2019 iSchoolMusical. All rights reserved.
 //
 
+
+//NSLocalizedString("get_started", comment: "")
+
+
 import UIKit
 import MapKit
 
@@ -21,11 +25,11 @@ class CoursePageViewController: UIViewController {
         static let required = "TableViewRequiredSkills"
     }
     struct headers {
-        static let gained = "You will learn these skills:"
-        static let required = "Required skills:"
+        static let gained = NSLocalizedString("header_gained", comment: "")
+        static let required = NSLocalizedString("header_required", comment: "")
     }
     struct placeholders {
-        static let noSkillRequired = "Requires no previous skills"
+        static let noSkillRequired = NSLocalizedString("header_noSkillRequired", comment: "")
     }
     struct coordinates {
         static var lat = 0.0

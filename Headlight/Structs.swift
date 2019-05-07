@@ -10,7 +10,7 @@ import Foundation
 
 // a file that holds the fetched data structures as structs
 class CourseStruct {
-    struct FakeData: Codable{
+    struct FakeData: Codable {
         var skills : [String];
         var courses : [Course];
     }

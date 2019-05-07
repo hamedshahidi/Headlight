@@ -49,6 +49,9 @@
 "ends" = "Ends:";
 "requires" = "Requires";
 "provides" = "Provides";
+"header_gained" = "You will learn these skills:";
+"header_required" = "Required skills:";
+"header_noSkillRequired" = "Requires no previous skills";
 
 // Search
 "searchbar_placeholder" = "Search for a course";
