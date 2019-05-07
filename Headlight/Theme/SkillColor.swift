@@ -101,6 +101,10 @@ class SkillColor {
             skillColor[str] = colors[lastColorIndex]
             color = colors[lastColorIndex]
             lastColorIndex += 1
+            if lastColorIndex > 52 {
+                lastColorIndex = 0
+            }
+            print(lastColorIndex)
         } else {
             // Get skill color with key
             color = skillColor[str] ?? ""
