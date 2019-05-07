@@ -49,6 +49,17 @@
 "ends" = "Loppuu:";
 "requires" = "Vaaditut";
 "provides" = "Saadut";
+"header_gained" = "Opit nämä taidot:";
+"header_required" = "Vaaditut taidot:";
+"header_no_skill_required" = "Ei vaadi aiempia taitoja";
+"course_page_title" = "Kurssin tiedot";
+"btn_already_done" = "Tehty";
+"btn_mark_done" = "Merkitse tehdyksi";
+
+// Map view
+"map_page_title" = "Sijainti";
+"map_changer_normal" = "Kartta";
+"map_changer_satellite" = "Satelliitti";
 
 // Search
 "searchbar_placeholder" = "Hae kurssia";
