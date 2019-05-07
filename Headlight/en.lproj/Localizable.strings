@@ -45,7 +45,7 @@
 // Course view
 "description" = "Description:";
 "organized_by" = "Organized by:";
-"location_title" = "Location";
+"location_title" = "Location:";
 "starts" = "Starts:";
 "ends" = "Ends:";
 "requires" = "Requires";

@@ -15,18 +15,18 @@ class CoursePageViewController: UIViewController {
     var user = CoreDataHelper.getUserData()
     var courseIsDone: Bool = false
     
-    struct tableViews {
+    struct TableViews {
         static let gained = "TableViewGainedSkills"
         static let required = "TableViewRequiredSkills"
     }
-    struct headers {
+    struct Headers {
         static let gained = NSLocalizedString("header_gained", comment: "")
         static let required = NSLocalizedString("header_required", comment: "")
     }
-    struct placeholders {
+    struct Placeholders {
         static let noSkillRequired = NSLocalizedString("header_no_skill_required", comment: "")
     }
-    struct coordinates {
+    struct Coordinates {
         static var lat = 0.0
         static var long = 0.0
     }
@@ -76,6 +76,7 @@ class CoursePageViewController: UIViewController {
         organizerTitleLabel?.text = NSLocalizedString("organized_by", comment: "")
         startTitleLabel?.text = NSLocalizedString("starts", comment: "")
         endTitleLabel?.text = NSLocalizedString("ends", comment: "")
+        rateLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         btnDone.layer.cornerRadius = 8
         btnDone.borderWidth = 2
         btnDoneWidth.constant = btnDone.intrinsicContentSize.width + 50
@@ -176,7 +177,7 @@ class CoursePageViewController: UIViewController {
         endLabel?.text = course?.time?.end ?? "-"
     }
     
-    // MARK: - Navigation
+// MARK: - Navigation
     
     // Navigate to map page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -189,7 +190,7 @@ class CoursePageViewController: UIViewController {
     }
 }
 
-// TableViewController
+// MARK: - TableViewController
 extension CoursePageViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -197,10 +198,10 @@ extension CoursePageViewController: UITableViewDataSource, UITableViewDelegate {
         
         // Set table rows based on their related content
         switch tableView.restorationIdentifier {
-        case tableViews.gained:
+        case TableViews.gained:
             return (course?.skills?.gained?.count ?? 0) + 1
             
-        case tableViews.required:
+        case TableViews.required:
             return (course?.skills?.required?.count ?? 0) + 1
             
         default:
@@ -246,15 +247,15 @@ extension CoursePageViewController: UITableViewDataSource, UITableViewDelegate {
         
         // Indentify table and update UI accordingly
         switch tableView.restorationIdentifier {
-        case tableViews.gained:
-            header = headers.gained
+        case TableViews.gained:
+            header = Headers.gained
             skills = course?.skills?.gained ?? []
             
-        case tableViews.required:
+        case TableViews.required:
             if (course?.skills?.required?.count ?? 0) == 0 {
-                header = placeholders.noSkillRequired
+                header = Placeholders.noSkillRequired
             } else {
-                header = headers.required
+                header = Headers.required
             }
             skills = course?.skills?.required ?? []
             
@@ -279,27 +280,52 @@ extension CoursePageViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+
+// MARK: - MapViewDelegate
 extension CoursePageViewController: MKMapViewDelegate {
     
     func getCourseLocation () {
         
-        getCoordinates()
+        // Get coordinates of current course
+        let courseLocation = CustomLocationManager.getCoordinatesForCourse(course)
         
-        // Set map region based on location
-        let courseLocation = CLLocation(latitude: coordinates.lat, longitude: coordinates.long)
+        // Set location map region based on coordinates
         let regionRadius: CLLocationDistance = 350.0
         let region = MKCoordinateRegion(center: courseLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         locationMap.setRegion(region, animated: false)
 
+        convertCoordinatesToPlaceName(courseLocation)
         
-        // Add a pin on location
+        // Add a pin on the map based on coordinates
         let pin = MKPointAnnotation()
-        pin.coordinate = CLLocationCoordinate2D(latitude: coordinates.lat, longitude: coordinates.long)
+        pin.coordinate = CLLocationCoordinate2D(latitude: Coordinates.lat, longitude: Coordinates.long)
         locationMap.addAnnotation(pin)
     }
     
-    func getCoordinates() {
-        coordinates.lat = course?.location?.ltd ?? 0.0
-        coordinates.long = course?.location?.lgn ?? 0.0
+    // Convert CLLocation object (containes coordinates) into human readable place name
+    func convertCoordinatesToPlaceName (_ location: CLLocation) {
+        
+        // Reverce Geocoding CLLocation object
+        CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
+            
+            // Process the responce
+            self.processResponse(withPlacemarks: placemarks, error: error)
+        }
+    }
+    
+    // Check reverseGeocodeLocation response and extract string out of placemark
+    func processResponse(withPlacemarks placemarks: [CLPlacemark]?, error: Error?) {
+        
+        if let error = error {
+            print("Unable to Reverse Geocode Location (\(error))")
+            locationLabel.text = "Unable to Find Address for Location"
+        } else {
+            if let placemarks = placemarks, let placemark = placemarks.first {
+                locationLabel.text = placemark.compactAddress
+            } else {
+                locationLabel.text = "No Matching Addresses Found"
+            }
+        }
     }
 }
+

@@ -21,6 +21,7 @@
 		6A636694227C40A4009F10E1 /* CoursePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A636693227C40A4009F10E1 /* CoursePageViewController.swift */; };
 		6A63669D227C9545009F10E1 /* SkillListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A63669B227C9545009F10E1 /* SkillListCell.swift */; };
 		6A63669E227C9545009F10E1 /* SkillListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A63669C227C9545009F10E1 /* SkillListCell.xib */; };
+		6A885390228207BC0004D98E /* CustomLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A88538F228207BC0004D98E /* CustomLocationManager.swift */; };
 		6A8DBC0C2270B91700613A5F /* courseInfoHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC0A2270B91700613A5F /* courseInfoHeaderCell.swift */; };
 		6A8DBC102270BB8D00613A5F /* courseDescAndMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC0E2270BB8D00613A5F /* courseDescAndMapCell.swift */; };
 		6A8DBC142270F3CE00613A5F /* courseProviderAndTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC122270F3CE00613A5F /* courseProviderAndTimeCell.swift */; };
@@ -104,6 +105,7 @@
 		6A636693227C40A4009F10E1 /* CoursePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePageViewController.swift; sourceTree = "<group>"; };
 		6A63669B227C9545009F10E1 /* SkillListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillListCell.swift; sourceTree = "<group>"; };
 		6A63669C227C9545009F10E1 /* SkillListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkillListCell.xib; sourceTree = "<group>"; };
+		6A88538F228207BC0004D98E /* CustomLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLocationManager.swift; sourceTree = "<group>"; };
 		6A8DBC0A2270B91700613A5F /* courseInfoHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseInfoHeaderCell.swift; sourceTree = "<group>"; };
 		6A8DBC0E2270BB8D00613A5F /* courseDescAndMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseDescAndMapCell.swift; sourceTree = "<group>"; };
 		6A8DBC122270F3CE00613A5F /* courseProviderAndTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseProviderAndTimeCell.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				6AC3C48F2277225F00E3C595 /* Theme */,
 				6AC3C479226C880100E3C595 /* View Controllers */,
 				954297902265C2E000AA8E8F /* Storyboards */,
+				6A88538F228207BC0004D98E /* CustomLocationManager.swift */,
 				9542975E2265C2A700AA8E8F /* AppDelegate.swift */,
 				6AC1B7692280E1540016AECA /* Assets.xcassets */,
 				954297602265C2A700AA8E8F /* ViewController.swift */,
@@ -516,6 +519,7 @@
 				6AC3C488226F03C000E3C595 /* SignupSkillsViewController.swift in Sources */,
 				954297C5227731BD00AA8E8F /* CareerPathPickViewController.swift in Sources */,
 				954297CB2278310500AA8E8F /* PathData+CoreDataProperties.swift in Sources */,
+				6A885390228207BC0004D98E /* CustomLocationManager.swift in Sources */,
 				6A36550C226EFB23009C8FA2 /* MainViewController.swift in Sources */,
 				9535B9C1227D8C63004AFED6 /* CourseTableCell.swift in Sources */,
 				954297672265C2A700AA8E8F /* Headlight.xcdatamodeld in Sources */,
