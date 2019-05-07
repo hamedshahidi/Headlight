@@ -124,10 +124,9 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         
         // Sets current course info
         currentCourseHeader.text = NSLocalizedString("ongoing_course", comment: "")
-        if let courseId = currentCourse?.id {
-            currentCourseName.text = NSLocalizedString(courseId + "_name", comment: "")
-            currentCourseDescription.text = NSLocalizedString(courseId + "_description", comment: "")
-        } 
+        
+        currentCourseName.text = currentCourse?.name ?? ""
+        currentCourseDescription.text = currentCourse?.description ?? ""
         currentCourseOrganization.text = currentCourse?.organization
         currentCourseRating.text = NSString(format: "%.1f", currentCourse?.rating ?? 0 ) as String
         currentCourseSkills.attributedText = setColoredLabel(skillString: stringOfSkills)
@@ -197,10 +196,8 @@ class MainViewController: UIViewController, UISearchBarDelegate, UITableViewDele
 
         cell = changeCellColors(cell: cell, indexPath: indexPath, skillString: skillString, userHasDoneThisCourse: userHasDoneThisCourse)
         cell.course = course
-        if let courseId = course?.id {
-            cell.courseName.text = NSLocalizedString(courseId + "_name", comment: "")
-            cell.courseInfo.text = NSLocalizedString(courseId + "_description", comment: "")
-        }
+        cell.courseName.text = course?.name ?? ""
+        cell.courseInfo.text = course?.description ?? ""
 
         return cell
     }

@@ -232,6 +232,7 @@
                         <outlet property="nextBtn" destination="ZzN-cZ-4yU" id="Svv-8f-beB"/>
                         <outlet property="skillNumberLabel" destination="mvB-Gn-zdi" id="Ux2-QK-Ccn"/>
                         <outlet property="tableView" destination="YN7-cl-shO" id="DpR-qx-Cwh"/>
+                        <outlet property="yourSkillsLabel" destination="dyi-Xv-5xv" id="BLg-7y-6Ie"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K1t-1w-oK4" userLabel="First Responder" sceneMemberID="firstResponder"/>

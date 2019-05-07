@@ -26,7 +26,6 @@
 		6A8DBC142270F3CE00613A5F /* courseProviderAndTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC122270F3CE00613A5F /* courseProviderAndTimeCell.swift */; };
 		6A8DBC1C2271021F00613A5F /* courseSkillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DBC1A2271021F00613A5F /* courseSkillsCell.swift */; };
 		6AC1B76A2280E1550016AECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AC1B7692280E1540016AECA /* Assets.xcassets */; };
-		6AC1B76C228151630016AECA /* coursePageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC1B76B228151630016AECA /* coursePageUITests.swift */; };
 		6AC3C47C226C887700E3C595 /* SignupNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C47B226C887700E3C595 /* SignupNameViewController.swift */; };
 		6AC3C488226F03C000E3C595 /* SignupSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C487226F03C000E3C595 /* SignupSkillsViewController.swift */; };
 		6AC3C48E22705FAC00E3C595 /* SkillColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3C48D22705FAC00E3C595 /* SkillColor.swift */; };
@@ -107,7 +106,6 @@
 		6A8DBC122270F3CE00613A5F /* courseProviderAndTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseProviderAndTimeCell.swift; sourceTree = "<group>"; };
 		6A8DBC1A2271021F00613A5F /* courseSkillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseSkillsCell.swift; sourceTree = "<group>"; };
 		6AC1B7692280E1540016AECA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6AC1B76B228151630016AECA /* coursePageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coursePageUITests.swift; sourceTree = "<group>"; };
 		6AC3C47B226C887700E3C595 /* SignupNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupNameViewController.swift; sourceTree = "<group>"; };
 		6AC3C487226F03C000E3C595 /* SignupSkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSkillsViewController.swift; sourceTree = "<group>"; };
 		6AC3C48D22705FAC00E3C595 /* SkillColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillColor.swift; sourceTree = "<group>"; };
@@ -333,7 +331,6 @@
 				954297832265C2A900AA8E8F /* Info.plist */,
 				6AC3C49C227F0D0C00E3C595 /* SignupUITests.swift */,
 				6A48C55522804B8C0079B4A1 /* SearchPageUITests.swift */,
-				6AC1B76B228151630016AECA /* coursePageUITests.swift */,
 			);
 			path = HeadlightUITests;
 			sourceTree = "<group>";
@@ -561,7 +558,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				954297822265C2A900AA8E8F /* HeadlightUITests.swift in Sources */,
-				6AC1B76C228151630016AECA /* coursePageUITests.swift in Sources */,
 				6A48C55622804B8C0079B4A1 /* SearchPageUITests.swift in Sources */,
 				6AC3C49D227F0D0C00E3C595 /* SignupUITests.swift in Sources */,
 			);
