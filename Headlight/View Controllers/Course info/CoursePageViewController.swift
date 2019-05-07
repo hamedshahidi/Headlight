@@ -51,6 +51,7 @@ class CoursePageViewController: UIViewController {
     @IBOutlet weak var locationMap: MKMapView!
     
     @IBOutlet weak var btnDone: UIButton!
+    @IBOutlet weak var btnDoneWidth: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +68,7 @@ class CoursePageViewController: UIViewController {
         self.navigationItem.title = NSLocalizedString("course_page_title", comment: "")
         btnDone.layer.cornerRadius = 8
         btnDone.borderWidth = 2
+        btnDoneWidth.constant = btnDone.intrinsicContentSize.width + 10
     }
     
     // Observer to autosize UITableView height based on its content size
@@ -275,7 +277,7 @@ extension CoursePageViewController: MKMapViewDelegate {
         
         // Set map region based on location
         let courseLocation = CLLocation(latitude: coordinates.lat, longitude: coordinates.long)
-        let regionRadius: CLLocationDistance = 100.0
+        let regionRadius: CLLocationDistance = 350.0
         let region = MKCoordinateRegion(center: courseLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         locationMap.setRegion(region, animated: false)
 

@@ -435,6 +435,7 @@
                     <connections>
                         <outlet property="arrowImageView" destination="wop-bj-4p3" id="TZa-Ir-qGl"/>
                         <outlet property="btnDone" destination="Ohn-WE-IPL" id="6HQ-0g-4a0"/>
+                        <outlet property="btnDoneWidth" destination="aLB-h6-sEE" id="QR5-Wa-Nhw"/>
                         <outlet property="descLabel" destination="XYC-8J-CJC" id="C7x-Tq-Uqy"/>
                         <outlet property="endLabel" destination="bE4-Po-gSD" id="ZdH-UF-aVt"/>
                         <outlet property="heightConstraintGainedSkills" destination="4lR-zU-cWY" id="Bv6-kp-4VX"/>

@@ -30,7 +30,7 @@ class MapViewController: UIViewController {
         
         // Set map region based on location
         let location = CLLocation(latitude: coordinates.lat, longitude: coordinates.long)
-        let regionRadius: CLLocationDistance = 1000.0
+        let regionRadius: CLLocationDistance = 800.0
         let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         map.setRegion(region, animated: true)
         

@@ -39,8 +39,8 @@
          "name": "Web Basics",
          "description": "Learn basics of web",
          "location": {
-            "lgn": 60.258735,
-            "ltd": 24.845603
+            "lgn": 24.845603,
+            "ltd": 60.258735
          },
          "time": {
             "start": "12-4-2019",
@@ -62,8 +62,8 @@
          "name": "Physics 01",
          "description": "The introduction course to physics",
          "location": {
-            "lgn": 60.223774,
-            "ltd": 25.078383
+            "lgn": 25.078383,
+            "ltd": 60.223774
          },
          "time": {
             "start": "12-4-2019",
@@ -83,8 +83,8 @@
          "name": "Physics 02",
          "description": "Deep dive into the world of electromagnetism",
          "location": {
-             "lgn": 60.223774,
-             "ltd": 25.078383
+             "lgn": 25.078383,
+             "ltd": 60.223774
          },
          "time": {
             "start": "16-5-2019",
@@ -107,8 +107,8 @@
          "name": "Physics 03",
          "description": "Kinetic motion and thermodynamics",
          "location": {
-             "lgn": 60.223774,
-             "ltd": 25.078383
+             "lgn": 25.078383,
+             "ltd": 60.223774
          },
          "time": {
             "start": "1-8-2019",
@@ -131,8 +131,8 @@
          "name": "Mathematics 01",
          "description": "The introduction course mathematics, basic calculus",
          "location": {
-             "lgn": 60.258735,
-             "ltd": 24.845603
+             "lgn": 24.845603,
+             "ltd": 60.258735
          },
          "time": {
             "start": "12-4-2019",
@@ -152,8 +152,8 @@
          "name": "Mathematics 02",
          "description": "Intermediate calculus",
          "location": {
-             "lgn": 60.258735,
-             "ltd": 24.845603
+             "lgn": 24.845603,
+             "ltd": 60.258735
          },
          "time": {
             "start": "16-5-2019",
@@ -175,8 +175,8 @@
          "name": "Mathematics 03",
          "description": "Advanced calculus",
          "location": {
-             "lgn": 60.258735,
-             "ltd": 24.845603
+             "lgn": 24.845603,
+             "ltd": 60.258735
          },
          "time": {
             "start": "1-8-2019",
@@ -198,8 +198,8 @@
          "name": "Smart Systems 01",
          "description": "First course of smart systems technology, mechanics of computer chips",
          "location": {
-             "lgn": 60.223774,
-             "ltd": 25.078383
+             "lgn": 25.078383,
+             "ltd": 60.223774
          },
          "time": {
             "start": "12-4-2019",
@@ -220,8 +220,8 @@
          "name": "Smart Systems 02",
          "description": "How to create automated systems, turing machine principles",
          "location": {
-             "lgn": 60.223774,
-             "ltd": 25.078383
+             "lgn": 25.078383,
+             "ltd": 60.223774
          },
          "time": {
             "start": "16-6-2019",
@@ -245,8 +245,8 @@
          "name": "Web Based Mobile Applications",
          "description": "Creating mobile applications with web technologies.",
          "location": {
-             "lgn": 60.258735,
-             "ltd": 24.845603
+             "lgn": 24.845603,
+             "ltd": 60.258735
          },
          "time": {
             "start": "1-6-2019",
@@ -276,8 +276,8 @@
          "name": "Object-Oriented Programming and Datacommunications",
          "description": "Learning the basics of how the internet works & object oriented programming with Java.",
          "location": {
-             "lgn": 60.258735,
-             "ltd": 24.845603
+             "lgn": 24.845603,
+             "ltd": 60.258735
          },
          "time": {
             "start": "1-8-2019",
@@ -301,8 +301,8 @@
          "name": "Mobile Application Development (Android)",
          "description": "Creating native applications for Android.",
          "location": {
-             "lgn": 60.258735,
-             "ltd": 24.845603
+             "lgn": 24.845603,
+             "ltd": 60.258735
          },
          "time": {
             "start": "1-10-2019",
@@ -328,8 +328,8 @@
          "name": "Mobile Application Development (iOS)",
          "description": "Creating native applications for iOS.",
          "location": {
-             "lgn": 60.258735,
-             "ltd": 24.845603
+             "lgn": 24.845603,
+             "ltd": 60.258735
          },
          "time": {
             "start": "1-12-2019",
@@ -356,8 +356,8 @@
          "name": "Converting websites to PWA",
          "description": "Converting existing websites to mobile friendly PWAs.",
          "location": {
-             "lgn": 60.258735,
-             "ltd": 24.845603
+             "lgn": 24.845603,
+             "ltd": 60.258735
          },
          "time": {
             "start": "26-1-2020",
@@ -382,8 +382,8 @@
           "name": "Basics of SQL",
           "description": "Learn to query a database with SQL",
           "location": {
-              "lgn": 60.223774,
-              "ltd": 25.078383
+              "lgn": 25.078383,
+              "ltd": 60.223774
           },
           "time": {
               "start": "28-4-2019",
@@ -405,8 +405,8 @@
           "name": "Unity Basics",
           "description": "Learn the basics of Unity and C#",
           "location": {
-              "lgn": 60.210006,
-              "ltd": 24.976785
+              "lgn": 24.976785,
+              "ltd": 60.210006
           },
           "time": {
               "start": "16-8-2019",
@@ -428,8 +428,8 @@
           "name": "The basics of programming",
           "description": "In this course you will learn about algorithms, object oriented programming and the basics of Java",
           "location": {
-              "lgn": 60.205068,
-              "ltd": 24.963515
+              "lgn": 24.963515,
+              "ltd": 60.205068
           },
           "time": {
               "start": "14-12-2019",
@@ -450,8 +450,8 @@
           "name": "The basics of programming",
           "description": "In this course you will learn to design and create basic programs in Java",
           "location": {
-              "lgn": 63.104706,
-              "ltd": 21.593242
+              "lgn": 21.593242,
+              "ltd": 63.104706
           },
           "time": {
               "start": "04-01-2020",
@@ -471,8 +471,8 @@
           "name": "Basics of Unreal",
           "description": "Learn the basics of Unreal and c++",
           "location": {
-              "lgn": 60.210006,
-              "ltd": 24.976785
+              "lgn": 24.976785,
+              "ltd": 60.210006
           },
           "time": {
               "start": "16-08-2019",
@@ -494,8 +494,8 @@
           "name": "C++ Programming",
           "description": "In this course you will get familiar with C++ by designing a whole program from scratch that utilises different C++ features",
           "location": {
-              "lgn": 60.186845,
-              "ltd": 24.827725
+              "lgn": 24.827725,
+              "ltd": 60.186845
           },
           "time": {
               "start": "12-09-2019",
