@@ -297,7 +297,8 @@ func setColoredLabel(skillString: String) -> NSAttributedString{
     let skills = skillString.split(separator: ",")
     for skill in skills {
         let skillColor = SkillColor.getColor(str: String(skill))
-        attributedString.append(NSAttributedString(string: String(skill),
+        print(skill)
+        attributedString.append(NSAttributedString(string: NSLocalizedString(String(skill), comment: ""),
                                                    attributes: [.foregroundColor: skillColor ?? UIColor.black]))
     }
     return attributedString
