@@ -91,9 +91,6 @@ class SkillColor {
     
     // Get a color for a skill. Parameter str is a KEY of a skill.
     static func getColor(str: String) -> UIColor? {
-        if skillColor.count == 0 {
-            assignColors()
-        }
         
         var color = ""
         // If there is no color for a skill, assign a color to it
@@ -104,15 +101,15 @@ class SkillColor {
             if lastColorIndex > 52 {
                 lastColorIndex = 0
             }
-            print(lastColorIndex)
         } else {
             // Get skill color with key
             color = skillColor[str] ?? ""
         }
-        
+
         return UIColor(hex: color)
     }
     
+    /*
     // Assign colors to skills for the first time
     static func assignColors() {
         let tempSkills = skills.keys.sorted(by: <)
@@ -122,7 +119,7 @@ class SkillColor {
             lastColorIndex += 1
         }
     }
-    
+    */
     
     // Finds two complementary colors for text and background
     // with a contrast rate suitable for reading.
