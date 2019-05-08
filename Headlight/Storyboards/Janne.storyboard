@@ -311,11 +311,11 @@
                                                             <constraint firstAttribute="width" constant="125" id="tey-u7-Jvb"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" name="Tint"/>
+                                                <color key="backgroundColor" name="Accent"/>
                                                 <constraints>
                                                     <constraint firstItem="Lhk-wa-nmm" firstAttribute="leading" secondItem="N9h-NI-zoU" secondAttribute="leadingMargin" id="4yS-CF-FAF"/>
                                                     <constraint firstAttribute="trailing" secondItem="mc1-T6-Eos" secondAttribute="trailing" id="7vr-6s-N58"/>
@@ -508,6 +508,9 @@
     </scenes>
     <resources>
         <image name="Rate star" width="553" height="481"/>
+        <namedColor name="Accent">
+            <color red="0.1803921568627451" green="0.49019607843137253" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Background">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
