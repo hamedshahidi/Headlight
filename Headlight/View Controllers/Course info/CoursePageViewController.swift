@@ -154,6 +154,9 @@ class CoursePageViewController: UIViewController {
         tableViewGainedSkills.tableFooterView = UIView()
         tableViewRequiredSkills.tableFooterView = UIView()
         
+        tableViewGainedSkills.allowsSelection = false
+        tableViewRequiredSkills.allowsSelection = false
+        
         tableViewGainedSkills.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
         tableViewRequiredSkills.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
         
