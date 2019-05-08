@@ -11,62 +11,50 @@ import MapKit
 
 class CustomLocationManager {
     
-//    let course: CourseStruct.Course? = nil
-    
-//    struct Coordinates {
-//        var lat: Double
-//        var long: Double
-//    }
-    
+    init() {}
     
     // Get coordinates of course
-    static func getCoordinatesForCourse(_ course: CourseStruct.Course?) -> CLLocation {
+    func getCoordinatesForCourse(_ course: CourseStruct.Course?) -> CLLocation {
         let coordinates = GeoData.Coordinates(lat: course?.location?.ltd ?? 0.0, long: course?.location?.lgn ?? 0.0)
         
         return CLLocation(latitude: coordinates.lat, longitude: coordinates.long)
     }
     
-    
-    // Find place name of location on map by converting CLLocation object
-    // which containes coordinates into human readable place name
-    func findLocationName(_ location: CLLocation ) -> String {
-        var locationName: String = ""
+    // Find place name of given location by converting CLLocation object coordinates into human readable place name
+    // and feed it to provided target
+    func feedLocationName(_ location: CLLocation, target: Any ) {
         
-        // Reverse Geocoding CLLocation object
+        // Reverse Geocoding CLLocation object to find placemark
         CLGeocoder().reverseGeocodeLocation(location){ ( placemarks, error ) in
-            locationName = self.placemarkHandler(placemarks, error)
+            self.placemarkHandler(placemarks, error, target)
         }
-        
-        return locationName
     }
     
-    
     // process reverseGeocodeLocation response and extraxt string from placemark
-    func placemarkHandler(_ placemarks: [CLPlacemark]?, _ error: Error?) -> String {
-        
+    func placemarkHandler(_ placemarks: [CLPlacemark]?, _ error: Error?, _ target: Any) {
         var result = ""
         
         if let error = error {
             print("Unable to Reverse Geocode Location (\(error))")
-            result = "-"
-            
         } else {
-        
             if let placemarks = placemarks, let placemark = placemarks.first {
                 result = placemark.compactAddress
             }
         }
         
-        return result
+        if let label = target as? UILabel {
+            label.text = result
+        }
+        
+        if let annotationPoint = target as? MKPointAnnotation {
+            annotationPoint.title = result
+        }
     }
 }
-
-
 
 extension CLPlacemark {
 
     var compactAddress: String {
-
         var result = ""
         
         if let street = thoroughfare {
@@ -85,16 +73,12 @@ extension CLPlacemark {
             result += "\(city)"
         }
         
-        
-        
         return result
     }
 }
 
-
-
 class GeoData {
-    
+
     struct Coordinates {
         var lat: Double
         var long: Double

@@ -12,49 +12,45 @@ import MapKit
 class MapViewController: UIViewController {
     
     var course: CourseStruct.Course? = nil
-    struct coordinates {
-        static var lat = 0.0
-        static var long = 0.0
-    }
 
     @IBOutlet weak var map: MKMapView!
     
     @IBOutlet weak var mapTypeChanger: UISegmentedControl!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getCoordinates()
+//        getCoordinates()
         initializeUISettings()
         
-        // Set map region based on location
-        let location = CLLocation(latitude: coordinates.lat, longitude: coordinates.long)
+        let locationManager = CustomLocationManager()
+        
+        // Get coordinates of current course
+        let location = locationManager.getCoordinatesForCourse(course)
+        
+        // Set map region based on coordinates
         let regionRadius: CLLocationDistance = 600.0
         let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         map.setRegion(region, animated: true)
         
-        // Add a pin on location
+        // Initialize a pin for location
         let pin = MKPointAnnotation()
-        pin.title = course?.organization ?? ""
-        pin.coordinate = CLLocationCoordinate2D(latitude: coordinates.lat, longitude: coordinates.long)
+        pin.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        
+        // Find place name by coordinates and feed to UI
+        locationManager.feedLocationName(location, target: pin)
+        
+        // Add pin to map
         map.addAnnotation(pin)
     }
     
     @IBAction func changeMapType(_ sender: UISegmentedControl) {
-        
         switch sender.selectedSegmentIndex {
         case 0:
             map.mapType = .standard
         default:
             map.mapType = .satellite
         }
-    }
-    
-    
-    func getCoordinates() {
-        coordinates.lat = course?.location?.ltd ?? 0.0
-        coordinates.long = course?.location?.lgn ?? 0.0
     }
     
     func initializeUISettings() {
