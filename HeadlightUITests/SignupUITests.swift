@@ -83,7 +83,7 @@ class SignupUITests: XCTestCase {
         enterUsername(app, "name")
         let nextButton = app.buttons["Next"]
         nextButton.tap()
-        let frontEnd = app.tables/*@START_MENU_TOKEN@*/.staticTexts["Front-End Developer"]/*[[".cells.staticTexts[\"Front-End Developer\"]",".staticTexts[\"Front-End Developer\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        let frontEnd = app.tables.staticTexts["Front-End Developer"]
         XCTAssert(frontEnd.exists)
     }
     
@@ -92,7 +92,7 @@ class SignupUITests: XCTestCase {
         let elementsQuery = app.scrollViews.otherElements
         enterUsername(app, "name")
         app.buttons["Next"].tap()
-        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Front-End Developer"]/*[[".cells.staticTexts[\"Front-End Developer\"]",".staticTexts[\"Front-End Developer\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.tables.staticTexts["Front-End Developer"].tap()
         app.buttons["Pick this path"].tap()
         let career = elementsQuery.tables.staticTexts["Front-End Developer"]
         waitForElementToAppear(career)
@@ -105,8 +105,8 @@ class SignupUITests: XCTestCase {
         let elementsQuery = app.scrollViews.otherElements
         app.buttons["Next"].tap()
         let tablesQuery = app.tables
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Front-End Developer"]/*[[".cells.staticTexts[\"Front-End Developer\"]",".staticTexts[\"Front-End Developer\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Smart Systems 01"]/*[[".cells.staticTexts[\"Smart Systems 01\"]",".staticTexts[\"Smart Systems 01\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery.staticTexts["Front-End Developer"].tap()
+        tablesQuery.staticTexts["Smart Systems 01"].tap()
         let desc = elementsQuery.staticTexts["Description:"]
         XCTAssert(desc.exists)
     }
@@ -115,7 +115,7 @@ class SignupUITests: XCTestCase {
         let app = XCUIApplication()
         enterUsername(app, "name")
         app.buttons["Next"].tap()
-        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Front-End Developer"]/*[[".cells.staticTexts[\"Front-End Developer\"]",".staticTexts[\"Front-End Developer\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.tables.staticTexts["Front-End Developer"].tap()
         app.navigationBars["Front-End Developer"].buttons["Select Career"].tap()
         let select = app.navigationBars["Select Career"].staticTexts["Select Career"]
         waitForElementToAppear(select)

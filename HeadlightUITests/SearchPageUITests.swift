@@ -45,7 +45,7 @@ class SearchPageUITests: XCTestCase {
         let searchBar =  app.searchFields["search by subject"]
         searchBar.tap()
         searchBar.typeText("ios")
-        XCTAssert(app.tables/*@START_MENU_TOKEN@*/.staticTexts["Mobile Application Development (iOS)"]/*[[".cells.staticTexts[\"Mobile Application Development (iOS)\"]",".staticTexts[\"Mobile Application Development (iOS)\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists)
+        XCTAssert(app.tables.staticTexts["Mobile Application Development (iOS)"].exists)
         
     }
     
@@ -65,7 +65,7 @@ class SearchPageUITests: XCTestCase {
         searchBySubjectSearchField.tap()
         searchBySubjectSearchField.typeText("ios")
         searchBySubjectSearchField.buttons["Clear text"].tap()
-        XCTAssert(!app.tables/*@START_MENU_TOKEN@*/.staticTexts["Mobile Application Development (iOS)"]/*[[".cells.staticTexts[\"Mobile Application Development (iOS)\"]",".staticTexts[\"Mobile Application Development (iOS)\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists)
+        XCTAssert(!app.tables.staticTexts["Mobile Application Development (iOS)"].exists)
         
     }
 
