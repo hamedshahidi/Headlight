@@ -326,7 +326,7 @@
                                                 </connections>
                                             </tableView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableViewRequiredSkills" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Ou-h2-Thw" userLabel="TableViewRequiredSkills">
-                                                <rect key="frame" x="0.0" y="902" width="375" height="300"/>
+                                                <rect key="frame" x="0.0" y="882" width="375" height="300"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="eL5-rN-vO1"/>
@@ -384,10 +384,10 @@
                                                 </connections>
                                             </tableView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="wop-bj-4p3" userLabel="ImageViewArrow">
-                                                <rect key="frame" x="167.5" y="834" width="40" height="60"/>
+                                                <rect key="frame" x="167.5" y="834" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="dEG-rl-XFQ"/>
-                                                    <constraint firstAttribute="height" constant="60" id="hY2-2P-X8h"/>
+                                                    <constraint firstAttribute="height" constant="40" id="hY2-2P-X8h"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
