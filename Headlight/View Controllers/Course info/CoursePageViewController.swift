@@ -263,19 +263,23 @@ extension CoursePageViewController: UITableViewDataSource, UITableViewDelegate {
             break
         }
         
-        // Populate table with data
+        // Populate table with data and update UI accordinly
         switch indexPath.row {
             case 0:
                 label?.text = header
                 cell.backgroundColor = Theme.background
             
             default:
+                cell.backgroundColor = Theme.accent
+                label?.backgroundColor = .white
                 label?.borderWidth = 2
                 label?.borderColor = SkillColor.getColor(str: skills?[indexPath.row - 1] ?? "")
                 label?.layer.cornerRadius = 8
                 label?.font = UIFont.boldSystemFont(ofSize: 16)
                 label?.text = "  " + (skills?[indexPath.row - 1] ?? "") + "  "
                 label?.sizeToFit()
+                label?.layer.masksToBounds = true
+
         }
     }
 }
@@ -290,16 +294,18 @@ extension CoursePageViewController: MKMapViewDelegate {
         let courseLocation = CustomLocationManager.getCoordinatesForCourse(course)
         
         // Set location map region based on coordinates
-        let regionRadius: CLLocationDistance = 350.0
+
+        let regionRadius: CLLocationDistance = 400.0
         let region = MKCoordinateRegion(center: courseLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         locationMap.setRegion(region, animated: false)
 
         convertCoordinatesToPlaceName(courseLocation)
-        
+
         // Add a pin on the map based on coordinates
         let pin = MKPointAnnotation()
         pin.coordinate = CLLocationCoordinate2D(latitude: Coordinates.lat, longitude: Coordinates.long)
         locationMap.addAnnotation(pin)
+        
     }
     
     // Convert CLLocation object (containes coordinates) into human readable place name
