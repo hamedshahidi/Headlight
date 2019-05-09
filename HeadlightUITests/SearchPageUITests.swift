@@ -33,7 +33,7 @@ class SearchPageUITests: XCTestCase {
         
         let app = XCUIApplication()
         app.scrollViews.otherElements.searchFields["Search"].tap()
-        let searchbar = app.searchFields["search by subject"]
+        let searchbar = app.searchFields["Search by course or subject"]
         XCTAssert(searchbar.exists)
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -42,7 +42,7 @@ class SearchPageUITests: XCTestCase {
     func testSearchResult() {
         let app = XCUIApplication()
         app.scrollViews.otherElements.searchFields["Search"].tap()
-        let searchBar =  app.searchFields["search by subject"]
+        let searchBar = app.searchFields["Search by course or subject"]
         searchBar.tap()
         searchBar.typeText("ios")
         XCTAssert(app.tables.staticTexts["Mobile Application Development (iOS)"].exists)
@@ -61,7 +61,7 @@ class SearchPageUITests: XCTestCase {
     func testCancelButton(){
         let app = XCUIApplication()
         app.scrollViews.otherElements.searchFields["Search"].tap()
-        let searchBySubjectSearchField = app.searchFields["search by subject"]
+        let searchBySubjectSearchField = app.searchFields["Search by course or subject"]
         searchBySubjectSearchField.tap()
         searchBySubjectSearchField.typeText("ios")
         searchBySubjectSearchField.buttons["Clear text"].tap()
