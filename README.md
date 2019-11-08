@@ -1,5 +1,6 @@
-# Headlight
-Make your future bright!
+# Headlight - Make your future bright!
+Course/Study Path Finder IOS mobile application
+
 IOS mobile application - Finding suitable course path for chosen career
 
 #### Technologies:
